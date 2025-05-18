@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="72mm"
+   height="23mm"
+   viewBox="0 0 72 23"
+   version="1.1"
+   id="svg3957"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="eppid.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3959"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0143712"
+     inkscape:cx="75.909097"
+     inkscape:cy="76.894929"
+     inkscape:window-width="1500"
+     inkscape:window-height="915"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3954" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g4828"
+       transform="translate(0,1.5875)">
+      <rect
+         style="fill:#ff6600;stroke:none;stroke-width:0.2;stroke-miterlimit:2.8;paint-order:stroke fill markers"
+         id="rect4722"
+         width="5.3362341"
+         height="5.3362341"
+         x="63.680378"
+         y="2.2259171" />
+      <rect
+         style="fill:#ff6600;stroke:none;stroke-width:0.115879;stroke-miterlimit:2.8;paint-order:stroke fill markers"
+         id="rect4722-9-7"
+         width="3.0917826"
+         height="3.0917826"
+         x="59.74847"
+         y="4.4204693" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.4536px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#070707;stroke:none;stroke-width:1.22542;stroke-miterlimit:2.8;paint-order:stroke fill markers"
+         x="30.135183"
+         y="20.059334"
+         id="text4080"
+         transform="scale(1.0384025,0.96301772)"><tspan
+           sodipodi:role="line"
+           id="tspan4078"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.4536px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke:none;stroke-width:1.22542"
+           x="30.135183"
+           y="20.059334"><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:19.4536px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ff6600;stroke:none;stroke-width:1.22542"
+   id="tspan4166">e</tspan>PPID</tspan></text>
+      <rect
+         style="fill:#ff6600;stroke:none;stroke-width:0.144849;stroke-miterlimit:2.8;paint-order:stroke fill markers"
+         id="rect4722-9"
+         width="3.8647478"
+         height="3.8647478"
+         x="61.364445"
+         y="8.4194374" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:46.3546px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ff6600;stroke:none;stroke-width:0.343553;stroke-miterlimit:2.8;paint-order:stroke fill markers"
+       x="32.293659"
+       y="6.5812798"
+       id="text4832"
+       transform="scale(1.079339,0.92649297)"><tspan
+         sodipodi:role="line"
+         id="tspan4830"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:6.0599px;font-family:Roboto;-inkscape-font-specification:'Roboto, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.343553"
+         x="32.293659"
+         y="6.5812798">KOMPOLNAS</tspan></text>
+  </g>
+</svg>

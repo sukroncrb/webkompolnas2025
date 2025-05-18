@@ -1,0 +1,433 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700&display=swap");
+
+*,
+*::before,
+*::after {
+    @apply box-border;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Titillium Web", sans-serif;
+}
+
+
+/*
+
+
+    Header
+*/
+.header {
+    @apply 
+        fixed top-0 right-0 left-0 z-50 bg-white;
+}
+
+.container {
+    @apply 
+        max-w-[100%] mx-auto px-5
+        sm:max-w-[100%] sm:px-5
+        md:max-w-[100%] md:px-5
+        lg:max-w-7xl lg:px-5
+        xl:max-w-7xl xl:px-0
+        2xl:max-w-7xl 2xl:px-0;
+}
+
+.container.konten {
+    @apply
+    max-w-[990px]
+    sm:max-w-[100%]
+    md:max-w-[100%]
+    lg:max-w-[990px]
+    xl:max-w-[990px]
+    2xl:max-w-[990px];
+}
+
+.page {
+    @apply
+    min-h-28 py-10;
+}
+
+.format-koran {
+
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count : 1;
+ 
+	-webkit-column-width: 100%;
+	-moz-column-width: 100%;
+	column-width :100%;
+ 
+	-webkit-column-gap : 30px;
+	-moz-column-gap : 30px;
+	column-gap : 30px;	
+	
+	-webkit-column-rule-width : 1px;
+	-moz-column-rule-width : 1px;
+	column-rule-width : 1px;	
+ 
+	-webkit-column-rule : none;
+	-moz-column-rule : none;
+	column-rule : none;
+ 
+	-webkit-column-span :all;
+	-moz-column-span :all;
+	column-span :all;	
+}
+
+.format-koran p {
+    @apply text-justify mb-4;
+}
+
+.format-koran img {
+    @apply mb-4;
+}
+
+.line {
+    @apply 
+        h-0.5 border-b border-b-gray-200 z-10 relative;
+}
+
+
+/* sm 640px */
+@media (width >= 40rem) { 
+    .format-koran {
+
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count : 1;
+     
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width :100%;
+    }
+}
+
+articles {
+    @apply cursor-pointer;
+}
+
+/* md 768px */
+@media (width >= 48rem) { 
+    .format-koran {
+
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count : 1;
+     
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width :100%;
+    }   
+}
+
+/* lg 1024px */
+@media (width >= 64rem) { 
+    .format-koran {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count : 2;
+     
+        -webkit-column-width: 200px;
+        -moz-column-width: 200px;
+        column-width :200px;
+    }
+}
+
+/* xl 1280px */
+@media (width >= 80rem) { 
+    .format-koran {
+
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count : 3;
+     
+        -webkit-column-width: 100px;
+        -moz-column-width: 100px;
+        column-width :100px;
+    }
+}
+
+/* 2xl 1536px */
+@media (width >= 96rem) { 
+    .format-koran {
+
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count : 3;
+     
+        -webkit-column-width: 100px;
+        -moz-column-width: 100px;
+        column-width :100px;
+    }
+}
+
+
+
+/*
+
+
+    Header Block
+*/
+.header-block {
+    @apply 
+        w-full block justify-between items-center py-4 gap-8
+        sm:block
+        md:block
+        lg:flex
+        xl:flex
+        2xl:flex;
+}
+
+
+
+
+/*
+
+
+    Menu
+*/
+.menu {
+    @apply 
+        py-2;
+}
+
+.menu ul {
+    @apply flex justify-items-start items-center gap-6;
+}
+
+.menu ul > li {
+    @apply 
+        relative h-10 hidden justify-items-start items-center gap-4 cursor-pointer
+        sm:hidden
+        md:hidden
+        lg:flex
+        xl:flex
+        2xl:flex;
+}
+
+.menu > div > ul > li:first-child {
+    @apply 
+        relative h-10 flex justify-items-start items-center gap-4 cursor-pointer
+        sm:flex
+        md:flex
+        lg:hidden
+        xl:hidden
+        2xl:hidden
+    ;
+}
+
+
+
+.menu ul > li svg {
+    @apply w-5;
+}
+
+.menu ul > li:hover ul {
+    @apply w-20 bg-white transition-all;
+}
+
+.menu ul > li > line {
+    @apply absolute w-0 h-0.5 mt-12 bg-yellow-400 z-30;
+}
+
+.menu ul > li:hover > line {
+    @apply w-full transition-all;
+}
+
+.menu ul > li svg.down {
+    @apply w-4;
+}
+
+.menu ul > li:hover svg.down {
+    @apply w-4 rotate-180 transition;
+}
+
+.menu ul li ul {
+    @apply hidden;
+}
+
+.menu ul li:hover ul {
+    @apply block w-64 z-20 absolute bg-white rounded-b-xl p-4 px-8 shadow top-10;
+}
+
+.menu ul li ul li {
+    @apply py-5 no-underline;
+}
+
+
+.menu ul > li ul li:hover {
+    @apply underline;
+}
+
+section {
+    @apply mt-[130px];
+}
+
+.menu-mobile > ul {
+    @apply relative p-4;
+}
+
+.menu-mobile > ul > li {
+    @apply text-gray-400 py-2 px-4;
+}
+
+.menu-mobile > ul > li > a{
+    @apply relative block text-gray-800 py-2 cursor-pointer;
+}
+
+.menu-mobile > ul > li > a:hover {
+    @apply text-sky-600;
+}
+
+.menu-mobile > ul > li > svg {
+    @apply hidden;
+}
+
+.menu-mobile > ul > li > ul {
+    @apply relative block ml-4;
+}
+
+.menu-mobile > ul > li > ul > li > a{
+    @apply relative block py-2 px-4 text-gray-800 cursor-pointer;
+}
+
+.menu-mobile > ul > li > ul > li > a:hover{
+    @apply text-sky-600;
+}
+
+.banner {
+    background-image: url('../images/bg-gradasi.png');
+    background-size: cover;
+    background-position: center;
+    @apply
+    block py-10;
+}
+
+.banner h3 {
+    @apply
+    text-3xl font-semibold my-3;
+}
+
+.banner .breadcrumb ul {
+    @apply
+    flex justify-start items-center text-sm;
+}
+
+.banner .breadcrumb ul li {
+    @apply
+    flex justify-start items-center;
+}
+
+.banner .breadcrumb ul li a {
+    @apply
+    font-semibold;
+}
+
+.banner .breadcrumb ul li span:after {
+    content: "/";
+    @apply mx-2
+}
+
+.banner .breadcrumb ul li:last-child span:after {
+    content: "";
+}
+
+.quotes {
+    @apply relative block text-center text-3xl font-semibold my-10 mx-auto w-auto
+        sm:w-auto
+        md:w-auto
+        lg:w-[700px]
+        xl:w-[700px]
+        2xl:w-[700px]
+    ;
+}
+
+.text-danger {
+    @apply text-red-700;
+}
+
+.fab {
+    @apply fixed right-0 bottom-0 z-[9999];
+}
+
+.fab > .btn {
+    @apply fixed w-[50px] h-[50px] right-[30px] rounded-full cursor-pointer flex justify-center items-center bg-white shadow-md;
+}
+
+.isi-berita > p {
+    @apply block mt-4 text-justify bottom-10;
+}
+
+.highlight {
+    @apply bg-yellow-50;
+}
+
+
+
+/*
+    Form
+*/
+
+.form-label {
+    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+}
+
+.form-control {
+    @apply shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+
+.hr {
+    @apply h-[1px] bg-gray-100 border-0 w-full block my-8 relative;
+}
+
+.hr > span {
+    @apply absolute pr-4 bg-white text-sm mt-[-10px] font-semibold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+Foter
+*/
+
+.footer {
+    @apply
+    min-h-28;
+}
+
+.footer-top {
+    @apply min-h-64 bg-gradient-to-r from-sky-900 to-sky-700 text-center flex justify-center items-center text-white
+    sm:block
+    md:block
+    lg:flex
+    xl:flex
+    2xl:flex;
+}
+
+.footer-bottom {
+    @apply
+    p-4 bg-gray-100 text-gray-500;
+}

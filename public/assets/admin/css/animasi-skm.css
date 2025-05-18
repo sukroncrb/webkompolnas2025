@@ -1,0 +1,150 @@
+.skm-loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.animasi-logo-skm {
+    width: 185px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 900;
+    font-size: 16pt;
+}
+
+
+
+.animasi-logo-skm .teks-s,
+.animasi-logo-skm .teks-m {
+    position: absolute;
+    margin-top: -100px;
+    display: block;
+    @supports (background-clip:text) or (-webkit-background-clip:text) {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: url('../images/custom-apps/img/anim.gif');
+        /* background-image: url(https://i.pinimg.com/originals/48/42/41/4842415e5f93c69717a67668fd1fb85b.gif); */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.animasi-logo-skm .teks-k{
+    position: absolute;
+    margin-top: 100px;
+    display: block;
+    @supports (background-clip:text) or (-webkit-background-clip:text) {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: url('../images/custom-apps/img/anim.gif');
+        /* background-image: url(https://i.pinimg.com/originals/48/42/41/4842415e5f93c69717a67668fd1fb85b.gif); */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.animasi-logo-skm .teks-skm {
+    position: absolute;
+    margin-top: 100px;
+    display: block;
+    @supports (background-clip:text) or (-webkit-background-clip:text) {
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: url('../images/custom-apps/img/anim.gif');
+        /* background-image: url(https://i.pinimg.com/originals/48/42/41/4842415e5f93c69717a67668fd1fb85b.gif); */
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.animasi-logo-skm .teks-s,
+.animasi-logo-skm .teks-k,
+.animasi-logo-skm .teks-m,
+.animasi-logo-skm .teks-skm {
+    margin-left: 50%;
+    transform: translate(-50%,0);
+}
+
+.animasi-logo-skm .teks-s {
+    animation: anim-SM 2s forwards;
+    animation-delay: 0;
+    font-size: 14pt;
+}
+
+.animasi-logo-skm .teks-k {
+    animation: anim-K 2s forwards;
+    animation-delay: 1.5s;
+    font-size: 14pt;
+}
+
+.animasi-logo-skm .teks-m {
+    animation: anim-SM 2s forwards;
+    animation-delay: 3s;
+    font-size: 14pt;
+}
+
+.animasi-logo-skm .teks-skm {
+    animation: anim-SKM 2s forwards;
+    animation-delay: 4.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.animasi-logo-skm .teks-skm > img {
+    width: 38px;
+}
+
+@keyframes anim-SM {
+    0%   {
+        margin-top: -100px;
+    }
+    30%   {
+        margin-top: 10px;
+    }
+    70%   {
+        margin-top: 010px;
+    }
+    100% {
+        margin-top: -100px;
+    }
+}
+
+@keyframes anim-K {
+    0%   {
+        margin-top: 100px;
+    }
+    30%   {
+        margin-top: 10px;
+    }
+    70%   {
+        margin-top: 10px;
+    }
+    100% {
+        margin-top: 100px;
+    }
+}
+
+@keyframes anim-SKM {
+    0%   {
+        margin-top: 100px;
+    }
+    30%   {
+        margin-top: 0;
+    }
+    100% {
+        margin-top: 0;
+    }
+}

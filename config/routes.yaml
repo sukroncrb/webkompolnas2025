@@ -1,0 +1,395 @@
+TestPublic:
+  path: '/test'
+  opsi: 'get|TestController|index'
+
+IndexWeb:
+  path: '/'
+  opsi: 'get|HomeController|index'
+
+IndexAuthentication:
+  path: '/login'
+  opsi: 'get|AuthController|index'
+
+
+
+################### Website
+
+TentangSejarahWeb:
+  path: '/tentang-kompolnas/:params'
+  opsi: 'get|TentangController|index'
+
+DataPublikasiWeb:
+  path: '/data-dan-publikasi/:params'
+  opsi: 'get|PublikasiController|index'
+
+BeritaWeb:
+  path: '/berita'
+  opsi: 'get|BeritaController|index'
+
+BeritaOnlyWeb:
+  path: '/berita/:params'
+  opsi: 'get|BeritaController|only'
+
+RegulasiWeb:
+  path: '/regulasi/:params'
+  opsi: 'get|RegulasiController|index'
+
+KontakWeb:
+  path: '/hubungi-kami'
+  opsi: 'get|KontakController|index'
+
+FormWeb:
+  path: '/form'
+  opsi: 'get|FormController|index'
+
+FormWithParamWeb:
+  path: '/form/:params'
+  opsi: 'get|FormController|index'
+
+EventWithoutParamWeb:
+  path: '/event'
+  opsi: 'get|EventController|index'
+
+EventWithParamWeb:
+  path: '/event/:params'
+  opsi: 'get|EventController|read'
+
+
+
+
+
+
+
+
+################## Dashboard
+
+IndexHomeDashboard:
+  path: '/dashboard'
+  opsi: 'get|DashboardController|index'
+
+# Berita
+IndexBeritaDashboard:
+  path: '/berita'
+  opsi: 'get|BeritaController|index'
+AddBeritaDashboard:
+  path: '/berita/add'
+  opsi: 'get|BeritaController|add'
+EditBeritaDashboard:
+  path: '/berita/:id/edit'
+  opsi: 'get|BeritaController|edit'
+ReadBeritaDashboard:
+  path: '/berita/:id/read'
+  opsi: 'get|BeritaController|read'
+
+# Buku
+IndexBukuDashboard:
+  path: '/buku'
+  opsi: 'get|BukuController|index'
+AddBukuDashboard:
+  path: '/buku/add'
+  opsi: 'get|BukuController|add'
+EditBukuDashboard:
+  path: '/buku/:id/edit'
+  opsi: 'get|BukuController|edit'
+ReadBukuDashboard:
+  path: '/buku/:id/read'
+  opsi: 'get|BukuController|read'
+
+# Photo
+IndexPhotoDashboard:
+  path: '/photo'
+  opsi: 'get|PhotoController|index'
+IndexPhotoAlbumDashboard:
+  path: '/photo/album'
+  opsi: 'get|PhotoController|album'
+AddPhotoDashboard:
+  path: '/photo/add'
+  opsi: 'get|PhotoController|add'
+AddPhotoWithParamDashboard:
+  path: '/photo/:params'
+  opsi: 'get|PhotoController|add'
+EditPhotoDashboard:
+  path: '/photo/:id/edit'
+  opsi: 'get|PhotoController|edit'
+ReadPhotoDashboard:
+  path: '/photo/:id/read'
+  opsi: 'get|PhotoController|read'
+
+
+# Pengumuman
+IndexPengumumanDashboard:
+  path: '/pengumuman'
+  opsi: 'get|PengumumanController|index'
+AddPengumumanDashboard:
+  path: '/pengumuman/add'
+  opsi: 'get|PengumumanController|add'
+EditPengumumanDashboard:
+  path: '/pengumuman/:id/edit'
+  opsi: 'get|PengumumanController|edit'
+ReadPengumumanDashboard:
+  path: '/pengumuman/:id/read'
+  opsi: 'get|PengumumanController|read'
+
+
+# Regulasi
+IndexRegulasiDashboard:
+  path: '/regulasi'
+  opsi: 'get|RegulasiController|index'
+AddRegulasiDashboard:
+  path: '/regulasi/add'
+  opsi: 'get|RegulasiController|add'
+EditRegulasiDashboard:
+  path: '/regulasi/:id/edit'
+  opsi: 'get|RegulasiController|edit'
+ReadRegulasiDashboard:
+  path: '/regulasi/:id/read'
+  opsi: 'get|RegulasiController|read'
+
+
+# Users
+IndexUsersDashboard:
+  path: '/users'
+  opsi: 'get|UsersController|index'
+PostUsersDashboard:
+  path: '/users'
+  opsi: 'post|UsersController|index'
+TambahUsersDashboard:
+  path: '/users/add'
+  opsi: 'get|UsersController|add'
+ReadUsersDashboard:
+  path: '/users/:id/read'
+  opsi: 'get|UsersController|read'
+EditUsersDashboard:
+  path: '/users/:id/edit'
+  opsi: 'get|UsersController|edit'
+IndexProfileParamsDashboard:
+  path: '/profile/detail/:params'
+  opsi: 'get|UsersController|read'
+
+
+# Grup
+IndexGrupDashboard:
+  path: '/grup'
+  opsi: 'get|GrupController|index'
+PostGrupDashboard:
+  path: '/grup'
+  opsi: 'post|GrupController|index'
+TambahtGrupDashboard:
+  path: '/grup/add'
+  opsi: 'get|GrupController|add'
+ReadtGrupDashboard:
+  path: '/grup/:id/read'
+  opsi: 'get|GrupController|read'
+EdittGrupDashboard:
+  path: '/grup/:id/edit'
+  opsi: 'get|GrupController|edit'
+
+
+# Form
+IndexFormDashboard:
+  path: '/form/:params'
+  opsi: 'get|FormController|index'
+  
+
+
+# Seting
+IndexSetingDashboard:
+  path: '/seting'
+  opsi: 'get|SetingController|index'
+
+
+# Video
+IndexVideoDashboard:
+  path: '/video'
+  opsi: 'get|VideoController|index'
+
+
+# Static
+IndexWithParamsStatisDashboard:
+  path: '/statis/:params'
+  opsi: 'get|StatisController|index'
+
+
+
+
+################## Api
+PostLoginApi:
+  path: '/login'
+  opsi: 'post|AuthService|login'
+
+GetUsersApi:
+  path: '/users'
+  opsi: 'get|UsersService|load'
+
+PostUsersApi:
+  path: '/users'
+  opsi: 'post|UsersService|load'
+
+GetGrupApi:
+  path: '/grup'
+  opsi: 'get|GrupService|load'
+
+PostGrupApi:
+  path: '/grup'
+  opsi: 'post|GrupService|load'
+
+GetSesiApi:
+  path: '/sesi'
+  opsi: 'get|SesiService|load'
+
+LogoutApi:
+  path: '/logout'
+  opsi: 'get|AuthService|logout'
+
+CsrfApi:
+  path: '/csrf'
+  opsi: 'get|CsrfService|index'
+
+
+GetDashboardApi:
+  path: '/data'
+  opsi: 'get|DashboardService|load'
+
+GetDashboarWithParamdApi:
+  path: '/data/:params'
+  opsi: 'get|DashboardService|load'
+
+
+
+
+
+###### Api Berita
+BeritaGetApi:
+  path: '/berita'
+  opsi: 'get|BeritaService|load'
+
+BeritaGetWithParamApi:
+  path: '/berita/:params'
+  opsi: 'get|BeritaService|load'
+
+BeritaPostApi:
+  path: '/berita'
+  opsi: 'post|BeritaService|load'
+
+
+BukuGetApi:
+  path: '/buku'
+  opsi: 'get|BukuService|load'
+
+BukuGetWithParamApi:
+  path: '/buku/:params'
+  opsi: 'get|BukuService|load'
+
+BukuPostApi:
+  path: '/buku'
+  opsi: 'post|BukuService|load'
+
+
+PhotoGetApi:
+  path: '/photo'
+  opsi: 'get|PhotoService|load'
+
+PhotoGetWithParamApi:
+  path: '/photo/:params'
+  opsi: 'get|PhotoService|load'
+
+PhotoPostApi:
+  path: '/photo'
+  opsi: 'post|PhotoService|load'
+
+
+PengumumanGetApi:
+  path: '/pengumuman'
+  opsi: 'get|PengumumanService|load'
+
+PengumumanGetWithParamApi:
+  path: '/pengumuman/:params'
+  opsi: 'get|PengumumanService|load'
+
+PengumumanPostApi:
+  path: '/pengumuman'
+  opsi: 'post|PengumumanService|load'
+
+
+RegulasiGetApi:
+  path: '/regulasi'
+  opsi: 'get|RegulasiService|load'
+
+RegulasiGetWithParamApi:
+  path: '/regulasi/:params'
+  opsi: 'get|RegulasiService|load'
+
+RegulasiPostApi:
+  path: '/regulasi'
+  opsi: 'post|RegulasiService|load'
+
+
+###### Api Pengunjung
+PengunjungGetApi:
+  path: '/pengunjung'
+  opsi: 'get|PengunjungService|load'
+
+
+
+###### Api Form
+FormGetApi:
+  path: '/form'
+  opsi: 'get|FormService|load'
+
+FormGetWithParamApi:
+  path: '/form/:params'
+  opsi: 'get|FormService|load'
+
+FormPostApi:
+  path: '/form'
+  opsi: 'post|FormService|load'
+
+
+
+###### Api Plus One
+
+PlusOneApi:
+  path: '/plusone/:params'
+  opsi: 'get|PlusoneService|load'
+
+
+###### Api Youtube
+
+YoutubeApi:
+  path: '/youtube-api'
+  opsi: 'get|YoutubeService|load'
+
+
+###### Api Info
+
+GetInfoApi:
+  path: '/info'
+  opsi: 'get|InfoService|load'
+
+PostInfoApi:
+  path: '/info'
+  opsi: 'post|InfoService|load'
+
+
+###### Api Seting
+
+GetSetingApi:
+  path: '/seting'
+  opsi: 'get|SetingService|load'
+
+PostSetingApi:
+  path: '/seting'
+  opsi: 'post|SetingService|load'
+
+
+###### Api Statis
+
+GetStatisApi:
+  path: '/statis'
+  opsi: 'get|StatisService|load'
+
+PostStatisApi:
+  path: '/statis'
+  opsi: 'post|StatisService|load'
+
+

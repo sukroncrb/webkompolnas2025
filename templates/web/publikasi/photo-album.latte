@@ -1,0 +1,58 @@
+{layout '../main.latte'}
+{block css}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/tableexport.jquery.plugin@1.29.0/tableExport.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/bootstrap-table-locale-all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.24.1/dist/extensions/export/bootstrap-table-export.min.js"></script>
+<link rel="stylesheet" href="{$baseurl}assets/web/package/spotlight/css/spotlight.min.css">
+<style>
+  .select,
+  #locale {
+    width: 100%;
+  }
+  .like {
+    margin-right: 10px;
+  }
+</style>
+{/block}
+{block content}
+<section>
+    <div class="banner">
+        <div class="container konten">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href='{$baseurl}'><span>Home</span></a></li>
+                    <li><a href='{$baseurl}data-dan-publikasi/photo'><span>Album Photo</span></a></li>
+                    <li><span>Photo</span></li>
+                </ul>
+            </div>
+            <h3>{$title}</h1>
+        </div>
+    </div>
+    {if $photo->hitung()}
+        <div class="container konten page grid grid-cols-1 grid-rows-3 gap-6
+                sm:grid-cols-2
+                md:grid-cols-2
+                lg:grid-cols-4
+                xl:grid-cols-4
+                2xl:grid-cols-4">
+            {foreach $photo->hasil() as $p}
+                <div class="spotlight"  data-title="{$p->keterangan}"  data-src="{$baseurl}{$p->gambar}">
+                    <img src="{$baseurl}{$p->gambar}">
+                    <div class='text-center mt-2'>{$p->keterangan}</div>
+                </div>
+            {/foreach}
+        </div>
+    {else}
+        <div>....</div>
+    {/if}
+</section>
+{/block}
+{block js}
+<script src="{$baseurl}assets/web/package/spotlight/js/spotlight.bundle.js" defer></script>
+<script n:syntax="off">
+
+</script>
+{/block}

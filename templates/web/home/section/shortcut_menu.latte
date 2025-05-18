@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="grid grid-cols-1 grid-rows-1 gap-1 mb-10 mx-auto max-w-[1100px] p-0
+        sm:grid-cols-1
+        md:grid-cols-2
+        lg:grid-cols-4
+        xl:grid-cols-4
+        2xl:grid-cols-4
+    ">
+        {foreach $shortcut as $sc}
+        <div onClick='window.location.href=this.dataset.link' data-link="{$sc->link}" class="button-short-cut p-4 bg-gray-200 hover:shadow-sm hover:bg-gray-100 cursor-pointer rounded-sm flex justify-center items-center">
+            <div class="flex justify-center items-center gap-4 h-full">
+                {$sc->media |noescape}
+                <div>
+                    <h3 class="font-semibold text-md">{$sc->label}</h3>
+                </div>
+            </div>
+        </div>
+        {/foreach}
+    </div>
+</div>

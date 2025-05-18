@@ -1,0 +1,559 @@
+{
+    "packages": [
+        {
+            "name": "brick/math",
+            "version": "0.12.3",
+            "version_normalized": "0.12.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/brick/math.git",
+                "reference": "866551da34e9a618e64a819ee1e01c20d8a588ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/brick/math/zipball/866551da34e9a618e64a819ee1e01c20d8a588ba",
+                "reference": "866551da34e9a618e64a819ee1e01c20d8a588ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.2",
+                "phpunit/phpunit": "^10.1",
+                "vimeo/psalm": "6.8.8"
+            },
+            "time": "2025-02-28T13:11:00+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Brick\\Math\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Arbitrary-precision arithmetic library",
+            "keywords": [
+                "Arbitrary-precision",
+                "BigInteger",
+                "BigRational",
+                "arithmetic",
+                "bigdecimal",
+                "bignum",
+                "bignumber",
+                "brick",
+                "decimal",
+                "integer",
+                "math",
+                "mathematics",
+                "rational"
+            ],
+            "support": {
+                "issues": "https://github.com/brick/math/issues",
+                "source": "https://github.com/brick/math/tree/0.12.3"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/BenMorel",
+                    "type": "github"
+                }
+            ],
+            "install-path": "../brick/math"
+        },
+        {
+            "name": "latte/latte",
+            "version": "v3.0.20",
+            "version_normalized": "3.0.20.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/latte.git",
+                "reference": "4db7a5502f8cef02fffa84fc9c34a635d9c79d4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/latte/zipball/4db7a5502f8cef02fffa84fc9c34a635d9c79d4d",
+                "reference": "4db7a5502f8cef02fffa84fc9c34a635d9c79d4d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-tokenizer": "*",
+                "php": "8.0 - 8.4"
+            },
+            "conflict": {
+                "nette/application": "<3.1.7",
+                "nette/caching": "<3.1.4"
+            },
+            "require-dev": {
+                "nette/php-generator": "^4.0",
+                "nette/tester": "^2.5",
+                "nette/utils": "^4.0",
+                "phpstan/phpstan": "^1",
+                "tracy/tracy": "^2.10"
+            },
+            "suggest": {
+                "ext-fileinfo": "to use filter |datastream",
+                "ext-iconv": "to use filters |reverse, |substring",
+                "ext-intl": "to use Latte\\Engine::setLocale()",
+                "ext-mbstring": "to use filters like lower, upper, capitalize, ...",
+                "nette/php-generator": "to use tag {templatePrint}",
+                "nette/utils": "to use filter |webalize"
+            },
+            "time": "2024-10-08T00:58:27+00:00",
+            "bin": [
+                "bin/latte-lint"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0-only",
+                "GPL-3.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "☕ Latte: the intuitive and fast template engine for those who want the most secure PHP sites. Introduces context-sensitive escaping.",
+            "homepage": "https://latte.nette.org",
+            "keywords": [
+                "context-sensitive",
+                "engine",
+                "escaping",
+                "html",
+                "nette",
+                "security",
+                "template",
+                "twig"
+            ],
+            "support": {
+                "issues": "https://github.com/nette/latte/issues",
+                "source": "https://github.com/nette/latte/tree/v3.0.20"
+            },
+            "install-path": "../latte/latte"
+        },
+        {
+            "name": "ramsey/collection",
+            "version": "2.1.1",
+            "version_normalized": "2.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/collection.git",
+                "reference": "344572933ad0181accbf4ba763e85a0306a8c5e2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/collection/zipball/344572933ad0181accbf4ba763e85a0306a8c5e2",
+                "reference": "344572933ad0181accbf4ba763e85a0306a8c5e2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "captainhook/plugin-composer": "^5.3",
+                "ergebnis/composer-normalize": "^2.45",
+                "fakerphp/faker": "^1.24",
+                "hamcrest/hamcrest-php": "^2.0",
+                "jangregor/phpstan-prophecy": "^2.1",
+                "mockery/mockery": "^1.6",
+                "php-parallel-lint/php-console-highlighter": "^1.0",
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpspec/prophecy-phpunit": "^2.3",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.1",
+                "phpstan/phpstan-mockery": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^10.5",
+                "ramsey/coding-standard": "^2.3",
+                "ramsey/conventional-commits": "^1.6",
+                "roave/security-advisories": "dev-latest"
+            },
+            "time": "2025-03-22T05:38:12+00:00",
+            "type": "library",
+            "extra": {
+                "captainhook": {
+                    "force-install": true
+                },
+                "ramsey/conventional-commits": {
+                    "configFile": "conventional-commits.json"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Ramsey\\Collection\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Ramsey",
+                    "email": "ben@benramsey.com",
+                    "homepage": "https://benramsey.com"
+                }
+            ],
+            "description": "A PHP library for representing and manipulating collections.",
+            "keywords": [
+                "array",
+                "collection",
+                "hash",
+                "map",
+                "queue",
+                "set"
+            ],
+            "support": {
+                "issues": "https://github.com/ramsey/collection/issues",
+                "source": "https://github.com/ramsey/collection/tree/2.1.1"
+            },
+            "install-path": "../ramsey/collection"
+        },
+        {
+            "name": "ramsey/uuid",
+            "version": "4.7.6",
+            "version_normalized": "4.7.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ramsey/uuid.git",
+                "reference": "91039bc1faa45ba123c4328958e620d382ec7088"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/91039bc1faa45ba123c4328958e620d382ec7088",
+                "reference": "91039bc1faa45ba123c4328958e620d382ec7088",
+                "shasum": ""
+            },
+            "require": {
+                "brick/math": "^0.8.8 || ^0.9 || ^0.10 || ^0.11 || ^0.12",
+                "ext-json": "*",
+                "php": "^8.0",
+                "ramsey/collection": "^1.2 || ^2.0"
+            },
+            "replace": {
+                "rhumsaa/uuid": "self.version"
+            },
+            "require-dev": {
+                "captainhook/captainhook": "^5.10",
+                "captainhook/plugin-composer": "^5.3",
+                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+                "doctrine/annotations": "^1.8",
+                "ergebnis/composer-normalize": "^2.15",
+                "mockery/mockery": "^1.3",
+                "paragonie/random-lib": "^2",
+                "php-mock/php-mock": "^2.2",
+                "php-mock/php-mock-mockery": "^1.3",
+                "php-parallel-lint/php-parallel-lint": "^1.1",
+                "phpbench/phpbench": "^1.0",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-mockery": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpunit/phpunit": "^8.5 || ^9",
+                "ramsey/composer-repl": "^1.4",
+                "slevomat/coding-standard": "^8.4",
+                "squizlabs/php_codesniffer": "^3.5",
+                "vimeo/psalm": "^4.9"
+            },
+            "suggest": {
+                "ext-bcmath": "Enables faster math with arbitrary-precision integers using BCMath.",
+                "ext-gmp": "Enables faster math with arbitrary-precision integers using GMP.",
+                "ext-uuid": "Enables the use of PeclUuidTimeGenerator and PeclUuidRandomGenerator.",
+                "paragonie/random-lib": "Provides RandomLib for use with the RandomLibAdapter",
+                "ramsey/uuid-doctrine": "Allows the use of Ramsey\\Uuid\\Uuid as Doctrine field type."
+            },
+            "time": "2024-04-27T21:32:50+00:00",
+            "type": "library",
+            "extra": {
+                "captainhook": {
+                    "force-install": true
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Ramsey\\Uuid\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A PHP library for generating and working with universally unique identifiers (UUIDs).",
+            "keywords": [
+                "guid",
+                "identifier",
+                "uuid"
+            ],
+            "support": {
+                "issues": "https://github.com/ramsey/uuid/issues",
+                "source": "https://github.com/ramsey/uuid/tree/4.7.6"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ramsey",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/ramsey/uuid",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../ramsey/uuid"
+        },
+        {
+            "name": "symfony/deprecation-contracts",
+            "version": "v3.5.1",
+            "version_normalized": "3.5.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6",
+                "reference": "74c71c939a79f7d5bf3c1ce9f5ea37ba0114c6f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "time": "2024-09-25T14:20:29+00:00",
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
+                "branch-alias": {
+                    "dev-main": "3.5-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v3.5.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/deprecation-contracts"
+        },
+        {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.32.0",
+            "version_normalized": "1.32.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "reference": "a3cc8b044a6ea513310cbd48ef7333b384945638",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "provide": {
+                "ext-ctype": "*"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "time": "2024-09-09T11:45:10+00:00",
+            "type": "library",
+            "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/polyfill",
+                    "name": "symfony/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-ctype/tree/v1.32.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/polyfill-ctype"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v7.2.6",
+            "version_normalized": "7.2.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "0feafffb843860624ddfd13478f481f4c3cd8b23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0feafffb843860624ddfd13478f481f4c3cd8b23",
+                "reference": "0feafffb843860624ddfd13478f481f4c3cd8b23",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "symfony/console": "<6.4"
+            },
+            "require-dev": {
+                "symfony/console": "^6.4|^7.0"
+            },
+            "time": "2025-04-04T10:10:11+00:00",
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v7.2.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "../symfony/yaml"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

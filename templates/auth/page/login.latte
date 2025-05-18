@@ -1,0 +1,74 @@
+{layout '../main.latte'}
+{block content}
+    <div id="main-wrapper" class="auth-customizer-none">
+        <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-8 col-lg-6 col-xxl-3 auth-card">
+                    <div class="card mb-0">
+                        <div class="card-body">
+                            <div class='flex-center'>
+                                <a href="{$baseurl}" class="p-0030">
+                                    <div class='animasi-logo-skm'>
+                                        <span class='teks-s'>KOMISI</span>
+                                        <span class='teks-k'>KEPOLISIAN</span>
+                                        <span class='teks-m'>NASIONAL</span>
+                                        <span class='teks-skm'><img src='{$baseurl}assets/admin/images/custom-apps/img/Logo_Kompolnas.png'><span>KOMPOLNAS</span></span>
+                                    </div>
+                                </a>
+                            </div>
+                            {* <div class="d-flex align-items-center justify-content-between w-100 mb-3">
+                                <div>
+                                    <div>Login dengan Authenticator</div>
+                                    <a href="">Download authenticator</a>
+                                </div>
+                                <div class="p-2 w-30">
+                                    <img src="{$baseurl}assets/auth/img/sampleqr.png" class="w-100">
+                                </div>
+                            </div> *}
+                            <div id="msgformInput"></div>
+                            <form method="post" id="formInput" name="formInput">
+                                <div class="mb-3">
+                                    <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="email" data-label="Email" name="email" placeholder="name@example.com" />
+                                    <label for="email">Email</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" data-label="Password" id="psw" name="psw" placeholder="Password" />
+                                    <label for="psw">Password</label>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div class="form-check flex-center px-0">
+                                        <div class="form-check form-switch mb-0">
+                                            <input class="form-check-input cursor-pointer" type="checkbox" name="ingatkan" role="switch" id="flexSwitchCheckChecked">
+                                            <label class="form-check-label text-dark" for="flexCheckChecked">
+                                                Ingatkan
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <a class="text-primary fw-medium" href="../main/authentication-forgot-password.html">Lupa password?</a>
+                                </div>
+                                <button class="btn btn-primary w-100 py-8 rounded-2">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{/block}
+
+{block js}
+<script>
+sf({
+    fid: 'formInput',
+    field: [
+        'email|setEmail',
+        'psw|setText'
+    ]
+});
+</script>
+{/block}

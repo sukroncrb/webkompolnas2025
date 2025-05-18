@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="baseurl" content="{$baseurl}">
+    <meta property="og:url" content="{$baseurl}"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Kompolnas Official"/>
+    <meta property="og:description" content="Website Resmi Komisi Kepolisian Nasional"/>
+    <title>{block title}{/block}</title>
+    <link rel="stylesheet" href="{$baseurl}assets/web/css/style.css">
+    <link rel="stylesheet" href="{$baseurl}assets/admin/css/animasi-skm.css" />
+    {* <link rel="stylesheet" href="{$baseurl}assets/web/css/struktur.css"> *}
+    <link rel="stylesheet" href="{$baseurl}assets/web/css/shimmer.css">
+    {block css}{/block}
+</head>
+<body>
+
+    <div itemprop="blog Post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+        <div itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject">
+            <meta content="{$baseurl}assets/web/images/12334.png" itemprop='https{$baseurl}'/>
+        </div>
+    </div>
+
+    <div id='opsi' data-apikey="{$apikey}"></div>
+    {include './components/header.latte'}
+    {block content}{/block}
+    {include './components/footer.latte'}
+    {include './components/floating.latte'}
+
+    <script src="{$baseurl}assets/web/js/jquery-3.7.0.js"></script>
+    <script src="{$baseurl}assets/admin/js/jam.js"></script>
+    <script src="{$baseurl}assets/web/js/web.js"></script>
+    <script src="{$baseurl}assets/web/js/validasi.js"></script>
+    <script>
+        setInterval(()=>{
+            setJamDigital('jam');
+        }, 1000);
+
+        setJamDigital('jam');
+
+        el("#switch-menu").addEventListener("click", ()=>{
+            if(el("#float-menu").classList.contains("bottom-[-400px]")){
+                el("#float-menu").classList.remove("bottom-[-400px]");
+                el("#float-menu").classList.add("bottom-0");
+            }else{
+                el("#float-menu").classList.remove("bottom-0");
+                el("#float-menu").classList.add("bottom-[-400px]");
+            }
+        });
+
+        window.addEventListener("click", (e)=>{
+            if(e.target.dataset.opsi != "switch") {
+                el("#float-menu").classList.remove("bottom-0");
+                el("#float-menu").classList.add("bottom-[-400px]");
+            }
+        });
+
+        let fabUp = el("#fabUp");
+        window.addEventListener("scroll", ()=>{
+            const currentOffset = window.pageYOffset;
+            if(currentOffset > 100) {
+                fabUp.classList.remove("bottom-[-100px]");
+                fabUp.classList.add("bottom-[95px]");
+            }else{
+                fabUp.classList.remove("bottom-[95px]");
+                fabUp.classList.add("bottom-[-100px]");
+            }
+        });
+
+        fabUp.addEventListener("click", ()=>{
+            window.scrollTo({
+                top:0,
+                behavior: "smooth"
+            });
+        });
+
+        
+    </script>
+    <script n:syntax="off" type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="c4dd1880-97b3-4279-ac1c-08c391050270";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    {block js}{/block}
+</body>
+</html>

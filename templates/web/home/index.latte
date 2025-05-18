@@ -1,0 +1,801 @@
+{layout '../main.latte'}
+{block css}
+<link rel="stylesheet" href="{$baseurl}assets/web/css/carousel.css" />
+<link rel="stylesheet" href="{$baseurl}assets/web/css/carousel2.css" />
+<link rel="stylesheet" href="{$baseurl}assets/web/css/carousel3.css" />
+<style>
+  .popupclass {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, .6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    background: white;
+  }
+
+  .card-body {
+    position:relative;
+    padding: 20px;
+  }
+
+  .card-body > button [
+    position: absolute right:0   
+  ]
+
+  @media screen and (max-width: 414px) { 
+    .img-banner {
+      width: 414px;
+    }
+  }
+
+  @media screen and (min-width: 414px) { 
+    .img-banner {
+      width: 414px;
+    }
+  }
+
+  .btn-visit {
+    cursor: pointer;
+    position: absolute; 
+    bottom: 20px; 
+    left: 20px; 
+    right: 20px; 
+    height: 90%; 
+    z-index: 99;
+    background-image: linear-gradient(to bottom,
+      transparent 0%,       /* Mulai sepenuhnya transparan */
+      rgba(255, 255, 255, 0.2) 600%, /* Mulai terlihat putih dengan opasitas 20% di 20% */
+      rgba(255, 255, 255, 0.6) 20%, /* LebihSolid putih dengan opasitas 60% di 60% */
+      white 100%             /* Sepenuhnya putih di 100% */
+    );
+    transition: all .5s;
+    overflow: hidden;
+  }
+
+  .btn-visit:hover {
+    background-image: linear-gradient(to bottom,
+      transparent 0%,       /* Mulai sepenuhnya transparan */
+      rgba(255, 255, 255, 0.2) 20%, /* Mulai terlihat putih dengan opasitas 20% di 20% */
+      rgba(255, 255, 255, 0.6) 40%, /* LebihSolid putih dengan opasitas 60% di 60% */
+      white 100%             /* Sepenuhnya putih di 100% */
+    );
+    transition: all .5s;
+  }
+
+  .btn-visit > span {
+    position: absolute;
+    font-weight: 500;
+    left: 50%;
+    transform: translate(-50%,0);
+    border: 2px dashed #000;
+    background: rgba(255,255,255,.5);
+    border-radius: 8px;
+    padding: 10px 20px;
+    bottom: 20px;
+    opacity: 0;
+    transition: all, 1s;
+    font-size: 10pt;
+  }
+
+  .btn-visit:hover > span {
+    bottom: 80px;
+    opacity: 1;
+    transition: all, 1s;
+  }
+  
+</style>
+{/block}
+{block content}
+<section>
+    {include './section/carousel.latte'}
+    {include './section/quotes.latte'}
+    {include './section/shortcut_menu.latte'}
+    {include './section/kompolnas.latte'}
+    {include './section/youtube.latte'}
+    {include './section/polri.latte'}
+    {include './section/link.latte'}
+</section>
+{if $banner != ""}
+<div class="banner-popup" style="margin: 50px;">
+  <div class="popupclass" id="popup">
+    <div class="card">
+      <div class="card-body">
+        <div style='text-align: right; position: absolute; z-index: 99; top: 20px; right: 20px;'>
+          <button style='cursor: pointer; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; background: #fff; border-radius: 0 0 0 50%;' onClick="setToHide(this.dataset.link)" data-link=''>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor" class="size-6" style='width: 18px;'>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div style='min-width: 414px; min-height: 500px;'>
+          <img src="{$baseurl}{$banner}" class='img-banner'>
+          </p>
+          <button class="btn-visit" onClick="setToHide(this.dataset.link)" data-link='{$linkbanner}'>
+            <span>Klik untuk melihat event</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}
+{/block}
+{block js}
+<script n:syntax="off">
+
+
+function setToHide(link){
+  el("#popup").style.display = "none";
+  if(link != ""){
+    window.location.href =  link;
+  }
+}
+
+
+/// Carousel 2
+const gap = 5;
+
+const carousel2 = document.getElementById("carousel2"),
+  content = document.getElementById("content"),
+  next = document.getElementById("next"),
+  prev = document.getElementById("prev");
+
+next.addEventListener("click", e => {
+  carousel2.scrollBy(width + gap, 0);
+  if (carousel2.scrollWidth !== 0) {
+    prev.style.display = "flex";
+  }
+  if (content.scrollWidth - width - gap <= carousel2.scrollLeft + width) {
+    next.style.display = "none";
+  }
+});
+prev.addEventListener("click", e => {
+  carousel2.scrollBy(-(width + gap), 0);
+  if (carousel2.scrollLeft - width - gap <= 0) {
+    prev.style.display = "none";
+  }
+  if (!content.scrollWidth - width - gap <= carousel2.scrollLeft + width) {
+    next.style.display = "flex";
+  }
+});
+
+let width = carousel2.offsetWidth;
+window.addEventListener("resize", e => (width = carousel2.offsetWidth));
+
+
+// Carusel 3
+const cardsContainer = document.querySelector(".card-carousel");
+const cardsController = document.querySelector(".card-carousel + .card-controller")
+
+class DraggingEvent {
+  constructor(target = undefined) {
+    this.target = target;
+  }
+  
+  event(callback) {
+    let handler;
+    
+    this.target.addEventListener("mousedown", e => {
+      e.preventDefault()
+      
+      handler = callback(e)
+      
+      window.addEventListener("mousemove", handler)
+      
+      document.addEventListener("mouseleave", clearDraggingEvent)
+      
+      window.addEventListener("mouseup", clearDraggingEvent)
+      
+      function clearDraggingEvent() {
+        window.removeEventListener("mousemove", handler)
+        window.removeEventListener("mouseup", clearDraggingEvent)
+      
+        document.removeEventListener("mouseleave", clearDraggingEvent)
+        
+        handler(null)
+      }
+    })
+    
+    this.target.addEventListener("touchstart", e => {
+      handler = callback(e)
+      
+      window.addEventListener("touchmove", handler)
+      
+      window.addEventListener("touchend", clearDraggingEvent)
+      
+      document.body.addEventListener("mouseleave", clearDraggingEvent)
+      
+      function clearDraggingEvent() {
+        window.removeEventListener("touchmove", handler)
+        window.removeEventListener("touchend", clearDraggingEvent)
+        
+        handler(null)
+      }
+    })
+  }
+  
+  // Get the distance that the user has dragged
+  getDistance(callback) {
+    function distanceInit(e1) {
+      let startingX, startingY;
+      
+      if ("touches" in e1) {
+        startingX = e1.touches[0].clientX
+        startingY = e1.touches[0].clientY
+      } else {
+        startingX = e1.clientX
+        startingY = e1.clientY
+      }
+      
+
+      return function(e2) {
+        if (e2 === null) {
+          return callback(null)
+        } else {
+          
+          if ("touches" in e2) {
+            return callback({
+              x: e2.touches[0].clientX - startingX,
+              y: e2.touches[0].clientY - startingY
+            })
+          } else {
+            return callback({
+              x: e2.clientX - startingX,
+              y: e2.clientY - startingY
+            })
+          }
+        }
+      }
+    }
+    
+    this.event(distanceInit)
+  }
+}
+
+
+class CardCarousel extends DraggingEvent {
+  constructor(container, controller = undefined) {
+    super(container)
+    
+    // DOM elements
+    this.container = container
+    this.controllerElement = controller
+    this.cards = container.querySelectorAll(".card")
+    
+    // Carousel data
+    this.centerIndex = (this.cards.length - 1) / 2;
+    this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
+    this.xScale = {};
+    
+    // Resizing
+    window.addEventListener("resize", this.updateCardWidth.bind(this))
+    
+    if (this.controllerElement) {
+      this.controllerElement.addEventListener("keydown", this.controller.bind(this))      
+    }
+
+    
+    // Initializers
+    this.build()
+    
+    // Bind dragging event
+    super.getDistance(this.moveCards.bind(this))
+  }
+  
+  updateCardWidth() {
+    this.cardWidth = this.cards[0].offsetWidth / this.container.offsetWidth * 100
+    
+    this.build()
+  }
+  
+  build(fix = 0) {
+    for (let i = 0; i < this.cards.length; i++) {
+      const x = i - this.centerIndex;
+      const scale = this.calcScale(x)
+      const scale2 = this.calcScale2(x)
+      const zIndex = -(Math.abs(i - this.centerIndex))
+      
+      const leftPos = this.calcPos(x, scale2)
+     
+      
+      this.xScale[x] = this.cards[i]
+      
+      this.updateCards(this.cards[i], {
+        x: x,
+        scale: scale,
+        leftPos: leftPos,
+        zIndex: zIndex
+      })
+    }
+  }
+  
+  
+  controller(e) {
+    const temp = {...this.xScale};
+      
+      if (e.keyCode === 39) {
+        // Left arrow
+        for (let x in this.xScale) {
+          const newX = (parseInt(x) - 1 < -this.centerIndex) ? this.centerIndex : parseInt(x) - 1;
+
+          temp[newX] = this.xScale[x]
+        }
+      }
+      
+      if (e.keyCode == 37) {
+        // Right arrow
+        for (let x in this.xScale) {
+          const newX = (parseInt(x) + 1 > this.centerIndex) ? -this.centerIndex : parseInt(x) + 1;
+
+          temp[newX] = this.xScale[x]
+        }
+      }
+      
+      this.xScale = temp;
+      
+      for (let x in temp) {
+        const scale = this.calcScale(x),
+              scale2 = this.calcScale2(x),
+              leftPos = this.calcPos(x, scale2),
+              zIndex = -Math.abs(x)
+
+        this.updateCards(this.xScale[x], {
+          x: x,
+          scale: scale,
+          leftPos: leftPos,
+          zIndex: zIndex
+        })
+      }
+  }
+  
+  calcPos(x, scale) {
+    let formula;
+    
+    if (x < 0) {
+      formula = (scale * 100 - this.cardWidth) / 2
+      
+      return formula
+
+    } else if (x > 0) {
+      formula = 100 - (scale * 100 + this.cardWidth) / 2
+      
+      return formula
+    } else {
+      formula = 100 - (scale * 100 + this.cardWidth) / 2
+      
+      return formula
+    }
+  }
+  
+  updateCards(card, data) {
+    if (data.x || data.x == 0) {
+      card.setAttribute("data-x", data.x)
+    }
+    
+    if (data.scale || data.scale == 0) {
+      card.style.transform = `scale(${data.scale})`
+
+      if (data.scale == 0) {
+        card.style.opacity = data.scale
+      } else {
+        card.style.opacity = 1;
+      }
+    }
+   
+    if (data.leftPos) {
+      card.style.left = `${data.leftPos}%`        
+    }
+    
+    if (data.zIndex || data.zIndex == 0) {
+      if (data.zIndex == 0) {
+        card.classList.add("highlight")
+      } else {
+        card.classList.remove("highlight")
+      }
+      
+      card.style.zIndex = data.zIndex  
+    }
+  }
+  
+  calcScale2(x) {
+    let formula;
+   
+    if (x <= 0) {
+      formula = 1 - -1 / 9 * x
+      
+      return formula
+    } else if (x > 0) {
+      formula = 1 - 1 / 9 * x
+      
+      return formula
+    }
+  }
+  
+  calcScale(x) {
+    const formula = 1 - 1 / 9 * Math.pow(x, 2)
+    
+    if (formula <= 0) {
+      return 0 
+    } else {
+      return formula      
+    }
+  }
+  
+  checkOrdering(card, x, xDist) {    
+    const original = parseInt(card.dataset.x)
+    const rounded = Math.round(xDist)
+    let newX = x
+    
+    if (x !== x + rounded) {
+      if (x + rounded > original) {
+        if (x + rounded > this.centerIndex) {
+          
+          newX = ((x + rounded - 1) - this.centerIndex) - rounded + -this.centerIndex
+        }
+      } else if (x + rounded < original) {
+        if (x + rounded < -this.centerIndex) {
+          
+          newX = ((x + rounded + 1) + this.centerIndex) - rounded + this.centerIndex
+        }
+      }
+      
+      this.xScale[newX + rounded] = card;
+    }
+    
+    const temp = -Math.abs(newX + rounded)
+    
+    this.updateCards(card, {zIndex: temp})
+
+    return newX;
+  }
+  
+  moveCards(data) {
+    let xDist;
+    
+    if (data != null) {
+      this.container.classList.remove("smooth-return")
+      xDist = data.x / 250;
+    } else {
+
+      
+      this.container.classList.add("smooth-return")
+      xDist = 0;
+
+      for (let x in this.xScale) {
+        this.updateCards(this.xScale[x], {
+          x: x,
+          zIndex: Math.abs(Math.abs(x) - this.centerIndex)
+        })
+      }
+    }
+
+    for (let i = 0; i < this.cards.length; i++) {
+      const x = this.checkOrdering(this.cards[i], parseInt(this.cards[i].dataset.x), xDist),
+            scale = this.calcScale(x + xDist),
+            scale2 = this.calcScale2(x + xDist),
+            leftPos = this.calcPos(x + xDist, scale2)
+      
+      
+      this.updateCards(this.cards[i], {
+        scale: scale,
+        leftPos: leftPos
+      })
+    }
+  }
+}
+
+const carousel3 = new CardCarousel(cardsContainer)
+
+///// Berita
+async function getBerita(x) {
+    const endpoint = x.endpoint;
+    const elementid = x.elementid;
+
+    let itemberita = '';
+    let databerita = [];
+    databerita[endpoint] = [];
+
+    const url = baseurl + "api/berita/home-"+endpoint;
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'x-api-key': apikey,
+                'tipe': 'web'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        //console.log(result);
+
+        if(result.data.length > 0){
+
+          for(let i= 0; i<result.data.length; i++){
+              databerita[endpoint].push(result.data[i]);
+          }
+
+          for(let i=0; i<databerita[endpoint].length; i++){
+
+              itemberita += `
+              <articles
+                      onClick='window.location.href=this.dataset.link'
+                      data-link='`+baseurl+`berita/`+endpoint+`/`+databerita[endpoint][i].slug+`'
+                  >
+                  <div class="w-full h-[280px] overflow-hidden rounded-md
+                      sm:h-[280px]
+                      md:h-[250px]
+                      lg:h-[170px]
+                      xl:h-[180px]
+                      2xl:h-[180px]
+                  ">
+                      <img src="`+databerita[endpoint][i].gambar+`" class="w-full h-[280px] object-cover
+                          sm:h-[280px]
+                          md:h-[250px]
+                          lg:h-[170px]
+                          xl:h-[180px]
+                          2xl:h-[180px]
+                      ">
+                  </div>
+                  <h1 class="my-2 font-semibold">`+databerita[endpoint][i].judul+`</h1>
+                  <small>`+databerita[endpoint][i].kategori+` | `+window.tanggal.toFormatFB(databerita[endpoint][i].waktu)+`</small>
+              </articles>
+              `;
+          }
+
+        }else{
+
+          itemberita = "Kosong";
+          
+        }
+        
+
+        el('#'+elementid).innerHTML = itemberita;
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+getBerita({
+  endpoint: 'kompolnas',
+  elementid: 'listberitakompolnas'
+});
+
+getBerita({
+  endpoint: 'polri',
+  elementid: 'listberitapolri'
+});
+
+///// Berita
+async function getBeritaCover(x) {
+    const endpoint = x.endpoint;
+    const elementid = x.elementid;
+
+    let itemberita = '';
+    let itemberitamobile = '';
+    let databerita = [];
+    databerita[endpoint] = [];
+
+    const url = baseurl + "api/berita/home-"+endpoint;
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'x-api-key': apikey,
+                'tipe': 'web'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        //console.log(result);
+
+        if(result.data.length > 0){
+
+          for(let i= 0; i<result.data.length; i++){
+              databerita[endpoint].push(result.data[i]);
+          }
+
+          for(let i=0; i<databerita[endpoint].length; i++){
+
+              itemberita += `
+                <article class="main-post main-post--not-active">
+                    <div class="main-post__image">
+                        <img src="`+databerita[endpoint][i].gambar+`" 
+                            alt="`+databerita[endpoint][i].judul+`" 
+                            loading="lazy" />
+                    </div>
+                    <div class="main-post__content">
+                        <div class="main-post__tag-wrapper">
+                        <span class="main-post__tag berita">`+databerita[endpoint][i].kategori+`</span>
+                        </div>
+                        <h1 class="main-post__title">`+databerita[endpoint][i].judul+`</h1>
+                        <a class="main-post__link" href="`+baseurl+'berita/'+databerita[endpoint][i].kategori.toLowerCase()+`/`+databerita[endpoint][i].slug+`">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <span class="main-post__link-text ml-4"> Baca selengkapnya</span>
+                        </a>
+                    </div>
+                </article>
+              `;
+          }
+          
+          for(let i=0; i<databerita[endpoint].length; i++){
+              itemberitamobile += `
+                <article class="post">
+                    <div class="progress-bar">
+                    <div class="progress-bar__fill"></div>
+                    </div>
+                    <header class="post__header">
+                    <span class="post__tag">`+databerita[endpoint][i].kategori+`</span>
+                    <p class="post__published">`+window.tanggal.toFormatFB(databerita[endpoint][i].waktu)+`</p>
+                    </header>
+                    <h2 class="post__title">Kompolnas Dorong Mantan Kapolres Ngada AKBP Fajar Dihukum Penjara Seumur Hidup
+                    </h2>
+                </article>
+              `;
+          }
+
+        }else{
+
+          itemberita = "Kosong";
+          
+        }
+        
+        el('#'+elementid).innerHTML = itemberita;
+        el('#'+elementid+'mobile').innerHTML = itemberitamobile;
+
+        const mainProgressBar = document.querySelector(
+              ".progress-bar--primary .progress-bar__fill"
+          );
+          const mainPosts = document.querySelectorAll(".main-post");
+          const posts = document.querySelectorAll(".post");
+
+          let i = 0;
+          let postIndex = 0;
+          let currentPost = posts[postIndex];
+          let currentMainPost = mainPosts[postIndex];
+
+          let progressInterval = setInterval(progress, 100);
+
+          function progress() {
+              if (i === 100) {
+                  i = -5;
+                  // reset progress bar
+                  currentPost.querySelector(".progress-bar__fill").style.width = 0;
+                  mainProgressBar.style.width = 0;
+                  currentPost.classList.remove("post--active");
+
+                  postIndex++;
+
+                  currentMainPost.classList.add("main-post--not-active");
+                  currentMainPost.classList.remove("main-post--active");
+
+                  // reset postIndex to loop over the slides again
+                  if (postIndex === posts.length) {
+                  postIndex = 0;
+                  }
+
+                  currentPost = posts[postIndex];
+                  currentMainPost = mainPosts[postIndex];
+              } else {
+                  i++;
+                  currentPost.querySelector(".progress-bar__fill").style.width = `${i}%`;
+                  mainProgressBar.style.width = `${i}%`;
+                  currentPost.classList.add("post--active");
+
+                  currentMainPost.classList.add("main-post--active");
+                  currentMainPost.classList.remove("main-post--not-active");
+              }
+          }
+
+          posts.forEach((post, index) => {
+              post.addEventListener("click", () => {
+                  disablePostsTemporarily();
+                  i = 0;
+                  postIndex = index;
+                  updatePosts();
+              });
+          });
+
+          function disablePostsTemporarily() {
+
+            posts.forEach((post) => {
+              post.classList.add("post--disabled");
+            });
+
+            setTimeout(() => {
+              posts.forEach((post) => {
+                  post.classList.remove("post--disabled");
+              });
+            }, 2500);
+          }
+
+          function updatePosts() {
+
+            posts.forEach((post) => {
+              post.querySelector(".progress-bar__fill").style.width = 0;
+              post.classList.remove("post--active");
+            });
+
+            mainPosts.forEach((mainPost) => {
+              mainPost.classList.add("main-post--not-active");
+              mainPost.classList.remove("main-post--active");
+            });
+
+            currentPost = posts[postIndex];
+            currentMainPost = mainPosts[postIndex];
+
+            currentPost.querySelector(".progress-bar__fill").style.width = `${i}%`;
+            mainProgressBar.style.width = `${i}%`;
+            currentPost.classList.add("post--active");
+
+            currentMainPost.classList.add("main-post--active");
+            currentMainPost.classList.remove("main-post--not-active");
+
+          }
+
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+getBeritaCover({
+  endpoint: 'all',
+  elementid: 'listcover'
+});
+
+
+
+
+///// Pengunjung
+async function dataPengunjung() {
+
+    const url = baseurl + "api/pengunjung";
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'x-api-key': apikey,
+                'tipe': 'web'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Response status: ${response.status}`);
+        }
+
+        const result = await response.json();
+
+        el("#ptotal").innerHTML = result.data.total;
+        el("#phariini").innerHTML = result.data.hari_ini;
+        el("#pkemarin").innerHTML = result.data.kemarin;
+        el("#pmingguini").innerHTML = result.data.minggu_ini;
+        el("#pbulanini").innerHTML = result.data.bulan_ini;
+        el("#ptahunini").innerHTML = result.data.tahun_ini;
+        
+    } catch (error) {
+        console.error(error.message);
+    }
+}
+
+dataPengunjung();
+</script>
+{/block}

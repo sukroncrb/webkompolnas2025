@@ -1,0 +1,115 @@
+<?php
+
+use Latte\Runtime as LR;
+
+/** source: /home/sukroncrb2025/project/php/kompolnas/vendor/abiesoft/Http/../../../templates/web/kontak/index.latte */
+final class Template_9237e482fe extends Latte\Runtime\Template
+{
+	public const Source = '/home/sukroncrb2025/project/php/kompolnas/vendor/abiesoft/Http/../../../templates/web/kontak/index.latte';
+
+	public const Blocks = [
+		['css' => 'blockCss', 'content' => 'blockContent'],
+	];
+
+
+	public function main(array $ʟ_args): void
+	{
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 5 */;
+	}
+
+
+	public function prepare(): array
+	{
+		extract($this->params);
+
+		$this->parentName = '../main.latte';
+		return get_defined_vars();
+	}
+
+
+	/** {block css} on line 2 */
+	public function blockCss(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 3 */;
+		echo 'assets/web/css/carousel.css" />
+';
+	}
+
+
+	/** {block content} on line 5 */
+	public function blockContent(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<section>
+    <div class="banner">
+        <div class="container konten">
+            <div class="breadcrumb">
+                <ul>
+                    <li><a href=\'';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 11 */;
+		echo '\'><span>Home</span></a></li>
+                    <li><span>Hubungi Kami</span></li>
+                </ul>
+            </div>
+            <h3>Hubungi Kami</h1>
+        </div>
+    </div>
+    <div class="container konten page">
+        <div class="relative">
+            <div 
+                onclick="window.location.href=this.dataset.link"
+                data-link="https://www.google.com/maps/dir/';
+		echo LR\Filters::escapeHtmlAttr($latlong) /* line 22 */;
+		echo '/KOMPOLNAS"
+                title="arahkan ke kantor ini" class="absolute top-[10px] right-[10px] bg-white cursor-pointer z-1 w-[50px] h-[50px] rounded-full flex justify-center items-center shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"></path>
+                </svg>
+            </div>
+            <div class="mb-8 rounded-md overflow-hidden">
+                <iframe width="100%" height="400" src="https://maps.google.com/maps?q=kompolnas&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 grid-rows-1 gap-8 border-b-1 border-b-gray-200 pb-8">
+            <div class="font-semibold">Alamat Kantor</div>
+            <div class="col-start-2 col-span-2">
+                <div>Gedung Kompolnas</div>
+                <div>Jl. Tirtayasa VII No. 20 Kebayoran Baru Jakarta Selatan 12160</div>
+                <div>Jakarta - Indonesia</div>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 grid-rows-1 gap-8 border-b-1 border-b-gray-200 py-8">
+            <div class="font-semibold">No. Tlp./ Fax</div>
+            <div class="col-start-2 col-span-2">
+                021-7392315/ 7392317
+            </div>
+        </div>
+        <div class="grid grid-cols-3 grid-rows-1 gap-8 border-b-1 border-b-gray-200 py-8">
+            <div class="font-semibold">Email</div>
+            <div class="col-start-2 col-span-2">
+                <a href="mailto:email@email.com">email@email.com</a>
+            </div>
+        </div>
+        <div class="grid grid-cols-3 grid-rows-1 gap-8 py-8">
+            <div class="font-semibold">Website</div>
+            <div class="col-start-2 col-span-2">
+                <a href="https://kompolnas.go.id">https://kompolnas.go.id</a>
+            </div>
+        </div>
+    </div>
+</section>
+';
+	}
+}

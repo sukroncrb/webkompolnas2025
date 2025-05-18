@@ -1,0 +1,430 @@
+<?php
+
+use Latte\Runtime as LR;
+
+/** source: /home/sukroncrb2025/Project/kompolnas/vendor/abiesoft/Http/../../../templates/admin/regulasi/add.latte */
+final class Template_51d10495b8 extends Latte\Runtime\Template
+{
+	public const Source = '/home/sukroncrb2025/Project/kompolnas/vendor/abiesoft/Http/../../../templates/admin/regulasi/add.latte';
+
+	public const Blocks = [
+		['css' => 'blockCss', 'content' => 'blockContent', 'js' => 'blockJs'],
+	];
+
+
+	public function main(array $ʟ_args): void
+	{
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 8 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 185 */;
+	}
+
+
+	public function prepare(): array
+	{
+		extract($this->params);
+
+		$this->parentName = '../main.latte';
+		return get_defined_vars();
+	}
+
+
+	/** {block css} on line 2 */
+	public function blockCss(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 3 */;
+		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.css">
+<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 4 */;
+		echo '/assets/admin/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 5 */;
+		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 6 */;
+		echo 'assets/admin/libs/quill/dist/quill.snow.css">
+';
+	}
+
+
+	/** {block content} on line 8 */
+	public function blockContent(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<form id="formInput" name="formInput" method="post">
+    <div class="body-wrapper">
+        <div class="container-fluid">
+            <div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+                <div class="card-body px-4 py-3">
+                    <div class="row align-items-center">
+                        <div class="col-9">
+                            <h4 class="fw-semibold mb-8">Regulasi Baru</h4>
+                            <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+								<li class="breadcrumb-item">
+									<a class="text-muted text-decoration-none" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 20 */;
+		echo '">Home</a>
+								</li>
+                                <li class="breadcrumb-item">
+                                    <a class="text-muted text-decoration-none" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 23 */;
+		echo LR\Filters::escapeHtmlAttr($prefix_dashboard) /* line 23 */;
+		echo '/regulasi">Regulasi</a>
+                                </li>
+                                <li class="breadcrumb-item" aria-current="page">Baru</li>
+                            </ol>
+                            </nav>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center mb-n5">
+                                <div style=\'width: 168px; height: 165px;\'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="row">
+                    <div class="col-lg-8 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-7">
+                                    <h4 class="card-title">Regulasi</h4>
+                                    <button class="navbar-toggler border-0 shadow-none d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                        <i class="ti ti-menu fs-5 d-flex"></i>
+                                    </button>
+                                </div>
+                                
+                                <div class="row">
+                                    <div id="msgformInput"></div>
+                                    <div class="col-md-12 mt-2">
+                                        <h4 class="card-title mb-3" style=\'font-size: 11pt;\'>Info Umum</h4>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="judul" name="judul" data-label="Judul" placeholder="Judul regulasi" />
+                                            <label for="judul">Judul</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <select type="text" class="form-control" id="bentuk" name="bentuk" data-label="Bentuk">
+                                                <option value="">Pilih Bentuk Regulasi</option>
+                                                <option value="Undang-undang">Undang-undang</option>
+                                                <option value="TAP MPR">TAP MPR</option>
+                                                <option value="Peraturan Presiden">Peraturan Presiden</option>
+                                                <option value="Peraturan Kompolnas">Peraturan Kompolnas</option>
+                                                <option value="Peraturan Polri">Peraturan Polri</option>
+                                                <option value="Peraturan Kapolri">Peraturan Kapolri</option>
+                                                <option value="Surat Edaran">Surat Edaran</option>
+                                                <option value="Peraturan Menko">Peraturan Menko</option>
+                                            </select>
+                                            <label for="bentuk">Bentuk</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="pemerkarsa" name="pemerkarsa" data-label="Pemerkarsa" placeholder="Pemerkarsa" />
+                                            <label for="pemerkarsa">Pemerkarsa</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="nomor" name="nomor" data-label="Nomor" placeholder="Nomor" />
+                                            <label for="nomor">Nomor</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <textarea type="text" style=\'height: 80px;\' class="form-control" id="tentang" name="tentang" data-label="Tentang" placeholder="Tentang"></textarea>
+                                            <label for="tentang">Tentang</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="pengundang" name="pengundang" data-label="Pengundang" placeholder="Pengundang" />
+                                            <label for="pengundang">Pengundang</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 mt-2">
+                                        <h4 class="card-title mb-3" style=\'font-size: 11pt;\'>Info Penetapan</h4>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="tempatpenetapan" name="tempatpenetapan" data-label="Tempat penetapan" placeholder="Tempat penetapan" />
+                                            <label for="tempatpenetapan">Tempat penetapan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="date" class="form-control" id="tanggalpenetapan" name="tanggalpenetapan" data-label="Tanggal penetapan" placeholder="Tanggal penetapan" />
+                                            <label for="tanggalpenetapan">Tanggal penetapan</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="penandatangan" name="penandatangan" data-label="Penandatangan" placeholder="Penandatangan" />
+                                            <label for="penandatangan">Penandatangan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="offcanvas-md offcanvas-end overflow-auto" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <div class="col-md-12 mb-7">
+                                        <div class="form-floating mb-3">
+                                            <select type="text" class="form-control" id="status" name="status" data-label="Status dokumen">
+                                                <option value="">Pilih Status Dokumen</option>
+                                                <option value="Masih Berlaku">Masih Berlaku</option>
+                                                <option value="Tidak Berlaku">Tidak Berlaku</option>
+                                            </select>
+                                            <label for="status">Status dokumen</label>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="card-title mt-3 mb-3" style=\'font-size: 11pt;\'>Preview Dokumen</h4>
+                                    <div id=\'errorupload\'></div>
+                                    <div style=\'position: relative; width: 100%; min-height: 320px; padding: 10px; border-radius: 5px; border: 2px dashed #bdbdbd; background: #eee;\'>
+                                        <input type="file" id="fileInput" accept="application/pdf" style=\'position: absolute; z-index: 2; cursor: pointer; top: 0px; left: 0px; right: 0px; bottom: 0px; opacity: 0;\'>
+                                        <input type=\'hidden\' id=\'dokumen\' name=\'dokumen\' data-label="Dokumen">
+                                        <img id="preview" style="width: 100%; display: none; position: relative; z-index: 1;">
+                                        <div style=\'display: flex; justify-content: center; align-items: center; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 0;\'>
+                                            <div style=\'color: #bdbdbd; font-weight: bold;\'>
+                                                Klik untuk upload file
+                                            </div>
+                                        </div>
+                                        <progress id="progressBar" value="0" max="100" style="width: 100%; display: none;"></progress>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="alert bg-light-subtle" role="alert">
+                                    <strong>Catatan:</strong>
+                                    <div>
+                                        Pastikan dokumen berupa pdf
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button class="btn btn-primary">
+                                    Simpan
+                                    </button>
+                                    <button type="button" onClick=\'resetForm()\' class="btn btn-danger">
+                                    Reset form
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</form>
+';
+	}
+
+
+	/** {block js} on line 185 */
+	public function blockJs(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 186 */;
+		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 187 */;
+		echo '/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 188 */;
+		echo '/assets/admin/libs/select2/dist/js/select2.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 189 */;
+		echo '/assets/admin/js/forms/select2.init.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 190 */;
+		echo '/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 191 */;
+		echo '/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 192 */;
+		echo '/assets/admin/js/forms/repeater-init.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 193 */;
+		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 194 */;
+		echo 'assets/admin/libs/quill/dist/quill.min.js"></script>
+<script>
+
+el(\'#formInput\').onsubmit = (e) => {
+    e.preventDefault();
+
+    const fid = "formInput";
+    const field = [
+        \'judul|setText\',
+        \'bentuk|setPilihan\',
+        \'pemerkarsa|setText\',
+        \'nomor|setText\',
+        \'tentang|setText\',
+        \'pengundang|setText\',
+        \'tempatpenetapan|setText\',
+        \'tanggalpenetapan|setPilihan\',
+        \'penandatangan|setText\',
+        \'status|setPilihan\',
+        \'dokumen|setPilihan\'
+    ];
+    const form = el(\'form[id="\'+fid+\'"]\');
+    const formData = new FormData(form);
+    const message = el("#msg"+fid);
+    const preview = el(\'#preview\');
+
+    if(validasi({
+        fid: fid,
+        field: field
+    })){
+        fetch(baseurl + \'api/regulasi\', {
+            method: \'POST\',
+            headers: {
+                \'x-api-key\': apikey
+            },
+            body: formData
+        }).then(response => response.json()).then(result => {
+            // console.log(result);
+            if(result.code == 200){
+                message.innerHTML = "";
+                el("#judul").value = "";
+                el("#bentuk").value = "";
+                el("#pemerkarsa").value = "";
+                el("#nomor").value = "";
+                el("#tentang").value = "";
+                el("#pengundang").value = "";
+                el("#tempatpenetapan").value = "";
+                el("#tanggalpenetapan").value = "";
+                el("#penandatangan").value = "";
+                el("#status").value = "";
+                el("#dokumen").value = "";
+                preview.src = "";
+                preview.style.display = \'none\';
+                Swal.fire(
+                    "Sip!",
+                    "Regulasi telah disimpan",
+                    "success"
+                );
+            }else{
+                message.innerHTML = `
+                    <div class="alert alert-danger text-danger" role="alert">
+                        `+result.info+`
+                    </div>
+                `;
+            }
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+
+}
+
+function resetForm() {
+    el("#judul").value = "";
+    el("#bentuk").value = "";
+    el("#pemerkarsa").value = "";
+    el("#nomor").value = "";
+    el("#tentang").value = "";
+    el("#pengundang").value = "";
+    el("#tempatpenetapan").value = "";
+    el("#tanggalpenetapan").value = "";
+    el("#penandatangan").value = "";
+    el("#status").value = "";
+    el("#dokumen").value = "";
+    preview.src = "";
+    preview.style.display = \'none\';
+}
+
+document.getElementById(\'fileInput\').addEventListener(\'change\', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = el(\'#preview\');
+            // preview.src = e.target.result;
+            preview.src = baseurl + "assets/admin/images/custom-apps/icons/pdf.png";
+            preview.style.display = \'block\';
+        };
+        reader.readAsDataURL(file);
+
+        uploadFile(file);
+    }
+});
+
+function uploadFile(file){
+    const xhr = new XMLHttpRequest();
+    const progressBar = el(\'#progressBar\');
+    progressBar.style.display = \'block\';
+
+    el("#errorupload").innerHTML = ``;
+
+    xhr.upload.onprogress = function(event) {
+        if (event.lengthComputable) {
+            const percent = Math.round((event.loaded / event.total) * 100);
+            progressBar.value = percent;
+        }
+    };
+
+    xhr.onload = function() {
+        const result = JSON.parse(xhr.responseText);
+        if(result.code == 200){
+            let namafile = result.data;
+            el("#dokumen").value = namafile;
+            progressBar.style.display = \'none\';
+        }else{
+            el("#errorupload").innerHTML = `
+                <div class="alert alert-danger text-danger" role="alert">
+                    `+result.info+`
+                </div>
+            `;
+            progressBar.style.display = \'none\';
+        }
+    };
+
+    xhr.open(\'POST\', \'/api/regulasi\');
+
+    xhr.setRequestHeader(\'x-api-key\', apikey);
+
+    const formData = new FormData();
+    formData.append(\'__csrf\', el("#__csrf").value);
+    formData.append(\'tipe\', \'UPLOAD\');
+    formData.append(\'jenis\', \'DOKUMEN\');
+    formData.append(\'folder\', \'regulasi\');
+    formData.append(\'file\', file);
+    xhr.send(formData);
+}
+</script>
+';
+	}
+}

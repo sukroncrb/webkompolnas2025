@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="baseurl" content="{$baseurl}" />
+    <meta name="apikey" content="{$apikey}" />
+    <meta name="prefix" content="{$prefix_dashboard}" />
+    <link rel="shortcut icon" type="image/png" href="{$baseurl}assets/admin/images/logos/favicon.png" />
+    <link rel="stylesheet" href="{$baseurl}assets/admin/css/styles.css" />
+    <link rel="stylesheet" href="{$baseurl}assets/admin/css/animasi-skm.css" />
+    {block css}{/block}
+    <title>{block title}{/block}</title>
+
+</head>
+
+<body class="link-sidebar">
+
+    <div class="preloader">
+        <div class="skm-loader">
+            <div class='animasi-logo-skm'>
+                <span class='teks-s'>SARAN</span>
+                <span class='teks-k'>KELUHAN</span>
+                <span class='teks-m'>MASYARAKAT</span>
+                <span class='teks-skm'><img src='{$baseurl}assets/admin/images/custom-apps/img/Logo_Kompolnas.png'><span>SKM</span></span>
+            </div>
+        </div>
+    </div>
+    
+    {block content}{/block}
+
+    <script>
+        function handleColorTheme(e) {
+            document.documentElement.setAttribute("data-color-theme", e);
+        }
+    </script>
+
+    <div class="dark-transparent sidebartoggler"></div>
+    <script src="{$baseurl}assets/admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{$baseurl}assets/admin/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="{$baseurl}assets/admin/js/theme/app.init.js"></script>
+    <script src="{$baseurl}assets/admin/js/theme/theme.js"></script>
+    <script src="{$baseurl}assets/admin/js/theme/app.min.js"></script>
+    <script src="{$baseurl}assets/admin/js/theme/sidebarmenu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    {block js}{/block}
+
+</body>
+
+</html>
