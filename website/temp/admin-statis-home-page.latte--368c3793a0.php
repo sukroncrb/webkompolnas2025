@@ -1,9 +1,57 @@
-{layout '../main.latte'}
-{block css}
-<link rel="stylesheet" href="{$baseurl}/assets/admin/libs/dropzone/dist/min/dropzone.min.css">
-<link rel="stylesheet" href="{$baseurl}/assets/admin/libs/select2/dist/css/select2.min.css">
-<link rel="stylesheet" href="{$baseurl}assets/admin/libs/sweetalert2/dist/sweetalert2.min.css">
-<link rel="stylesheet" href="{$baseurl}assets/admin/libs/quill/dist/quill.snow.css">
+<?php
+
+use Latte\Runtime as LR;
+
+/** source: /home/sukroncrb2025/Project/kompolnas/website/vendor/abiesoft/Http/../../../templates/admin/statis/home-page.latte */
+final class Template_368c3793a0 extends Latte\Runtime\Template
+{
+	public const Source = '/home/sukroncrb2025/Project/kompolnas/website/vendor/abiesoft/Http/../../../templates/admin/statis/home-page.latte';
+
+	public const Blocks = [
+		['css' => 'blockCss', 'content' => 'blockContent', 'js' => 'blockJs'],
+	];
+
+
+	public function main(array $ʟ_args): void
+	{
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 27 */;
+		echo "\n";
+		$this->renderBlock('js', get_defined_vars()) /* line 231 */;
+	}
+
+
+	public function prepare(): array
+	{
+		extract($this->params);
+
+		$this->parentName = '../main.latte';
+		return get_defined_vars();
+	}
+
+
+	/** {block css} on line 2 */
+	public function blockCss(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 3 */;
+		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.css">
+<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 4 */;
+		echo '/assets/admin/libs/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 5 */;
+		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.css">
+<link rel="stylesheet" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 6 */;
+		echo 'assets/admin/libs/quill/dist/quill.snow.css">
 <style>
 .list-media svg {
     width: 30px; 
@@ -23,28 +71,43 @@
     transform: translate(-50%, 0);
 }
 </style>
-{/block}
-{block content}
-<div class="body-wrapper">
+';
+	}
+
+
+	/** {block content} on line 27 */
+	public function blockContent(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<div class="body-wrapper">
 	<div class="container-fluid">
 		<div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
 			<div class="card-body px-4 py-3">
 				<div class="row align-items-center">
 					<div class="col-9">
-						<h4 class="fw-semibold mb-8">{$title}</h4>
+						<h4 class="fw-semibold mb-8">';
+		echo LR\Filters::escapeHtmlText($title) /* line 34 */;
+		echo '</h4>
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item">
-									<a class="text-muted text-decoration-none" href="{$baseurl}">Home</a>
+									<a class="text-muted text-decoration-none" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 38 */;
+		echo '">Home</a>
 								</li>
 								<li class="breadcrumb-item" aria-current="page">Statis</li>
-								<li class="breadcrumb-item" aria-current="page">{$title}</li>
+								<li class="breadcrumb-item" aria-current="page">';
+		echo LR\Filters::escapeHtmlText($title) /* line 41 */;
+		echo '</li>
 							</ol>
 						</nav>
 					</div>
 					<div class="col-3">
 						<div class="text-center mb-n5">
-							<div style='width: 168px; height: 165px;'></div>
+							<div style=\'width: 168px; height: 165px;\'></div>
                         </div>
 					</div>
 				</div>
@@ -54,19 +117,24 @@
             <div class="col-md-12 col-xl-4">
                 <div class="card">
                     <div class="card-body">
-                        <div class="mb-3" style='display: block; min-height: 353px;'>
-                            <img id='coverphotobanner' style="width: 100%;" src="{$baseurl}{$bannerphoto}">
+                        <div class="mb-3" style=\'display: block; min-height: 353px;\'>
+                            <img id=\'coverphotobanner\' style="width: 100%;" src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 58 */;
+		echo LR\Filters::escapeHtmlAttr($bannerphoto) /* line 58 */;
+		echo '">
                         </div>
                         <h6 class="font-semibold text-center mb-3">Banner Photo Kompolnas</h6>
-                        <form method="post" id="formBanner" name="formBanner" data-id="{$bannerphotoid}">
+                        <form method="post" id="formBanner" name="formBanner" data-id="';
+		echo LR\Filters::escapeHtmlAttr($bannerphotoid) /* line 61 */;
+		echo '">
                             <div id="msgformBanner"></div>
                             <div class="form-group">
                                 <input type="file" data-label="Media" id="media" name="media" class="form-control">
                             </div>
                             <div class="form-group mt-3">
-                                <input type='hidden' id='folder' name='folder' value='homepage'>
-                                <input type='hidden' id='jenis' name='jenis' value='PHOTO'>
-                                <input type='hidden' id='tipe' name='tipe' value='HOME_PAGE_BANNER_PHOTO'>
+                                <input type=\'hidden\' id=\'folder\' name=\'folder\' value=\'homepage\'>
+                                <input type=\'hidden\' id=\'jenis\' name=\'jenis\' value=\'PHOTO\'>
+                                <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_BANNER_PHOTO\'>
                                 <button class="btn btn-primary">
                                 Simpan Perubahan
                                 </button>
@@ -78,19 +146,29 @@
             <div class="col-md-12 col-xl-4">
                 <div class="card">
                     <div class="card-body">
-                        <div class="mb-3" style='min-height: 272px;'>
-                            <div class="text-center"><img style="width: 20px;" src="{$baseurl}assets/web/images/quotes.png"></div>
-                            <h2 class="font-semibold text-center mt-3 mb-3" id="viewQuotes">{$quotes}</h2>
-                            <div class="text-center"><img style="width: 20px; transform: rotate(180deg);" src="{$baseurl}assets/web/images/quotes.png"></div>
+                        <div class="mb-3" style=\'min-height: 272px;\'>
+                            <div class="text-center"><img style="width: 20px;" src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 82 */;
+		echo 'assets/web/images/quotes.png"></div>
+                            <h2 class="font-semibold text-center mt-3 mb-3" id="viewQuotes">';
+		echo LR\Filters::escapeHtmlText($quotes) /* line 83 */;
+		echo '</h2>
+                            <div class="text-center"><img style="width: 20px; transform: rotate(180deg);" src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 84 */;
+		echo 'assets/web/images/quotes.png"></div>
                         </div>
                         <h6 class="font-semibold text-center mb-3">Quotes</h6>
-                        <form method="post" id="formQuotes" name="formQuotes" data-id="{$quotesid}">
+                        <form method="post" id="formQuotes" name="formQuotes" data-id="';
+		echo LR\Filters::escapeHtmlAttr($quotesid) /* line 87 */;
+		echo '">
                             <div id="msgformQuotes"></div>
                             <div class="form-group">
-                                <textarea id="keterangan" name="keterangan" data-label="Quotes" class="form-control" style='height: 120px;'>{$quotes}</textarea>
+                                <textarea id="keterangan" name="keterangan" data-label="Quotes" class="form-control" style=\'height: 120px;\'>';
+		echo LR\Filters::escapeHtmlText($quotes) /* line 90 */;
+		echo '</textarea>
                             </div>
                             <div class="form-group mt-3">
-                                <input type='hidden' id='tipe' name='tipe' value='HOME_PAGE_QUOTES'>
+                                <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_QUOTES\'>
                                 <button class="btn btn-primary">
                                 Simpan Perubahan
                                 </button>
@@ -102,16 +180,16 @@
             <div class="col-md-12 col-xl-4">
                 <div class="card">
                     <div class="card-body">
-                        <div style='position: relative; margin-bottom: 30px;'>
-                            <div class="mb-2" id="viewshortcut" style='height: 220px; overflow: auto; overflow-x: hidden;'></div>
-                            <div id='floatstatus'></div>
+                        <div style=\'position: relative; margin-bottom: 30px;\'>
+                            <div class="mb-2" id="viewshortcut" style=\'height: 220px; overflow: auto; overflow-x: hidden;\'></div>
+                            <div id=\'floatstatus\'></div>
                         </div>
                         <h6 class="font-semibold text-center mb-3">Shortcut Fiture</h6>
                         <form method="post" id="formShortcut" name="formShortcut">
                             <div id="msgformShortcut"></div>
                             <div class="col-12 form-group mb-3">
                                 <textarea data-label="Icon" id="media" name="media" placeholder="Pastekan code svg disini" class="form-control"></textarea>
-                                <small>untuk mendapatkan icon berupa code svg bisa didapat di <a href='https://heroicons.com' target="_blank">heroicons.com</a></small>
+                                <small>untuk mendapatkan icon berupa code svg bisa didapat di <a href=\'https://heroicons.com\' target="_blank">heroicons.com</a></small>
                             </div>
                             <div class="row">
                                 <div class="col-6 form-group mb-3">
@@ -121,7 +199,7 @@
                                     <input class="form-control" data-label="Link" placeholder="Link" id="link" name="link">
                                 </div>
                             </div>
-                            <input type='hidden' id='tipe' name='tipe' value='HOME_PAGE_SHORTCUT'>
+                            <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_SHORTCUT\'>
                             <div id="buttonMode">
                                 <button class="btn btn-primary">
                                 Simpan
@@ -142,10 +220,12 @@
                                     <div class="form-group mb-3">
                                         <div class="row">
                                             <div class="col-md-4 col-6" style="position: relative;">
-                                                <div style='width: 100%; height: 150px; background: #f5f5f5; overflow: hidden;'>
-                                                    <img id="viewphotokomisioner" src='{$baseurl}assets/storage/default/add_image.jpeg' style='width: 100%; height: 150px; object-fit: cover;'>
+                                                <div style=\'width: 100%; height: 150px; background: #f5f5f5; overflow: hidden;\'>
+                                                    <img id="viewphotokomisioner" src=\'';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 146 */;
+		echo 'assets/storage/default/add_image.jpeg\' style=\'width: 100%; height: 150px; object-fit: cover;\'>
                                                 </div>
-                                                <input type='file' style='position: absolute; z-index: 1; opacity: 0; cursor: pointer; top: 0; width: 90%; height: 150px;' id="photo" name="photo">
+                                                <input type=\'file\' style=\'position: absolute; z-index: 1; opacity: 0; cursor: pointer; top: 0; width: 90%; height: 150px;\' id="photo" name="photo">
                                                 <input type="hidden" id="filephoto" name="filephoto">
                                             </div>
                                             <div class="col-md-8 col-6">
@@ -157,12 +237,12 @@
                                                 </div>
                                                 <div class="form-group mb-3">
                                                     <select class="form-control" id="periode" name="periode">
-                                                        <option value=''>Pilih Periode</option>
-                                                        <option value='Periode I dan II Tahun 2006-2012'>Periode I dan II Tahun 2006-2012</option>
-                                                        <option value='Periode III Tahun 2012-2016'>Periode III Tahun 2012-2016</option>
-                                                        <option value='Periode IV Tahun 2016-2020'>Periode IV Tahun 2016-2020</option>
-                                                        <option value='Periode V Tahun 2020-2024'>Periode V Tahun 2020-2024</option>
-                                                        <option value='Periode Saat ini'>Periode Saat ini</option>
+                                                        <option value=\'\'>Pilih Periode</option>
+                                                        <option value=\'Periode I dan II Tahun 2006-2012\'>Periode I dan II Tahun 2006-2012</option>
+                                                        <option value=\'Periode III Tahun 2012-2016\'>Periode III Tahun 2012-2016</option>
+                                                        <option value=\'Periode IV Tahun 2016-2020\'>Periode IV Tahun 2016-2020</option>
+                                                        <option value=\'Periode V Tahun 2020-2024\'>Periode V Tahun 2020-2024</option>
+                                                        <option value=\'Periode Saat ini\'>Periode Saat ini</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -172,7 +252,7 @@
                                         <textarea class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" style="height: 200px;"></textarea>
                                     </div>
                                     <div class="form-group mt-3">
-                                        <input type='hidden' id='tipe' name='tipe' value='HOME_PAGE_KOMISIONER'>
+                                        <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_KOMISIONER\'>
                                         <div id="btnreplacekomisioner" data-id="">
                                             <button class="btn btn-primary">
                                             Simpan
@@ -183,10 +263,10 @@
                             </div>
                             <div class="col-12 col-lg-6">
                                 <h6 class="font-semibold text-center mb-3">Daftar Komisioner</h6>
-                                <div style='position: relative;'>
-                                    <div class='mb-3' style='overflow: auto; height: 420px;' id='viewkomisioner'>
+                                <div style=\'position: relative;\'>
+                                    <div class=\'mb-3\' style=\'overflow: auto; height: 420px;\' id=\'viewkomisioner\'>
                                     </div>
-                                    <div id="morekomisioner"><div class='float-status'>Ada 1 lagi</div></div>
+                                    <div id="morekomisioner"><div class=\'float-status\'>Ada 1 lagi</div></div>
                                 </div>
                             </div>
                         </div>
@@ -197,19 +277,26 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
-                            <img id='coverphotobanner' style="width: 100%;" src="{$baseurl}{$banneryoutube}">
+                            <img id=\'coverphotobanner\' style="width: 100%;" src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 200 */;
+		echo LR\Filters::escapeHtmlAttr($banneryoutube) /* line 200 */;
+		echo '">
                         </div>
                         <h6 class="font-semibold text-center mb-3">Banner Youtube Kompolnas</h6>
-                        <form method="post" id="formBannerYoutube" name="formBannerYoutube" data-id="{$banneryoutubeid}">
+                        <form method="post" id="formBannerYoutube" name="formBannerYoutube" data-id="';
+		echo LR\Filters::escapeHtmlAttr($banneryoutubeid) /* line 203 */;
+		echo '">
                             <div id="msgformBannerYoutube"></div>
                             <div class="form-group">
                                 <input type="file" data-label="Media" id="media" name="media" class="form-control">
-                                <input id="link" name="link" class="form-control mt-3" placeholder="Link channel youtube" value="{$linkbanneryoutube}">
+                                <input id="link" name="link" class="form-control mt-3" placeholder="Link channel youtube" value="';
+		echo LR\Filters::escapeHtmlAttr($linkbanneryoutube) /* line 207 */;
+		echo '">
                             </div>
                             <div class="form-group mt-3">
-                                <input type='hidden' id='folder' name='folder' value='homepage'>
-                                <input type='hidden' id='jenis' name='jenis' value='PHOTO'>
-                                <input type='hidden' id='tipe' name='tipe' value='HOME_PAGE_BANNER_YOUTUBE'>
+                                <input type=\'hidden\' id=\'folder\' name=\'folder\' value=\'homepage\'>
+                                <input type=\'hidden\' id=\'jenis\' name=\'jenis\' value=\'PHOTO\'>
+                                <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_BANNER_YOUTUBE\'>
                                 <button class="btn btn-primary">
                                 Simpan Perubahan
                                 </button>
@@ -226,19 +313,45 @@
         </div>
 	</div>
 </div>
-{/block}
+';
+	}
 
-{block js}
-<script src="{$baseurl}/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
-<script src="{$baseurl}/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
-<script src="{$baseurl}/assets/admin/libs/select2/dist/js/select2.min.js"></script>
-<script src="{$baseurl}/assets/admin/js/forms/select2.init.js"></script>
-<script src="{$baseurl}/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
-<script src="{$baseurl}/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="{$baseurl}/assets/admin/js/forms/repeater-init.js"></script>
-<script src="{$baseurl}assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
-<script src="{$baseurl}assets/admin/libs/quill/dist/quill.min.js"></script>
-<script n:syntax="off">
+
+	/** {block js} on line 231 */
+	public function blockJs(array $ʟ_args): void
+	{
+		extract($this->params);
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 232 */;
+		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 233 */;
+		echo '/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
+		echo '/assets/admin/libs/select2/dist/js/select2.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
+		echo '/assets/admin/js/forms/select2.init.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
+		echo '/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
+		echo '/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 238 */;
+		echo '/assets/admin/js/forms/repeater-init.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 239 */;
+		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 240 */;
+		echo 'assets/admin/libs/quill/dist/quill.min.js"></script>
+<script>
 
 // Banner Photo
 let frB = el("#formBanner");
@@ -246,14 +359,14 @@ frB.addEventListener("submit", (e)=> {
     e.preventDefault();
     const fid = frB.id;
     
-    const form = el('form[id="'+fid+'"]');
+    const form = el(\'form[id="\'+fid+\'"]\');
     const formData = new FormData(form);
 
     if(frB.dataset.id){
-        formData.append('id', frB.dataset.id);
+        formData.append(\'id\', frB.dataset.id);
     }
 
-    let banner = document.forms[fid]['media'];
+    let banner = document.forms[fid][\'media\'];
 
     if(setText(banner.value)){
         el("#msg"+fid).innerHTML = `
@@ -264,10 +377,10 @@ frB.addEventListener("submit", (e)=> {
         banner.focus();
     }else{
         el("#msg"+fid).innerHTML = "";
-        fetch(baseurl + 'api/statis', {
-            method: 'POST',
+        fetch(baseurl + \'api/statis\', {
+            method: \'POST\',
             headers: {
-                'x-api-key': apikey
+                \'x-api-key\': apikey
             },
             body: formData
         }).then(response => response.json()).then(result => {
@@ -300,14 +413,14 @@ frQ.addEventListener("submit", (e)=> {
     e.preventDefault();
     const fid = frQ.id;
     
-    const form = el('form[id="'+fid+'"]');
+    const form = el(\'form[id="\'+fid+\'"]\');
     const formData = new FormData(form);
 
     if(frQ.dataset.id){
-        formData.append('id', frQ.dataset.id);
+        formData.append(\'id\', frQ.dataset.id);
     }
 
-    let keterangan = document.forms[fid]['keterangan'];
+    let keterangan = document.forms[fid][\'keterangan\'];
 
     if(setText(keterangan.value)){
         el("#msg"+fid).innerHTML = `
@@ -318,10 +431,10 @@ frQ.addEventListener("submit", (e)=> {
         keterangan.focus();
     }else{
         el("#msg"+fid).innerHTML = "";
-        fetch(baseurl + 'api/statis', {
-            method: 'POST',
+        fetch(baseurl + \'api/statis\', {
+            method: \'POST\',
             headers: {
-                'x-api-key': apikey
+                \'x-api-key\': apikey
             },
             body: formData
         }).then(response => response.json()).then(result => {
@@ -344,10 +457,10 @@ frQ.addEventListener("submit", (e)=> {
 
 
 function loadShortcutFiture(){
-    fetch(baseurl + 'api/statis', {
-        method: 'GET',
+    fetch(baseurl + \'api/statis\', {
+        method: \'GET\',
         headers: {
-            'x-api-key': apikey
+            \'x-api-key\': apikey
         }
     }).then(response => response.json()).then(result => {
         //console.log(result);
@@ -358,18 +471,18 @@ function loadShortcutFiture(){
         jumlahHidden = result.data.length - 4;
         for(let i=0; i<result.data.length; i++){
             konten += `
-                <div onClick='isiFormShortCut(this.id)' 
-                    id='sc-`+result.data[i].id+`'
-                    data-id='`+result.data[i].id+`'
-                    data-label='`+result.data[i].label+`'
-                    data-media='`+result.data[i].media+`'
-                    data-link='`+result.data[i].link+`'
-                    style='cursor: pointer; position: relative; margin-top: 4px;' class='list-media'>
-                    <div style='display: flex; justify-content: left; align-items: center; padding: 10px 15px; background: #eee; border-radius: 4px;'>
+                <div onClick=\'isiFormShortCut(this.id)\' 
+                    id=\'sc-`+result.data[i].id+`\'
+                    data-id=\'`+result.data[i].id+`\'
+                    data-label=\'`+result.data[i].label+`\'
+                    data-media=\'`+result.data[i].media+`\'
+                    data-link=\'`+result.data[i].link+`\'
+                    style=\'cursor: pointer; position: relative; margin-top: 4px;\' class=\'list-media\'>
+                    <div style=\'display: flex; justify-content: left; align-items: center; padding: 10px 15px; background: #eee; border-radius: 4px;\'>
                         `+result.data[i].media+`
-                        <div style='font-weight: 500;'>`+result.data[i].label+`</div>
+                        <div style=\'font-weight: 500;\'>`+result.data[i].label+`</div>
                     </div>
-                    <button id='btnHps`+result.data[i].id+`' data-tipe="HAPUS_SHORTCUT" data-id="`+result.data[i].id+`" data-label="`+result.data[i].label+`" onClick="return hps(this.id)" style="padding: 0px; background: #fff; border: none; position: absolute; right: 0; z-index: 1; top: 8px; width: 30px; padding: 5px 8px; border-radius: 10px 0 0 10px;">
+                    <button id=\'btnHps`+result.data[i].id+`\' data-tipe="HAPUS_SHORTCUT" data-id="`+result.data[i].id+`" data-label="`+result.data[i].label+`" onClick="return hps(this.id)" style="padding: 0px; background: #fff; border: none; position: absolute; right: 0; z-index: 1; top: 8px; width: 30px; padding: 5px 8px; border-radius: 10px 0 0 10px;">
                         <svg style="width: 10pt;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>
@@ -378,13 +491,13 @@ function loadShortcutFiture(){
             `;
         }
         if(jumlahHidden > 0){
-            el("#floatstatus").innerHTML = `<div class='float-status'>Ada `+jumlahHidden+` lagi</div>`;
+            el("#floatstatus").innerHTML = `<div class=\'float-status\'>Ada `+jumlahHidden+` lagi</div>`;
         }else{
             el("#floatstatus").innerHTML = "";
         }
 
 
-        el("#viewshortcut").addEventListener('scroll', ()=>{
+        el("#viewshortcut").addEventListener(\'scroll\', ()=>{
             if(el("#viewshortcut").scrollTop > (currentTop * 48)) {
                 currentTop += 1;
                 if(jumlahHidden > 0){
@@ -396,7 +509,7 @@ function loadShortcutFiture(){
                 jumlahHidden += 1;
             }
             if(jumlahHidden > 0){
-                el("#floatstatus").innerHTML = `<div class='float-status'>Ada `+jumlahHidden+` lagi</div>`;
+                el("#floatstatus").innerHTML = `<div class=\'float-status\'>Ada `+jumlahHidden+` lagi</div>`;
             }else{
                 el("#floatstatus").innerHTML = ``;
             }
@@ -419,7 +532,7 @@ function isiFormShortCut(x){
     el("#formShortcut").querySelector("#media").value = media;
     el("#formShortcut").querySelector("#link").value = link;
     el("#buttonMode").innerHTML = `
-        <button id='btnreplace' data-id='`+id+`' class="btn btn-primary">Simpan Perubahan</button>
+        <button id=\'btnreplace\' data-id=\'`+id+`\' class="btn btn-primary">Simpan Perubahan</button>
         <button onClick="shortCutReset()" type="button" class="btn btn-danger">Batal</button>
     `;
 }
@@ -443,15 +556,15 @@ frSc.addEventListener("submit", (e)=> {
     e.preventDefault();
     const fid = frSc.id;
 
-    const form = el('form[id="'+fid+'"]');
+    const form = el(\'form[id="\'+fid+\'"]\');
     const formData = new FormData(form);
 
-    let media = document.forms[fid]['media'];
-    let label = document.forms[fid]['label'];
-    let link = document.forms[fid]['link'];
+    let media = document.forms[fid][\'media\'];
+    let label = document.forms[fid][\'label\'];
+    let link = document.forms[fid][\'link\'];
 
-    if(el('#btnreplace')){
-        formData.append('id',el('#btnreplace').dataset.id);
+    if(el(\'#btnreplace\')){
+        formData.append(\'id\',el(\'#btnreplace\').dataset.id);
     }
 
     if(setText(media.value)){
@@ -477,10 +590,10 @@ frSc.addEventListener("submit", (e)=> {
         link.focus();
     }else{
         el("#msg"+fid).innerHTML = "";
-        fetch(baseurl + 'api/statis', {
-            method: 'POST',
+        fetch(baseurl + \'api/statis\', {
+            method: \'POST\',
             headers: {
-                'x-api-key': apikey
+                \'x-api-key\': apikey
             },
             body: formData
         }).then(response => response.json()).then(result => {
@@ -517,10 +630,10 @@ frSc.addEventListener("submit", (e)=> {
 // Komisioner
 
 function loadListKomisioner(){
-    fetch(baseurl + 'api/statis/listkomisioner', {
-        method: 'GET',
+    fetch(baseurl + \'api/statis/listkomisioner\', {
+        method: \'GET\',
         headers: {
-            'x-api-key': apikey
+            \'x-api-key\': apikey
         }
     }).then(response => response.json()).then(result => {
         //console.log(result);
@@ -535,17 +648,17 @@ function loadListKomisioner(){
                 dataphoto = baseurl + result.data[i].photo;
             }
             konten += `
-                <div onClick='isiFormKomisioner(this.id)' 
-                    id='km-`+result.data[i].id+`'
-                    data-id='`+result.data[i].id+`'
-                    data-nama='`+result.data[i].nama+`'
-                    data-jabatan='`+result.data[i].jabatan+`'
-                    data-periode='`+result.data[i].periode+`'
-                    data-keterangan='`+result.data[i].keterangan+`'
-                    data-photo='`+dataphoto+`' 
-                    style='position: relative; background: #f5f5f5; padding: 10px; border-radius: 8px; margin-bottom: 5px;'>
-                    <div style='position: absolute; width: 60px; height: 60px; border-radius: 50%; overflow: hidden;'>
-                        <img style='width: 60px; height: 60px; object-fit: cover;' src="`+dataphoto+`">
+                <div onClick=\'isiFormKomisioner(this.id)\' 
+                    id=\'km-`+result.data[i].id+`\'
+                    data-id=\'`+result.data[i].id+`\'
+                    data-nama=\'`+result.data[i].nama+`\'
+                    data-jabatan=\'`+result.data[i].jabatan+`\'
+                    data-periode=\'`+result.data[i].periode+`\'
+                    data-keterangan=\'`+result.data[i].keterangan+`\'
+                    data-photo=\'`+dataphoto+`\' 
+                    style=\'position: relative; background: #f5f5f5; padding: 10px; border-radius: 8px; margin-bottom: 5px;\'>
+                    <div style=\'position: absolute; width: 60px; height: 60px; border-radius: 50%; overflow: hidden;\'>
+                        <img style=\'width: 60px; height: 60px; object-fit: cover;\' src="`+dataphoto+`">
                     </div>
                     <div style="height: 60px; margin-left: 80px; display:flex; justify-content: start; align-items: center;">
                         <div>
@@ -553,7 +666,7 @@ function loadListKomisioner(){
                             <div>`+result.data[i].jabatan+`</div>
                         </div>
                     </div>
-                    <button id='btnHps`+result.data[i].id+`' data-tipe="HAPUS_KOMISIONER"  data-id="`+result.data[i].id+`" data-label="`+result.data[i].nama+`" onClick="return hps(this.id)" style="padding: 0px; background: #fff; border: none; position: absolute; right: 0; z-index: 1; top: 8px; width: 30px; padding: 5px 8px; border-radius: 10px 0 0 10px;">
+                    <button id=\'btnHps`+result.data[i].id+`\' data-tipe="HAPUS_KOMISIONER"  data-id="`+result.data[i].id+`" data-label="`+result.data[i].nama+`" onClick="return hps(this.id)" style="padding: 0px; background: #fff; border: none; position: absolute; right: 0; z-index: 1; top: 8px; width: 30px; padding: 5px 8px; border-radius: 10px 0 0 10px;">
                         <svg style="width: 10pt;" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg>
@@ -562,12 +675,12 @@ function loadListKomisioner(){
             `;
         }
         if(jumlahHidden > 0){
-            el("#morekomisioner").innerHTML = `<div class='float-status'>Ada `+jumlahHidden+` lagi</div>`;
+            el("#morekomisioner").innerHTML = `<div class=\'float-status\'>Ada `+jumlahHidden+` lagi</div>`;
         }else{
             el("#morekomisioner").innerHTML = "";
         }
 
-        el("#viewkomisioner").addEventListener('scroll', ()=>{
+        el("#viewkomisioner").addEventListener(\'scroll\', ()=>{
             if(el("#viewkomisioner").scrollTop > (currentTop * 85)) {
                 currentTop += 1;
                 if(jumlahHidden > 0){
@@ -579,7 +692,7 @@ function loadListKomisioner(){
                 jumlahHidden += 1;
             }
             if(jumlahHidden > 0){
-                el("#morekomisioner").innerHTML = `<div class='float-status'>Ada `+jumlahHidden+` lagi</div>`;
+                el("#morekomisioner").innerHTML = `<div class=\'float-status\'>Ada `+jumlahHidden+` lagi</div>`;
             }else{
                 el("#morekomisioner").innerHTML = ``;
             }
@@ -613,7 +726,7 @@ function isiFormKomisioner(x){
     el("#formKomisioner").querySelector("#periode").children[0].innerText = periode;
     el("#formKomisioner").querySelector("#keterangan").value = keterangan;
     el("#btnreplacekomisioner").innerHTML = `
-        <button id='btnreplace' data-id='`+id+`' class="btn btn-primary">Simpan Perubahan</button>
+        <button id=\'btnreplace\' data-id=\'`+id+`\' class="btn btn-primary">Simpan Perubahan</button>
         <button onClick="komisionerFormReset()" type="button" class="btn btn-danger">Batal</button>
     `;
 }
@@ -639,18 +752,18 @@ frKm.addEventListener("submit", (e)=> {
     e.preventDefault();
     const fid = frKm.id;
 
-    const form = el('form[id="'+fid+'"]');
+    const form = el(\'form[id="\'+fid+\'"]\');
     const formData = new FormData(form);
 
-    let filephoto = document.forms[fid]['filephoto'];
-    let photo = document.forms[fid]['photo'];
-    let nama = document.forms[fid]['nama'];
-    let jabatan = document.forms[fid]['jabatan'];
-    let periode = document.forms[fid]['periode'];
-    let keterangan = document.forms[fid]['keterangan'];
+    let filephoto = document.forms[fid][\'filephoto\'];
+    let photo = document.forms[fid][\'photo\'];
+    let nama = document.forms[fid][\'nama\'];
+    let jabatan = document.forms[fid][\'jabatan\'];
+    let periode = document.forms[fid][\'periode\'];
+    let keterangan = document.forms[fid][\'keterangan\'];
 
-    if(el('#btnreplace')){
-        formData.append('id',el('#btnreplace').dataset.id);
+    if(el(\'#btnreplace\')){
+        formData.append(\'id\',el(\'#btnreplace\').dataset.id);
     }
 
     if(setPilihan(photo.value) && filephoto.value == ""){
@@ -690,10 +803,10 @@ frKm.addEventListener("submit", (e)=> {
         keterangan.focus();
     }else{
         el("#msg"+fid).innerHTML = "";
-        fetch(baseurl + 'api/statis', {
-            method: 'POST',
+        fetch(baseurl + \'api/statis\', {
+            method: \'POST\',
             headers: {
-                'x-api-key': apikey
+                \'x-api-key\': apikey
             },
             body: formData
         }).then(response => response.json()).then(result => {
@@ -731,7 +844,7 @@ frKm.addEventListener("submit", (e)=> {
 });
 
 let photoInput = el("#formKomisioner").querySelector("#photo");
-photoInput.addEventListener('change', function() {
+photoInput.addEventListener(\'change\', function() {
     const reader = new FileReader();
     const file = this.files[0];
     if (file) {
@@ -759,7 +872,7 @@ function hps(x) {
     let tipe = el("#"+x).dataset.tipe;
     Swal.fire({
         title: "Konfirmasi",
-        html: "Ingin menghapus berita <strong class='text-danger'>"+label+"</strong> ?",
+        html: "Ingin menghapus berita <strong class=\'text-danger\'>"+label+"</strong> ?",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
@@ -781,13 +894,13 @@ function doRemove(x) {
     let label = el("#"+x).dataset.label;
     let tipe = el("#"+x).dataset.tipe;
     const formData = new FormData();
-    formData.append('__csrf', el("#__csrf").value);
-    formData.append('tipe', tipe);
-    formData.append('id', id);
-    fetch(baseurl + 'api/statis', {
-        method: 'POST',
+    formData.append(\'__csrf\', el("#__csrf").value);
+    formData.append(\'tipe\', tipe);
+    formData.append(\'id\', id);
+    fetch(baseurl + \'api/statis\', {
+        method: \'POST\',
         headers: {
-            'x-api-key': apikey
+            \'x-api-key\': apikey
         },
         body: formData
     }).then(response => response.json()).then(result => {
@@ -795,7 +908,7 @@ function doRemove(x) {
         if(result.code == "200"){
           Swal.fire({
             title: "Ok!",
-            html: "Shortcut <strong class='text-danger'>"+label+"</strong> sudah dihapus.",
+            html: "Shortcut <strong class=\'text-danger\'>"+label+"</strong> sudah dihapus.",
             icon: "success"
           });
 
@@ -820,4 +933,6 @@ function doRemove(x) {
 }
 
 </script>
-{/block}
+';
+	}
+}

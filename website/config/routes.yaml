@@ -388,6 +388,10 @@ GetStatisApi:
   path: '/statis'
   opsi: 'get|StatisService|load'
 
+GetStatisWithParamsApi:
+  path: '/statis/:params'
+  opsi: 'get|StatisService|load'
+
 PostStatisApi:
   path: '/statis'
   opsi: 'post|StatisService|load'
