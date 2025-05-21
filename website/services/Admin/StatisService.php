@@ -180,11 +180,27 @@ final class StatisService extends Service
     }
 
     protected function addKomisioner(){
+        if(Input::file('photo','name') != ""){
+            return $this->addWithPhotoKomisioner();
+        }else{
+            return $this->addWithoutPhotoKomisioner();
+        }
+    }
+
+    protected function addWithPhotoKomisioner(){
+        
+    }
+
+    protected function addWithoutPhotoKomisioner($photo = ""){
         $nama = Input::get('nama');
         $jabatan = Input::get('jabatan');
         $periode = Input::get('periode');
         $keterangan = Input::get('keterangan');
-        $photo = "";
+        $photo = "assets/storage/default/pp.jpg";
+        if($photo != ""){
+            $photo = $photo;
+        }
+        
         $input = DB::terhubung()->input('komisioner', [
             'nama' => $nama,
             'jabatan' => $jabatan,
