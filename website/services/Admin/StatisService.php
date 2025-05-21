@@ -5,6 +5,8 @@ namespace App\Service\Admin;
 use Abiesoft\Resource\Mysql\DB;
 use Abiesoft\Resource\Utilities\Guard;
 use Abiesoft\Resource\Utilities\Input;
+use Abiesoft\Resource\Utilities\Config;
+use Abiesoft\Resource\Http\Authentication;
 use App\Service\Service;
 use App\Service\Upload;
 use DateTime;
@@ -55,21 +57,51 @@ final class StatisService extends Service
         };
 
     }
+
     protected function bannerphoto() {  
         $id = Input::get('id');
-        $media = $this->upload('media', 'string');
 
-        if(strpos($media, "assets/") !== false) {
+        $nama = Input::file("media",'name');
+        $temp = Input::file("media",'tmp_name');
+        $ukuran = Input::file("media",'size');
+        $folder = "homepage";
+        $user = new Authentication;
+        $dir = __DIR__."/../../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$user->getDir()."/".$folder."/";
+        
+        if(!file_exists($dir)){
+            mkdir($dir,0777,true);
+        }
+
+        $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
+        $file = $dir . $namabaru ;
+        $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+        
+        if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
+            return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
+        }
+
+        if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
+            return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
+        }
+        
+        $linkfile = 'assets/storage/'.$user->getDir().'/'.$folder.'/'.$namabaru;
+
+        if (file_exists($file)) {
+           return $this->badrequest("Maaf, file ini sudah ada.");
+        }
+
+        if (move_uploaded_file($temp, $file)) {
             $perbarui = DB::terhubung()->perbarui('statis', $id, [
-                'media' => $media
+                'media' => $linkfile
             ]);
+
             if($perbarui){
-                return $this->success($media);
+                return $this->success($linkfile);
             }else{
-                return $this->badrequest($media);
+                return $this->badrequest("Gagal mengganti banner");
             }
-        }else{
-            return $this->badrequest($media);
+        } else {
+            return $this->badrequest("Gagal mengupload data ");
         }
         
     }
@@ -131,19 +163,50 @@ final class StatisService extends Service
 
     protected function banneryoutube() {  
         $id = Input::get('id');
-        $media = $this->upload('media', 'string');
+        $link = Input::get('link');
 
-        if(strpos($media, "assets/") !== false) {
+        $nama = Input::file("media",'name');
+        $temp = Input::file("media",'tmp_name');
+        $ukuran = Input::file("media",'size');
+        $folder = "homepage";
+        $user = new Authentication;
+        $dir = __DIR__."/../../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$user->getDir()."/".$folder."/";
+        
+        if(!file_exists($dir)){
+            mkdir($dir,0777,true);
+        }
+
+        $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
+        $file = $dir . $namabaru ;
+        $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+        
+        if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
+            return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
+        }
+
+        if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
+            return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
+        }
+        
+        $linkfile = 'assets/storage/'.$user->getDir().'/'.$folder.'/'.$namabaru;
+
+        if (file_exists($file)) {
+           return $this->badrequest("Maaf, file ini sudah ada.");
+        }
+
+        if (move_uploaded_file($temp, $file)) {
             $perbarui = DB::terhubung()->perbarui('statis', $id, [
-                'media' => $media
+                'media' => $linkfile,
+                'link' => $link
             ]);
+
             if($perbarui){
-                return $this->success($media);
+                return $this->success($linkfile);
             }else{
                 return $this->badrequest("Gagal mengganti banner");
             }
-        }else{
-            return $this->badrequest($media);
+        } else {
+            return $this->badrequest("Gagal mengupload data ");
         }
         
     }
@@ -188,7 +251,40 @@ final class StatisService extends Service
     }
 
     protected function addWithPhotoKomisioner(){
+        $nama = Input::file("photo",'name');
+        $temp = Input::file("photo",'tmp_name');
+        $ukuran = Input::file("photo",'size');
+        $folder = "komisioner";
+        $user = new Authentication;
+        $dir = __DIR__."/../../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$user->getDir()."/".$folder."/";
         
+        if(!file_exists($dir)){
+            mkdir($dir,0777,true);
+        }
+
+        $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
+        $file = $dir . $namabaru ;
+        $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+        
+        if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
+            return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
+        }
+
+        if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
+            return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
+        }
+        
+        $linkfile = 'assets/storage/'.$user->getDir().'/'.$folder.'/'.$namabaru;
+
+        if (file_exists($file)) {
+           return $this->badrequest("Maaf, file ini sudah ada.");
+        }
+
+        if (move_uploaded_file($temp, $file)) {
+            return $this->addWithoutPhotoKomisioner($linkfile);
+        } else {
+            return $this->badrequest("Gagal mengupload data ");
+        }
     }
 
     protected function addWithoutPhotoKomisioner($photo = ""){
@@ -196,9 +292,10 @@ final class StatisService extends Service
         $jabatan = Input::get('jabatan');
         $periode = Input::get('periode');
         $keterangan = Input::get('keterangan');
-        $photo = "assets/storage/default/pp.jpg";
         if($photo != ""){
             $photo = $photo;
+        }else{
+            $photo = "assets/storage/default/pp.jpg";
         }
         
         $input = DB::terhubung()->input('komisioner', [
@@ -216,7 +313,7 @@ final class StatisService extends Service
     }
 
     protected function replaceKomisioner(){
-        if(Input::get('filephoto') != ""){
+        if(Input::file('photo','name') != ""){
             return $this->replaceWithPhotoKomisioner();
         }else{
             return $this->replaceWithoutPhotoKomisioner();
@@ -224,33 +321,53 @@ final class StatisService extends Service
     }
 
     protected function replaceWithPhotoKomisioner(){
-        $id = Input::get('id');
-        $nama = Input::get('nama');
-        $jabatan = Input::get('jabatan');
-        $periode = Input::get('periode');
-        $keterangan = Input::get('keterangan');
-        $photo = "";
-        $perbarui = DB::terhubung()->perbarui('komisioner', $id, [
-            'nama' => $nama,
-            'jabatan' => $jabatan,
-            'periode' => $periode,
-            'keterangan' => $keterangan,
-            'photo' => $photo
-        ]);
-        if($perbarui){
-            return $this->success("perbarui");
-        }else{
-            return $this->badrequest("Gagal memperbarui Komisioner");
+        $nama = Input::file("photo",'name');
+        $temp = Input::file("photo",'tmp_name');
+        $ukuran = Input::file("photo",'size');
+        $folder = "komisioner";
+        $user = new Authentication;
+        $dir = __DIR__."/../../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$user->getDir()."/".$folder."/";
+        
+        if(!file_exists($dir)){
+            mkdir($dir,0777,true);
+        }
+
+        $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
+        $file = $dir . $namabaru ;
+        $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+        
+        if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
+            return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
+        }
+
+        if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
+            return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
+        }
+        
+        $linkfile = 'assets/storage/'.$user->getDir().'/'.$folder.'/'.$namabaru;
+
+        if (file_exists($file)) {
+           return $this->badrequest("Maaf, file ini sudah ada.");
+        }
+
+        if (move_uploaded_file($temp, $file)) {
+            return $this->replaceWithoutPhotoKomisioner($linkfile);
+        } else {
+            return $this->badrequest("Gagal mengupload data ");
         }
     }
 
-    protected function replaceWithoutPhotoKomisioner(){
+    protected function replaceWithoutPhotoKomisioner($photo = ""){
         $id = Input::get('id');
         $nama = Input::get('nama');
         $jabatan = Input::get('jabatan');
         $periode = Input::get('periode');
         $keterangan = Input::get('keterangan');
-        $photo = "";
+        if($photo != ""){
+            $photo = $photo;
+        }else{
+            $photo = DB::terhubung()->query("SELECT photo FROM komisioner WHERE id =? ",[$id])->teks();
+        }
         $perbarui = DB::terhubung()->perbarui('komisioner', $id, [
             'nama' => $nama,
             'jabatan' => $jabatan,

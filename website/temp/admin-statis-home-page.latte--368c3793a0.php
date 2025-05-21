@@ -20,7 +20,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 27 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 231 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 233 */;
 	}
 
 
@@ -212,6 +212,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
             <div class="col-md-12 col-xl-12">
                 <div class="card">
                     <div class="card-body">
+                        <h4 class="font-semibold text-center mb-3">Profile Komisioner</h4>
                         <div class="row">
                             <div class="col-12 col-lg-6">
                                 <h6 class="font-semibold text-center mb-3">Profile Komisioner</h6>
@@ -222,11 +223,10 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
                                             <div class="col-md-4 col-6" style="position: relative;">
                                                 <div style=\'width: 100%; height: 150px; background: #f5f5f5; overflow: hidden;\'>
                                                     <img id="viewphotokomisioner" src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 146 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 147 */;
 		echo 'assets/storage/default/add_image.jpeg\' style=\'width: 100%; height: 150px; object-fit: cover;\'>
                                                 </div>
                                                 <input type=\'file\' style=\'position: absolute; z-index: 1; opacity: 0; cursor: pointer; top: 0; width: 90%; height: 150px;\' id="photo" name="photo">
-                                                <input type="hidden" id="filephoto" name="filephoto">
                                             </div>
                                             <div class="col-md-8 col-6">
                                                 <div class="form-group mb-3">
@@ -270,6 +270,10 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
                                 </div>
                             </div>
                         </div>
+                        <div class="alert alert-warning mt-3">
+                            <h6 class="font-semibold mb-3">Catatan:</h6>
+                            <div>Profile Komisioner ini digunakan di halaman Home Page, Tentang Kompolnas Sejarah (Bagian Nama-nama Anggota Kompolnas terdahulu) dan Tentang Kompolnas Komisioner. Profile Kompolnas yang akan di tampilkan dalam Home Page dan Tentang Kompolnas Komisioner hanya Anggota Kompolnas Periode Saat Ini saja.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,25 +281,23 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
-                            <img id=\'coverphotobanner\' style="width: 100%;" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 200 */;
-		echo LR\Filters::escapeHtmlAttr($banneryoutube) /* line 200 */;
+                            <img id=\'banneryoutubeview\' style="width: 100%;" src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 204 */;
+		echo LR\Filters::escapeHtmlAttr($banneryoutube) /* line 204 */;
 		echo '">
                         </div>
                         <h6 class="font-semibold text-center mb-3">Banner Youtube Kompolnas</h6>
                         <form method="post" id="formBannerYoutube" name="formBannerYoutube" data-id="';
-		echo LR\Filters::escapeHtmlAttr($banneryoutubeid) /* line 203 */;
+		echo LR\Filters::escapeHtmlAttr($banneryoutubeid) /* line 207 */;
 		echo '">
                             <div id="msgformBannerYoutube"></div>
                             <div class="form-group">
                                 <input type="file" data-label="Media" id="media" name="media" class="form-control">
                                 <input id="link" name="link" class="form-control mt-3" placeholder="Link channel youtube" value="';
-		echo LR\Filters::escapeHtmlAttr($linkbanneryoutube) /* line 207 */;
+		echo LR\Filters::escapeHtmlAttr($linkbanneryoutube) /* line 211 */;
 		echo '">
                             </div>
                             <div class="form-group mt-3">
-                                <input type=\'hidden\' id=\'folder\' name=\'folder\' value=\'homepage\'>
-                                <input type=\'hidden\' id=\'jenis\' name=\'jenis\' value=\'PHOTO\'>
                                 <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_BANNER_YOUTUBE\'>
                                 <button class="btn btn-primary">
                                 Simpan Perubahan
@@ -317,7 +319,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 231 */
+	/** {block js} on line 233 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -325,31 +327,31 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 232 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
 		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 233 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
 		echo '/assets/admin/js/forms/select2.init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 238 */;
 		echo '/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 239 */;
 		echo '/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 238 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 240 */;
 		echo '/assets/admin/js/forms/repeater-init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 239 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 241 */;
 		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 240 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 242 */;
 		echo 'assets/admin/libs/quill/dist/quill.min.js"></script>
 <script>
 
@@ -713,12 +715,6 @@ function isiFormKomisioner(x){
     let periode = el("#"+x).dataset.periode;
     let keterangan = el("#"+x).dataset.keterangan;
 
-    el("#formKomisioner").querySelector("#filephoto").value = photo;
-
-    if (photo.includes("assets/storage/")) {
-        photo = baseurl + photo;
-    }
-
     el("#formKomisioner").querySelector("#viewphotokomisioner").src = photo;
     el("#formKomisioner").querySelector("#nama").value = nama;
     el("#formKomisioner").querySelector("#jabatan").value = jabatan;
@@ -733,12 +729,12 @@ function isiFormKomisioner(x){
 
 
 function komisionerFormReset(){
-    el("#formKomisioner").querySelector("#filephoto").value = "";
     el("#formKomisioner").querySelector("#nama").value = "";
     el("#formKomisioner").querySelector("#jabatan").value = "";
-    el("#formKomisioner").querySelector("#periode").value = "";
     el("#formKomisioner").querySelector("#keterangan").value = "";
     el("#viewphotokomisioner").src = baseurl + "assets/storage/default/add_image.jpeg";
+    el("#formKomisioner").querySelector("#periode").children[0].value = "";
+    el("#formKomisioner").querySelector("#periode").children[0].innerText = "Pilih Periode";
     el("#btnreplacekomisioner").innerHTML = `
         <button class="btn btn-primary">Simpan</button>
     `;
@@ -754,9 +750,7 @@ frKm.addEventListener("submit", (e)=> {
 
     const form = el(\'form[id="\'+fid+\'"]\');
     const formData = new FormData(form);
-
-    let filephoto = document.forms[fid][\'filephoto\'];
-    let photo = document.forms[fid][\'photo\'];
+    
     let nama = document.forms[fid][\'nama\'];
     let jabatan = document.forms[fid][\'jabatan\'];
     let periode = document.forms[fid][\'periode\'];
@@ -766,14 +760,7 @@ frKm.addEventListener("submit", (e)=> {
         formData.append(\'id\',el(\'#btnreplace\').dataset.id);
     }
 
-    if(setPilihan(photo.value) && filephoto.value == ""){
-        el("#msg"+fid).innerHTML = `
-            <div class="alert alert-danger text-danger" role="alert">
-                <strong>Photo</strong> `+setPilihan(photo.value)+`.
-            </div>
-        `;
-        photo.focus();
-    }else if(setText(nama.value)){
+    if(setText(nama.value)){
         el("#msg"+fid).innerHTML = `
             <div class="alert alert-danger text-danger" role="alert">
                 <strong>Nama</strong> `+setText(nama.value)+`.
@@ -810,6 +797,7 @@ frKm.addEventListener("submit", (e)=> {
             },
             body: formData
         }).then(response => response.json()).then(result => {
+
             if(result.code == 200){
                 if(result.data == "perbarui"){
                     loadListKomisioner();
@@ -820,7 +808,6 @@ frKm.addEventListener("submit", (e)=> {
                     );
                 }else{
                     loadListKomisioner();
-                    filephoto.value = "";
                     photo.value = "";
                     nama.value = "";
                     jabatan.value = "";
@@ -931,6 +918,67 @@ function doRemove(x) {
         console.log(error);
     });
 }
+
+
+// Banner Photo
+let frBYt = el("#formBannerYoutube");
+frBYt.addEventListener("submit", (e)=> {
+    e.preventDefault();
+    const fid = frBYt.id;
+    
+    const form = el(\'form[id="\'+fid+\'"]\');
+    const formData = new FormData(form);
+
+    if(frBYt.dataset.id){
+        formData.append(\'id\', frBYt.dataset.id);
+    }
+
+    let banner = document.forms[fid][\'media\'];
+    let link = document.forms[fid][\'link\'];
+
+    if(setPilihan(banner.value)){
+        el("#msg"+fid).innerHTML = `
+            <div class="alert alert-danger text-danger" role="alert">
+                <strong>Banner</strong> `+setPilihan(banner.value)+`.
+            </div>
+        `;
+        banner.focus();
+    }else if(setText(link.value)){
+        el("#msg"+fid).innerHTML = `
+            <div class="alert alert-danger text-danger" role="alert">
+                <strong>Link</strong> `+setText(link.value)+`.
+            </div>
+        `;
+        link.focus();
+    }else{
+        el("#msg"+fid).innerHTML = "";
+        fetch(baseurl + \'api/statis\', {
+            method: \'POST\',
+            headers: {
+                \'x-api-key\': apikey
+            },
+            body: formData
+        }).then(response => response.json()).then(result => {
+            if(result.code == 200){
+                el("#banneryoutubeview").src = baseurl + result.data;
+                Swal.fire(
+                    "Sip!",
+                    "Banner youtube telah diperbarui",
+                    "success"
+                );
+                return false;
+            }else{
+                Swal.fire({
+                    title: "Ups!",
+                    html: result.info,
+                    icon: "error"
+                });
+            }
+        }).catch(error => {
+            console.log(error);
+        });
+    }
+});
 
 </script>
 ';
