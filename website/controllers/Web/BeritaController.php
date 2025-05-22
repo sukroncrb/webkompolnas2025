@@ -86,7 +86,7 @@ final class BeritaController extends Controller
                 'slug' => $slug,
                 'judul' => DB::terhubung()->query("SELECT judul FROM berita WHERE kategori = ? AND slug = ?", [$kategori,$slug])->teks(),
                 'gambar' => Config::Baseurl().DB::terhubung()->query("SELECT gambar FROM berita WHERE kategori = ? AND slug = ?", [$kategori,$slug])->teks(),
-                'isi' => html_entity_decode(DB::terhubung()->query("SELECT isi FROM berita WHERE kategori = ? AND slug = ?", [$kategori,$slug])->teks()),
+                'isi' => html_entity_decode(\Abiesoft\Resource\Utilities\Extract::imageFromText(DB::terhubung()->query("SELECT isi FROM berita WHERE kategori = ? AND slug = ?", [$kategori,$slug])->teks())),
                 'dibuat' => Tanggal::simpelAndTime(DB::terhubung()->query("SELECT dibuat FROM berita WHERE kategori = ? AND slug = ?", [$kategori,$slug])->teks()),
                 'oleh' => DB::terhubung()->query("SELECT nama FROM users WHERE id = ?", [DB::terhubung()->query("SELECT penulis FROM berita WHERE kategori = ? AND slug = ?", [$kategori,$slug])->teks()])->teks(),
             ]

@@ -17,6 +17,13 @@ final class TestController extends Controller
     public function index()
     {
 
+
+        // $teks = "Komisi Kepolisian Nasional (Kompolnas) menggelar Malam Apresiasi Bersama Mitra Kompolnas dan Pisah Sambut Komisoner Periode 2020-2024 ke Periode 2024-2028 pada Jumat (8/11/2025).Acara tersebut diselenggarakan untuk memberikan apresiasi kepada seluruh Kementerian serta [http://127.0.0.1:4000/assets/storage/eb7182de-6109-4e6c-a44d-235237244ef5/berita/4949846Screenshot_2025-05-07_103342.jpg] Lembaga-lembaga yang telah menjalin Kerjasama bersama Kompolnas.Selain acara tersebut, diselenggarakan juga pisah sambut antara Komisioner periode 2020-2024 ke Komisioner periode 2024-2028.
+        // [http://127.0.0.1:4000/assets/storage/eb7182de-6109-4e6c-a44d-235237244ef5/berita/4949846Screenshot_2025-05-07_103342.jpg]";
+
+        // echo \Abiesoft\Resource\Utilities\Extract::imageFromText($teks);
+        
+
         // Info::keep();
 
         // YoutubeApiService::videoTerbaru();

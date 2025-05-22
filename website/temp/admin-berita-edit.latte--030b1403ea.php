@@ -19,7 +19,7 @@ final class Template_030b1403ea extends Latte\Runtime\Template
 
 		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 8 */;
-		$this->renderBlock('js', get_defined_vars()) /* line 172 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 180 */;
 	}
 
 
@@ -28,7 +28,7 @@ final class Template_030b1403ea extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['p' => '124'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['p' => '132'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}
@@ -178,6 +178,14 @@ final class Template_030b1403ea extends Latte\Runtime\Template
                                         </div>
                                         <progress id="progressBar" value="0" max="100" style="width: 100%; display: none;"></progress>
                                     </div>
+                                    <div class="form-control mt-3" style=\'position: relative; padding: 15px;\'>
+                                        <div id=\'urlimage\' style="max-width: 85%; white-space: nowrap; overflow: hidden;">-</div>
+                                        <button type="button" onClick="copyText()" style=\'position: absolute; top: 10px; right: 5px; text-align: center; background: none; outline: none; border: none;\'>
+                                            <svg style=\'width: 25px;\' xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="card">
@@ -191,9 +199,9 @@ final class Template_030b1403ea extends Latte\Runtime\Template
                                             <div class="form-floating mb-3">
                                             <select type="text" class="form-control" id="kategori" name="kategori" data-label="Kategori" placeholder="Kategori">
                                                 <option value="';
-		echo LR\Filters::escapeHtmlAttr($kategori) /* line 113 */;
+		echo LR\Filters::escapeHtmlAttr($kategori) /* line 121 */;
 		echo '">';
-		echo LR\Filters::escapeHtmlText($kategori) /* line 113 */;
+		echo LR\Filters::escapeHtmlText($kategori) /* line 121 */;
 		echo '</option>
                                                 <option value="Kompolnas">Kompolnas</option>
                                                 <option value="Polri">Polri</option>
@@ -205,16 +213,16 @@ final class Template_030b1403ea extends Latte\Runtime\Template
                                             <div class="form-floating mb-3">
                                             <select type="text" class="form-control" id="penulis" name="penulis" data-label="Penulis" placeholder="Penulis">
                                                 <option value="';
-		echo LR\Filters::escapeHtmlAttr($idpenulis) /* line 123 */;
+		echo LR\Filters::escapeHtmlAttr($idpenulis) /* line 131 */;
 		echo '">';
-		echo LR\Filters::escapeHtmlText($namapenulis) /* line 123 */;
+		echo LR\Filters::escapeHtmlText($namapenulis) /* line 131 */;
 		echo '</option>
 ';
-		foreach ($penulis as $p) /* line 124 */ {
+		foreach ($penulis as $p) /* line 132 */ {
 			echo '                                                    <option value="';
-			echo LR\Filters::escapeHtmlAttr($p->id) /* line 125 */;
+			echo LR\Filters::escapeHtmlAttr($p->id) /* line 133 */;
 			echo '">';
-			echo LR\Filters::escapeHtmlText($p->nama) /* line 125 */;
+			echo LR\Filters::escapeHtmlText($p->nama) /* line 133 */;
 			echo '</option>
 ';
 
@@ -228,9 +236,9 @@ final class Template_030b1403ea extends Latte\Runtime\Template
                                             <div class="form-floating mb-3">
                                                 <select type="text" class="form-control" id="publikasi" name="publikasi" data-label="Publikasi" placeholder="Publikasi">
                                                     <option value="';
-		echo LR\Filters::escapeHtmlAttr($publikasi) /* line 134 */;
+		echo LR\Filters::escapeHtmlAttr($publikasi) /* line 142 */;
 		echo '">';
-		echo LR\Filters::escapeHtmlText($publikasi) /* line 134 */;
+		echo LR\Filters::escapeHtmlText($publikasi) /* line 142 */;
 		echo '</option>
                                                     <option value="Terbit">Terbit</option>
                                                     <option value="Draft">Draft</option>
@@ -255,10 +263,10 @@ final class Template_030b1403ea extends Latte\Runtime\Template
                                 </div>
                                 <div class="button-group">
                                     <input type=\'hidden\' id=\'isi\' name=\'isi\' value="';
-		echo LR\Filters::escapeHtmlAttr(html_entity_decode($isi)) /* line 157 */;
+		echo LR\Filters::escapeHtmlAttr(html_entity_decode($isi)) /* line 165 */;
 		echo '">
                                     <input type=\'hidden\' id="id" name="id" value="';
-		echo LR\Filters::escapeHtmlAttr($id) /* line 158 */;
+		echo LR\Filters::escapeHtmlAttr($id) /* line 166 */;
 		echo '">
                                     <input type=\'hidden\' id="tipe" name="tipe" value="PATCH">
                                     <button class="btn btn-primary">
@@ -276,7 +284,7 @@ final class Template_030b1403ea extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 172 */
+	/** {block js} on line 180 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -284,31 +292,31 @@ final class Template_030b1403ea extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 173 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 181 */;
 		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 174 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 182 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 175 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 183 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 176 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 184 */;
 		echo '/assets/admin/js/forms/select2.init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 177 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 185 */;
 		echo '/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 178 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 186 */;
 		echo '/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 179 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 187 */;
 		echo '/assets/admin/js/forms/repeater-init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 180 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 188 */;
 		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 181 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 189 */;
 		echo 'assets/admin/libs/quill/dist/quill.min.js"></script>
 <script>
 
@@ -425,6 +433,7 @@ function uploadFile(file){
         if(result.code == 200){
             let namafile = result.data;
             el("#gambar").value = namafile;
+            el("#urlimage").innerHTML = baseurl + namafile;
             progressBar.style.display = \'none\';
         }else{
             el("#errorupload").innerHTML = `
@@ -446,6 +455,20 @@ function uploadFile(file){
     formData.append(\'folder\', \'berita\');
     formData.append(\'file\', file);
     xhr.send(formData);
+}
+
+function copyText() {
+    const targetTxt = el(\'#urlimage\');
+    const text = targetTxt.innerText;
+
+    if(text != "-"){
+        navigator.clipboard.writeText("["+textToCopy+"]");   
+        Swal.fire(
+            "Sip!",
+            "Text disalin",
+            "success"
+        );
+    }
 }
 </script>
 ';
