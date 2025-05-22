@@ -51,12 +51,19 @@ final class StatisService extends Service
             'HOME_PAGE_SHORTCUT' => $this->shortcut(),
             'HOME_PAGE_KOMISIONER' => $this->komisioner(),
             'HOME_PAGE_BANNER_YOUTUBE' => $this->banneryoutube(),
+            'HOME_PAGE_ICON_LINK' => $this->iconlink(),
             'HAPUS_SHORTCUT' => $this->hapusShortcut(),
             'HAPUS_KOMISIONER' => $this->hapusKomisioner(),
+            'HAPUS_ICON_LINK' => $this->hapusiconlink(),
             default => $this->badrequest()
         };
 
     }
+
+
+
+
+    // --- Banner Photo --
 
     protected function bannerphoto() {  
         $id = Input::get('id');
@@ -105,6 +112,15 @@ final class StatisService extends Service
         }
         
     }
+
+
+    // ----------- Batas Banner Photo
+
+
+
+
+    // Banner Quotes ----------------
+
     protected function quotes() {  
         $id = Input::get('id');
         $keterangan = Input::get('keterangan');
@@ -117,6 +133,15 @@ final class StatisService extends Service
             return $this->badrequest("Gagal mengganti quotes");
         }
     }
+
+
+    // ------------- Batas Quotes
+
+
+
+
+
+    // Shortcut -----------------------
 
     protected function shortcut() {
         if(Input::get('id') != ""){
@@ -160,6 +185,30 @@ final class StatisService extends Service
             return $this->badrequest("Gagal memperbarui shortcut");
         }
     }
+
+    protected function hapusShortcut() {  
+        $id = Input::get('id');
+        $hapus = DB::terhubung()->hapus('statis', [
+            'id',
+            '=',
+            $id
+        ]);
+        if($hapus){
+            $this->success();
+        }else{
+            $this->badrequest("Gagal menghapus data");
+        }
+    }
+
+
+    // ------- Batas Shortcut
+
+
+
+
+
+
+    // Banner Youtube ------------------
 
     protected function banneryoutube() {  
         $id = Input::get('id');
@@ -211,7 +260,68 @@ final class StatisService extends Service
         
     }
 
-    protected function hapusShortcut() {  
+    // ------ Batas Banner Youtube
+
+
+
+
+
+
+    // Icon Link ----------------
+
+    protected function iconlink() {  
+        $label = Input::get('label');
+        $link = Input::get('link');
+
+        $nama = Input::file("media",'name');
+        $temp = Input::file("media",'tmp_name');
+        $ukuran = Input::file("media",'size');
+        $folder = "homepage";
+        $user = new Authentication;
+        $dir = __DIR__."/../../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$user->getDir()."/".$folder."/";
+        
+        if(!file_exists($dir)){
+            mkdir($dir,0777,true);
+        }
+
+        $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
+        $file = $dir . $namabaru ;
+        $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+        
+        if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
+            return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
+        }
+
+        if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
+            return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
+        }
+        
+        $linkfile = 'assets/storage/'.$user->getDir().'/'.$folder.'/'.$namabaru;
+
+        if (file_exists($file)) {
+           return $this->badrequest("Maaf, file ini sudah ada.");
+        }
+
+        if (move_uploaded_file($temp, $file)) {
+            $input = DB::terhubung()->input('statis', [
+                'media' => $linkfile,
+                'label' => $label,
+                'link' => $link,
+                'model' => 'iconlink'
+            ]);
+
+            if($input){
+                return $this->success($linkfile);
+            }else{
+                return $this->badrequest("Gagal menambah icon");
+            }
+        } else {
+            return $this->badrequest("Gagal menambah icon");
+        }
+        
+    }
+
+    protected function hapusiconlink() {  
         $id = Input::get('id');
         $hapus = DB::terhubung()->hapus('statis', [
             'id',
@@ -221,9 +331,11 @@ final class StatisService extends Service
         if($hapus){
             $this->success();
         }else{
-            $this->badrequest("Gagal menghapus data");
+            $this->badrequest("Gagal menghapus icon link");
         }
     }
+
+    // ---- Batas Icon Link
 
 
 

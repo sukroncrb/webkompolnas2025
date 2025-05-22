@@ -20,7 +20,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 27 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 233 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 228 */;
 	}
 
 
@@ -307,11 +307,6 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 col-xl-12">
-                <div class="card">
-                    <div class="card-body">Link</div>
-                </div>
-            </div>
         </div>
 	</div>
 </div>
@@ -319,7 +314,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 233 */
+	/** {block js} on line 228 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -327,31 +322,31 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 229 */;
 		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 230 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 231 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 232 */;
 		echo '/assets/admin/js/forms/select2.init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 238 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 233 */;
 		echo '/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 239 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
 		echo '/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 240 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
 		echo '/assets/admin/js/forms/repeater-init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 241 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
 		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 242 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
 		echo 'assets/admin/libs/quill/dist/quill.min.js"></script>
 <script>
 

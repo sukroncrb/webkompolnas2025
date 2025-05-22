@@ -11,95 +11,104 @@ trait Upload
         $nama = Input::file($elementname,'name');
         $temp = Input::file($elementname,'tmp_name');
         $ukuran = Input::file($elementname,'size');
+        $error = Input::file($elementname,'error');
         $folder = Input::get('folder');
         $jenis = Input::get('jenis');
 
+        if($error !=  1){
+
+            $dir = __DIR__."/../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$this->getDir()."/".$folder."/";
+            if(!file_exists($dir)){
+                mkdir($dir,0777,true);
+            }
+
+            
+            $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
+            $file = $dir . $namabaru ;
+            $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+
+
+            if($jenis == "DOKUMEN"){
+                if ($ukuran > Config::fromEnv('UKURAN_MAX_DOKUMEN_UPLOAD')) {
+                    if($output == 'string'){
+                        return "Maaf ukuran terlalu besar, pastikan tidak melebihi 5MB.";
+                    }else{
+                        return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 5MB.");
+                    }
+                }
         
-        $dir = __DIR__."/../".Config::fromEnv('PUBLIC_FOLDER')."/assets/storage/".$this->getDir()."/".$folder."/";
-        if(!file_exists($dir)){
-            mkdir($dir,0777,true);
-        }
-
+                if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_DOKUMEN_ALLOW')))) {
+                    if($output == 'string'){
+                        return "Maaf, hanya file ".Config::fromEnv('FILE_TYPE_DOKUMEN_ALLOW')." yang diijinkan.";
+                    }else{
+                        return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_DOKUMEN_ALLOW')." yang diijinkan.");
+                    }
+                }
+            }else if($jenis == "MEDIA"){
+                if ($ukuran > Config::fromEnv('UKURAN_MAX_MEDIA_UPLOAD')) {
+                    if($output == 'string'){
+                        return "Maaf ukuran terlalu besar, pastikan tidak melebihi 8MB.";
+                    }else{
+                        return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 8MB.");
+                    }
+                }
         
-        $namabaru = rand(0000,9999).str_replace(" ","_",$nama);
-        $file = $dir . $namabaru ;
-        $filetipe = strtolower(pathinfo($file,PATHINFO_EXTENSION));
-
-
-        if($jenis == "DOKUMEN"){
-            if ($ukuran > Config::fromEnv('UKURAN_MAX_DOKUMEN_UPLOAD')) {
-                if($output == 'string'){
-                    return "Maaf ukuran terlalu besar, pastikan tidak melebihi 5MB.";
-                }else{
-                    return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 5MB.");
+                if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_MEDIA_ALLOW')))) {
+                    if($output == 'string'){
+                        return "Maaf, hanya file ".Config::fromEnv('FILE_TYPE_MEDIA_ALLOW')." yang diijinkan.";
+                    }else{
+                        return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_MEDIA_ALLOW')." yang diijinkan.");
+                    }
                 }
-            }
-    
-            if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_DOKUMEN_ALLOW')))) {
-                if($output == 'string'){
-                    return "Maaf, hanya file ".Config::fromEnv('FILE_TYPE_DOKUMEN_ALLOW')." yang diijinkan.";
-                }else{
-                    return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_DOKUMEN_ALLOW')." yang diijinkan.");
-                }
-            }
-        }else if($jenis == "MEDIA"){
-            if ($ukuran > Config::fromEnv('UKURAN_MAX_MEDIA_UPLOAD')) {
-                if($output == 'string'){
-                    return "Maaf ukuran terlalu besar, pastikan tidak melebihi 8MB.";
-                }else{
-                    return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 8MB.");
-                }
-            }
-    
-            if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_MEDIA_ALLOW')))) {
-                if($output == 'string'){
-                    return "Maaf, hanya file ".Config::fromEnv('FILE_TYPE_MEDIA_ALLOW')." yang diijinkan.";
-                }else{
-                    return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_MEDIA_ALLOW')." yang diijinkan.");
-                }
-            }
-        }else{
-            if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
-                if($output == 'string'){
-                    return "Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.";
-                }else{
-                    return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
-                }
-            }
-    
-            if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
-                if($output == 'string'){
-                    return "Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.";
-                }else{
-                    return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
-                }
-            }
-        }
-
-
-        $linkfile = 'assets/storage/'.$this->getDir().'/'.$folder.'/'.$namabaru;
-
-        if (file_exists($file)) {
-            if($output == 'string'){
-                return "Maaf, file ini sudah ada.";
             }else{
-                return $this->badrequest("Maaf, file ini sudah ada.");
+                if ($ukuran > Config::fromEnv('UKURAN_MAX_IMAGE_UPLOAD')) {
+                    if($output == 'string'){
+                        return "Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.";
+                    }else{
+                        return $this->badrequest("Maaf ukuran terlalu besar, pastikan tidak melebihi 2MB.");
+                    }
+                }
+        
+                if(!in_array($filetipe, explode(",",Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')))) {
+                    if($output == 'string'){
+                        return "Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.";
+                    }else{
+                        return $this->badrequest("Maaf, hanya file ".Config::fromEnv('FILE_TYPE_IMAGE_ALLOW')." yang diijinkan.");
+                    }
+                }
             }
-        }
 
-        if($output == "string"){
-            if (move_uploaded_file($temp, $file)) {
-                return $linkfile;
-            } else {
-                return "Gagal mengupload data ";
+
+            $linkfile = 'assets/storage/'.$this->getDir().'/'.$folder.'/'.$namabaru;
+
+            if (file_exists($file)) {
+                if($output == 'string'){
+                    return "Maaf, file ini sudah ada.";
+                }else{
+                    return $this->badrequest("Maaf, file ini sudah ada.");
+                }
             }
+
+            if($output == "string"){
+                if (move_uploaded_file($temp, $file)) {
+                    return $linkfile;
+                } else {
+                    return "Gagal mengupload data ";
+                }
+            }else{
+                if (move_uploaded_file($temp, $file)) {
+                    return $this->success($linkfile);
+                } else {
+                    return $this->badrequest("Upload gagal");
+                }
+            }
+
         }else{
-            if (move_uploaded_file($temp, $file)) {
-                return $this->success($linkfile);
-            } else {
-                return $this->badrequest("Upload gagal");
-            }
+
+            return $this->badrequest("Error karena file tidak dikenali. Pastikan ukuran tidak melebihi 2MB.");
+
         }
+        
     }
 
 
