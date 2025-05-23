@@ -159,87 +159,33 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
                 ">
                     <div class="container-caraousel">
                         <div class="card-carousel" style="width: 140%;">
-                            <div class="card" id="1">
+
+';
+		$no = 1 /* line 146 */;
+		foreach ($komisioner as $k) /* line 147 */ {
+			echo '                            <div class="card" id="';
+			echo LR\Filters::escapeHtmlAttr($no) /* line 148 */;
+			echo '">
                                 <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
                                     <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 147 */;
-		echo 'assets/web/images/komisioner/k6.png\' class="w-[180px] h-[200px] object-cover">
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 150 */;
+			echo LR\Filters::escapeHtmlAttr($k->photo) /* line 150 */;
+			echo '\' class="w-[180px] h-[200px] object-cover">
                                 </div>
-                                <div class="font-semibold text-sm">Dr. Supardi Hamid, M.Si</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
+                                <div class="font-semibold text-sm">';
+			echo LR\Filters::escapeHtmlText($k->nama) /* line 152 */;
+			echo '</div>
+                                <div class="mt-1 text-sm">';
+			echo LR\Filters::escapeHtmlText($k->jabatan) /* line 153 */;
+			echo '</div>
                             </div>
-                            <div class="card" id="2">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 154 */;
-		echo 'assets/web/images/komisioner/k9.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Gufron, S.H.I</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
-                            </div>
-                            <div class="card" id="3">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 161 */;
-		echo 'assets/web/images/komisioner/k8.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Muhammad Choirul Anam, S.H</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
-                            </div>  
-                            <div class="card" id="4">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 168 */;
-		echo 'assets/web/images/komisioner/k7.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Dr. Yusuf, S.Ag., M.H.</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
-                            </div>
-                            <div class="card" id="5">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 175 */;
-		echo 'assets/web/images/komisioner/k1.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Jenderal Polisi (Purn.) Budi Gunawan</div>
-                                <div class="mt-1 text-sm">Ketua Kompolmas</div>
-                            </div>
-                            <div class="card" id="6">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 182 */;
-		echo 'assets/web/images/komisioner/k2.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Jenderal Polisi (Purn.) Tito Karnavian</div>
-                                <div class="mt-1 text-sm">Wakil Ketua Kompolnas</div>
-                            </div>
-                            <div class="card" id="7">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 189 */;
-		echo 'assets/web/images/komisioner/k3.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Dr. Supratman Andi Agtas, SH., MH</div>
-                                <div class="mt-1 text-sm">Anggota Kompolnas</div>
-                            </div>
-                            <div class="card" id="8">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 196 */;
-		echo 'assets/web/images/komisioner/k4.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Irjen Pol (Purn) Arief Wicaksono Sudiutomo</div>
-                                <div class="mt-1 text-sm">Anggota Kompolnas</div>
-                            </div>
-                            <div class="card" id="9">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 203 */;
-		echo 'assets/web/images/komisioner/k5.png\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Irjen Pol (Purn) Ida Oetari Poernamasasi</div>
-                                <div class="mt-1 text-sm">Anggota Kompolnas</div>
-                            </div>
+                            ';
+			echo LR\Filters::escapeHtmlText($no++) /* line 155 */;
+			echo "\n";
+
+		}
+
+		echo '
                         </div>
                         <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
                     </div>
@@ -250,10 +196,10 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
                 <h1 class="font-semibold mb-4">Pengumuman</h1>
                 <div class="w-full">
                     <img style=\'cursor: pointer;\' src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 217 */;
-		echo LR\Filters::escapeHtmlAttr($banner) /* line 217 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 167 */;
+		echo LR\Filters::escapeHtmlAttr($banner) /* line 167 */;
 		echo '" class="w-full" onClick=\'window.location.href=this.dataset.link\' data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($linkbanner) /* line 217 */;
+		echo LR\Filters::escapeHtmlAttr($linkbanner) /* line 167 */;
 		echo '\'>
                 </div>
             </div>
@@ -262,5 +208,18 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
         </div>
     </div>
 </div>';
+	}
+
+
+	public function prepare(): array
+	{
+		extract($this->params);
+
+		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
+			foreach (array_intersect_key(['k' => '147'], $this->params) as $ʟ_v => $ʟ_l) {
+				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
+			}
+		}
+		return get_defined_vars();
 	}
 }

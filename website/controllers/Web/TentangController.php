@@ -4,6 +4,7 @@ namespace App\Controller\Web;
 
 use Abiesoft\Resource\Http\Controller;
 use Abiesoft\Resource\Http\Lanjut;
+use Abiesoft\Resource\Mysql\DB;
 
 final class TentangController extends Controller
 {
@@ -80,6 +81,7 @@ final class TentangController extends Controller
             template: 'tentang/komisioner',
             data: [
                 'title' => 'Profil Komisioner Kompolnas',
+                'komisioner' => DB::terhubung()->query("SELECT id, nama, jabatan, photo, keterangan FROM komisioner WHERE periode = ? ORDER BY dibuat ", ['Periode Saat ini'])->hasil()
             ]
         );
     }

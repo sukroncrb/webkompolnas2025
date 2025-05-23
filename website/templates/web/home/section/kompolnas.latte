@@ -142,69 +142,19 @@
                 ">
                     <div class="container-caraousel">
                         <div class="card-carousel" style="width: 140%;">
-                            <div class="card" id="1">
+
+                            {var $no = 1}
+                            {foreach $komisioner as $k}
+                            <div class="card" id="{$no}">
                                 <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k6.png' class="w-[180px] h-[200px] object-cover">
+                                    <img src='{$baseurl}{$k->photo}' class="w-[180px] h-[200px] object-cover">
                                 </div>
-                                <div class="font-semibold text-sm">Dr. Supardi Hamid, M.Si</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
+                                <div class="font-semibold text-sm">{$k->nama}</div>
+                                <div class="mt-1 text-sm">{$k->jabatan}</div>
                             </div>
-                            <div class="card" id="2">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k9.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Gufron, S.H.I</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
-                            </div>
-                            <div class="card" id="3">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k8.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Muhammad Choirul Anam, S.H</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
-                            </div>  
-                            <div class="card" id="4">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k7.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Dr. Yusuf, S.Ag., M.H.</div>
-                                <div class="mt-1 text-sm">Anggota Kompolmas</div>
-                            </div>
-                            <div class="card" id="5">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k1.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Jenderal Polisi (Purn.) Budi Gunawan</div>
-                                <div class="mt-1 text-sm">Ketua Kompolmas</div>
-                            </div>
-                            <div class="card" id="6">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k2.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Jenderal Polisi (Purn.) Tito Karnavian</div>
-                                <div class="mt-1 text-sm">Wakil Ketua Kompolnas</div>
-                            </div>
-                            <div class="card" id="7">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k3.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Dr. Supratman Andi Agtas, SH., MH</div>
-                                <div class="mt-1 text-sm">Anggota Kompolnas</div>
-                            </div>
-                            <div class="card" id="8">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k4.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Irjen Pol (Purn) Arief Wicaksono Sudiutomo</div>
-                                <div class="mt-1 text-sm">Anggota Kompolnas</div>
-                            </div>
-                            <div class="card" id="9">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}assets/web/images/komisioner/k5.png' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">Irjen Pol (Purn) Ida Oetari Poernamasasi</div>
-                                <div class="mt-1 text-sm">Anggota Kompolnas</div>
-                            </div>
+                            {$no++}
+                            {/foreach}
+
                         </div>
                         <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
                     </div>
