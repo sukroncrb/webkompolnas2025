@@ -10,9 +10,17 @@ final class Template_efd58f192d extends Latte\Runtime\Template
 
 	public function main(array $ʟ_args): void
 	{
-		echo '<div class="bg-gray-100 py-8">
+		extract($ʟ_args);
+		unset($ʟ_args);
+
+		echo '<div class="bg-gray-100 py-8" style="cursor: pointer;" onClick="window.location.href=this.dataset.link" data-link="';
+		echo LR\Filters::escapeHtmlAttr($banneryoutubelink) /* line 1 */;
+		echo '">
     <div class="container">
-        <img src=\'https://yt3.googleusercontent.com/EfEmAGWxqTX0qFz8jM17BCRMWQE6toHwjtlH76_Tc-3Kn5stYI-ORls9W5RlzdZACVaogNXHgBY=w2120-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj\'>
+        <img src=\'';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 3 */;
+		echo LR\Filters::escapeHtmlAttr($banneryoutubeimage) /* line 3 */;
+		echo '\'>
     </div>
 </div>';
 	}

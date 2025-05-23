@@ -30,6 +30,7 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
             </div>
             <div class="relative w-full">
                 <div class="
+                    hidden
                     w-[80%] mx-auto relative right-0
                     sm:w-[87%]
                     md:w-[87%]
@@ -38,6 +39,7 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                     2xl:w-[90%]
                     ">
                     <input class="
+                        hidden
                         w-full border border-gray-300 pl-10 rounded-md outline-none p-2 hidden 
                         md:hidden 
                         sm:hidden 
@@ -45,6 +47,7 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                         xl:block 
                         2xl:block" placeholder="Cari">
                     <svg class="
+                        hidden
                         absolute w-6 stroke-gray-300 left-auto top-[-30px] right-[-40px]  
                         2xl:left-2 2xl:top-2
                         xl:left-2 xl:top-2
@@ -72,7 +75,7 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                     </div>
                     <div>
                         <div class="text-sm">';
-		echo LR\Filters::escapeHtmlText($tanggaldanharisimple) /* line 55 */;
+		echo LR\Filters::escapeHtmlText($tanggaldanharisimple) /* line 58 */;
 		echo '</div>
                         <div class="mt-[-5px] font-semibold"><span id=\'jam\'>17:56:00</span> <span>WIB</span></div>
                     </div>
@@ -91,7 +94,7 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                         </svg>
                     </li>
                     <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 72 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 75 */;
 		echo '\'>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
@@ -107,34 +110,34 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                         <line></line>
                         <ul>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 86 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 89 */;
 		echo 'tentang-kompolnas/sejarah\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 86 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 89 */;
 		echo 'tentang-kompolnas/sejarah\'>Sejarah</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 87 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 90 */;
 		echo 'tentang-kompolnas/arti-logo-dan-lambang\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 87 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 90 */;
 		echo 'tentang-kompolnas/arti-logo-dan-lambang\'>Arti logo dan lambang</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 88 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 91 */;
 		echo 'tentang-kompolnas/visi-dan-misi\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 88 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 91 */;
 		echo 'tentang-kompolnas/visi-dan-misi\'>Visi dan Misi</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 89 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 92 */;
 		echo 'tentang-kompolnas/tupoksi\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 89 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 92 */;
 		echo 'tentang-kompolnas/tupoksi\'>Tupoksi</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 90 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 93 */;
 		echo 'tentang-kompolnas/struktur-organisasi\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 90 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 93 */;
 		echo 'tentang-kompolnas/struktur-organisasi\'>Struktur Organisasi</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 91 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 94 */;
 		echo 'tentang-kompolnas/komisioner\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 91 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 94 */;
 		echo 'tentang-kompolnas/komisioner\'>Komisioner</a></li>
                         </ul>
                     </li>
@@ -146,24 +149,24 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                         <line></line>
                         <ul>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 101 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 104 */;
 		echo 'data-dan-publikasi/buku\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 101 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 104 */;
 		echo 'data-dan-publikasi/buku\'>Buku</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 102 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 105 */;
 		echo 'data-dan-publikasi/video\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 102 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 105 */;
 		echo 'data-dan-publikasi/video\'>Video</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 103 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 106 */;
 		echo 'data-dan-publikasi/photo\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 103 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 106 */;
 		echo 'data-dan-publikasi/photo\'>Photo</a></li>
                         </ul>
                     </li>
                     <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 106 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 109 */;
 		echo 'berita\'>
                         <span>Berita</span>
                         <line></line>
@@ -176,54 +179,54 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                         <line></line>
                         <ul>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 117 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 120 */;
 		echo 'regulasi/uud-45\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 117 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 120 */;
 		echo 'regulasi/uud-45\'>UUD 1945</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 118 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 121 */;
 		echo 'regulasi/tap-mpr-ri\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 118 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 121 */;
 		echo 'regulasi/tap-mpr-ri\'>TAP MPR RI</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 119 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 122 */;
 		echo 'regulasi/undang-undang\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 119 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 122 */;
 		echo 'regulasi/undang-undang\'>Undang-undang</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 120 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 123 */;
 		echo 'regulasi/peraturan-presiden\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 120 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 123 */;
 		echo 'regulasi/peraturan-presiden\'>Peraturan Presiden</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 121 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 124 */;
 		echo 'regulasi/peraturan-kompolnas\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 121 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 124 */;
 		echo 'regulasi/peraturan-kompolnas\'>Peraturan Kompolnas</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 122 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 125 */;
 		echo 'regulasi/peraturan-polri\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 122 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 125 */;
 		echo 'regulasi/peraturan-polri\'>Peraturan Polri</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 123 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 126 */;
 		echo 'regulasi/peraturan-kapolri\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 123 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 126 */;
 		echo 'regulasi/peraturan-kapolri\'>Peraturan Kapolri</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 124 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 127 */;
 		echo 'regulasi/surat-edaran\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 124 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 127 */;
 		echo 'regulasi/surat-edaran\'>Surat Edaran</a></li>
                             <li onClick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 125 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 128 */;
 		echo 'regulasi/peraturan-menko\'><a href=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 125 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 128 */;
 		echo 'regulasi/peraturan-menko\'>Permenko</a></li>
                         </ul>
                     </li>
                     <li onclick="window.location.href=this.dataset.link" data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 128 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 131 */;
 		echo 'hubungi-kami\'>
                         <span>Hubungi Kami</span>
                         <line></line>
@@ -233,7 +236,7 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                     <button 
                         onclick="window.location.href=this.dataset.link" 
                         data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 136 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 139 */;
 		echo 'form/pengaduan\'
                         type="button" 
                         class="
@@ -257,12 +260,12 @@ final class Template_f4669e0b79 extends Latte\Runtime\Template
                     <button
                         onclick="window.location.href=this.dataset.link" 
                         data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 177 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 180 */;
 		echo 'form/ppid\'
                         type="button" 
                         class="cursor-pointer">
                         <img src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 180 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 183 */;
 		echo 'assets/web/images/eppid.svg" class="mx-auto w-25">
                     </button>
                 </div>

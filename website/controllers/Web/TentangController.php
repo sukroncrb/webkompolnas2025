@@ -31,6 +31,8 @@ final class TentangController extends Controller
             template: 'tentang/sejarah',
             data: [
                 'title' => 'Sejarah Kompolnas',
+                'periode' => DB::terhubung()->query("SELECT id, periode FROM komisioner WHERE periode != ? GROUP BY periode ORDER BY dibuat ", ['Periode Saat ini'])->hasil(),
+                'komisioner' => DB::terhubung()->query("SELECT id, nama, periode, jabatan, photo FROM komisioner WHERE periode != ? ORDER BY dibuat ", ['Periode Saat ini'])->hasil(),
             ]
         );
     }

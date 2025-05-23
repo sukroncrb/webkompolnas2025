@@ -52,7 +52,9 @@ final class HomeController extends Controller {
                 'bannerphoto' => DB::terhubung()->query("SELECT media FROM statis WHERE id = ? ", ['033af9f8-69a1-4314-a956-c1433fffac2a'])->teks(),
                 'quotes' => DB::terhubung()->query("SELECT keterangan FROM statis WHERE id = ? ", ['4dd58d8d-6e3c-44ee-9f02-c1241fdb0be2'])->teks(),
                 'shortcut' => DB::terhubung()->query("SELECT label, media, link FROM statis WHERE model = ? ORDER BY dibuat ", ['shortcut'])->hasil(),
-                'komisioner' => $komisioner
+                'komisioner' => $komisioner,
+                'banneryoutubeimage' => DB::terhubung()->query("SELECT media FROM statis WHERE id = ? ", ['77227295-5c70-4063-93bf-43b2c7181645'])->teks(),
+                'banneryoutubelink' => DB::terhubung()->query("SELECT link FROM statis WHERE id = ? ", ['77227295-5c70-4063-93bf-43b2c7181645'])->teks(),
             ]
         );
     }
