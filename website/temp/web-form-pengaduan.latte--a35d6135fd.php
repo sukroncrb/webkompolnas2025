@@ -20,7 +20,7 @@ final class Template_a35d6135fd extends Latte\Runtime\Template
 		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 5 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 105 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 114 */;
 	}
 
 
@@ -83,8 +83,8 @@ final class Template_a35d6135fd extends Latte\Runtime\Template
                 </div>
                 <div class="hr"><span>Info Pengadu</span></div>
                 <div class="mb-5">
-                    <label for="noktp" class="form-label">Nomor KTP</label>
-                    <input id="noktp" name="noktp" class="form-control" data-label="Nomor KTP" maxLength="16"/>
+                    <label for="noktp" class="form-label">NIK</label>
+                    <input id="noktp" name="noktp" class="form-control" data-label="NIK" maxLength="16"/>
                 </div>
                 <div class="mb-5">
                     <label for="nama" class="form-label">Nama</label>
@@ -113,7 +113,7 @@ final class Template_a35d6135fd extends Latte\Runtime\Template
                     <input id="nohp" name="nohp" class="form-control" data-label="Nomor Hp"/>
                 </div>
 
-                <div class="hr"><span>Info Laporan</span></div>
+                <div class="hr"><span>Materi Keluhan</span></div>
                 <div class="mb-5">
                     <label for="satuanterlapor" class="form-label">Keterangan tentang anggota/ pejabat terlapor/ kesatuan pelapor (contoh: Mabes/Polda/Polres/Polsek)</label>
                     <textarea id="satuanterlapor" name="satuanterlapor" class="form-control" data-label="Satuan terlapor"></textarea>
@@ -121,18 +121,27 @@ final class Template_a35d6135fd extends Latte\Runtime\Template
                 <div class="mb-5">
                     <label for="namaterlapor" class="form-label">Nama dan pejabat terlapor</label>
                     <textarea id="namaterlapor" name="namaterlapor" class="form-control" data-label="Nama terlapor"></textarea>
+                    <small>apabila tidak ada abaikan</small>
                 </div>
                 <div class="mb-5">
-                    <label for="bentukperbuatan" class="form-label">Bentuk perbuatan/ pasal</label>
-                    <textarea id="bentukperbuatan" name="bentukperbuatan" class="form-control min-h-[100px]" data-label="Bentuk perbuatan"></textarea>
-                </div>
-                <div class="mb-5">
-                    <label for="kerugian" class="form-label">Kerugian yang dialami</label>
-                    <textarea id="kerugian" name="kerugian" class="form-control min-h-[100px]" data-label="Kerugian"></textarea>
+                    <label for="bentukperbuatan" class="form-label">Bentuk Keluhan</label>
+                    <select  id="bentukperbuatan" name="bentukperbuatan" class="form-control" data-label="Bentuk perbuatan">
+                    <option value="">Bentuk Keluhan</option>
+                    <option value="Pelayanan Buruk">Pelayanan Buruk</option>
+                    <option value="Penyalahgunaan Wewenang">Penyalahgunaan Wewenang</option>
+                    <option value="Diskriminasi">Diskriminasi</option>
+                    <option value="Diskresi Keliru">Diskresi Keliru</option>
+                    <option value="Korupsi">Korupsi</option>
+                    </select>
                 </div>
                 <div class="mb-5">
                     <label for="kronologi" class="form-label">Kronologi singkat apa yang dikeluhkan</label>
                     <textarea id="kronologi" name="kronologi" class="form-control min-h-[200px]" data-label="Kronologi"></textarea>
+                </div>
+                <div class="mb-5">
+                    <label for="kerugian" class="form-label">Pokok-pokok yang dikeluhkan contohnya: tidak menerima sp2hp dll</label>
+                    <textarea id="kerugian" name="kerugian" class="form-control min-h-[100px]" data-label="Kerugian"></textarea>
+                    <small>apabila tidak ada abaikan</small>
                 </div>
 
                 <div class="hr"><span>Dokumen</span></div>
@@ -159,7 +168,7 @@ final class Template_a35d6135fd extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 105 */
+	/** {block js} on line 114 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script>
