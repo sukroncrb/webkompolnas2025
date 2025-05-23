@@ -19,7 +19,7 @@ final class Template_ea8e5d1eb2 extends Latte\Runtime\Template
 
 		$this->renderBlock('content', get_defined_vars()) /* line 2 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 24 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 58 */;
 	}
 
 
@@ -61,14 +61,50 @@ final class Template_ea8e5d1eb2 extends Latte\Runtime\Template
         </div>
     </div>
     <div class="container konten page">
-        Event Kompolnas Award
+        <img src="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 19 */;
+		echo 'assets/storage/default/event_award.jpg" class="w-full">
+        
+        <div class="profile">
+            <div class="grid grid-cols-1 grid-rows-1 gap-8 border-b-1 border-b-gray-200 py-8
+                sm:grid-cols-1
+                md:grid-cols-1
+                lg:grid-cols-3
+                xl:grid-cols-3
+                2xl:grid-cols-3
+            ">
+                <div class="button-nama border-0 border-r-gray-200
+                    sm:border-0
+                    md:border-0
+                    lg:border-r-1
+                    xl:border-r-1
+                    2xl:border-r-1
+                ">
+                    <ul class="font-semibold">
+                        <li class="item-profile-btn" class="cursor-pointer hover:text-yellow-400 py-4">Tentang Event</li>
+                    </ul>
+                </div>
+                <div class="col-start-1 col-span-1
+                    sm:col-start-1 sm:col-span-1
+                    md:col-start-1 md:col-span-1
+                    lg:col-start-2 lg:col-span-2
+                    xl:col-start-2 xl:col-span-2
+                    2xl:col-start-2 2xl:col-span-2
+                ">
+                    <div class="detail-info">
+                        Tentang Event
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
 ';
 	}
 
 
-	/** {block js} on line 24 */
+	/** {block js} on line 58 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script>

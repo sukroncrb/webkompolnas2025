@@ -71,6 +71,7 @@ final class RegulasiService extends Service
     protected function post() {
         
         $csrf = Input::get('__csrf');
+
         if(!Guard::csrf($csrf)){
             return $this->badrequest("Token Expire");
         }
