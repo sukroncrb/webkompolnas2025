@@ -162,30 +162,28 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
 ';
 		$no = 1 /* line 145 */;
 		foreach ($komisioner as $k) /* line 146 */ {
-			echo '                            <div class="card" id="';
+			echo '                                <div class="card" id="';
 			echo LR\Filters::escapeHtmlAttr($no) /* line 147 */;
 			echo '" onClick="window.location.href=this.dataset.link" data-link="';
 			echo LR\Filters::escapeHtmlAttr($baseurl) /* line 147 */;
 			echo 'tentang-kompolnas/komisioner/k';
 			echo LR\Filters::escapeHtmlAttr($no) /* line 147 */;
 			echo '">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src=\'';
+                                    <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
+                                        <img src=\'';
 			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 149 */;
 			echo LR\Filters::escapeHtmlAttr($k->photo) /* line 149 */;
 			echo '\' class="w-[180px] h-[200px] object-cover">
-                                </div>
-                                <div class="font-semibold text-sm">';
+                                    </div>
+                                    <div class="font-semibold text-sm">';
 			echo LR\Filters::escapeHtmlText($k->nama) /* line 151 */;
 			echo '</div>
-                                <div class="mt-1 text-sm">';
+                                    <div class="mt-1 text-sm">';
 			echo LR\Filters::escapeHtmlText($k->jabatan) /* line 152 */;
 			echo '</div>
-                            </div>
-                            ';
-			echo LR\Filters::escapeHtmlText($no++) /* line 154 */;
-			echo "\n";
-
+                                </div>
+';
+			$no = $no + 1 /* line 154 */;
 		}
 
 		echo '                        </div>

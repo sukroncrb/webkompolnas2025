@@ -27,6 +27,21 @@ final class HomeController extends Controller {
             }
         }
 
+        $komisionerArrayAsli = DB::terhubung()->query("SELECT id, nama, jabatan, photo FROM komisioner WHERE periode = ? ORDER BY dibuat ", ['Periode Saat ini'])->hasil();
+
+        $arraySize = count($komisionerArrayAsli);
+        $shiftAmount = 4;
+
+        $komisioner = [];
+
+        for ($i = 0; $i < $arraySize; $i++) {
+            $ibaru = ($i + $shiftAmount) % $arraySize;
+            $komisioner[$ibaru] = $komisionerArrayAsli[$i];
+        }
+
+        ksort($komisioner);
+
+
         return $this->view(
             model: 'web',
             template: 'home/index',
@@ -37,7 +52,7 @@ final class HomeController extends Controller {
                 'bannerphoto' => DB::terhubung()->query("SELECT media FROM statis WHERE id = ? ", ['033af9f8-69a1-4314-a956-c1433fffac2a'])->teks(),
                 'quotes' => DB::terhubung()->query("SELECT keterangan FROM statis WHERE id = ? ", ['4dd58d8d-6e3c-44ee-9f02-c1241fdb0be2'])->teks(),
                 'shortcut' => DB::terhubung()->query("SELECT label, media, link FROM statis WHERE model = ? ORDER BY dibuat ", ['shortcut'])->hasil(),
-                'komisioner' => DB::terhubung()->query("SELECT id, nama, jabatan, photo FROM komisioner WHERE periode = ? ORDER BY dibuat ", ['Periode Saat ini'])->hasil()
+                'komisioner' => $komisioner
             ]
         );
     }

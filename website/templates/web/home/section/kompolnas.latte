@@ -144,14 +144,14 @@
                         <div class="card-carousel" style="width: 140%;">
                             {var $no = 1}
                             {foreach $komisioner as $k}
-                            <div class="card" id="{$no}" onClick="window.location.href=this.dataset.link" data-link="{$baseurl}tentang-kompolnas/komisioner/k{$no}">
-                                <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
-                                    <img src='{$baseurl}{$k->photo}' class="w-[180px] h-[200px] object-cover">
+                                <div class="card" id="{$no}" onClick="window.location.href=this.dataset.link" data-link="{$baseurl}tentang-kompolnas/komisioner/k{$no}">
+                                    <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
+                                        <img src='{$baseurl}{$k->photo}' class="w-[180px] h-[200px] object-cover">
+                                    </div>
+                                    <div class="font-semibold text-sm">{$k->nama}</div>
+                                    <div class="mt-1 text-sm">{$k->jabatan}</div>
                                 </div>
-                                <div class="font-semibold text-sm">{$k->nama}</div>
-                                <div class="mt-1 text-sm">{$k->jabatan}</div>
-                            </div>
-                            {$no++}
+                            {var $no = $no + 1}
                             {/foreach}
                         </div>
                         <a href="#" class="visuallyhidden card-controller">Carousel controller</a>

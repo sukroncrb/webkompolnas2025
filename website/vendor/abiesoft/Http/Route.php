@@ -3,6 +3,7 @@
 namespace Abiesoft\Resource\Http;
 
 use Abiesoft\Resource\Utilities\Config;
+use Abiesoft\Resource\Http\Lanjut;
 
 class Route extends Authentication{
 
@@ -112,10 +113,11 @@ class Route extends Authentication{
                     $fc = $callback[1];
                     return $ctrl->$fc($params);
                 }else{
-                    return $c->view(
-                        model: 'admin-error',
-                        template: '404'
-                    );
+                    Lanjut::ke();
+                    // return $c->view(
+                    //     model: 'admin-error',
+                    //     template: '404'
+                    // );
                 }
             }else{
                 die($callback);
@@ -142,19 +144,21 @@ class Route extends Authentication{
                     $fc = $callback[1];
                     return $ctrl->$fc($params);
                 }else{
-                    return $c->view(
-                        model: 'admin-error',
-                        template: '404'
-                    );
+                    Lanjut::ke();
+                    // return $c->view(
+                    //     model: 'admin-error',
+                    //     template: '404'
+                    // );
                 }
             }else{
                 die($callback);
             }
         }else{
-            return $c->view(
-                model: 'admin-error',
-                template: '404'
-            );
+            Lanjut::ke();
+            // return $c->view(
+            //     model: 'admin-error',
+            //     template: '404'
+            // );
         }
     }
 
@@ -179,19 +183,23 @@ class Route extends Authentication{
                     $params['id'] = $id;
                     return $ctrl->$fc($params);
                 }else{
-                    return $c->view(
-                        model: 'admin-error',
-                        template: '404'
-                    );
+
+                    Lanjut::ke();
+                    // return $c->view(
+                    //     model: 'admin-error',
+                    //     template: '404'
+                    // );
                 }
             }else{
                 die($callback);
             }
         }else{
-            return $c->view(
-                model: 'admin-error',
-                template: '404'
-            );
+
+            Lanjut::ke();
+            // return $c->view(
+            //     model: 'admin-error',
+            //     template: '404'
+            // );
         }
     }
 
@@ -225,7 +233,8 @@ class Route extends Authentication{
     }
 
     protected function notFoundRoute() {
-        die("404 | Not Found");
+        Lanjut::ke();
+        // die("404 | Not Found");
     }
 
 
