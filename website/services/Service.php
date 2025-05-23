@@ -4,7 +4,6 @@ namespace App\Service;
 
 use Abiesoft\Resource\Http\Authentication;
 use Abiesoft\Resource\Utilities\Config;
-use Abiesoft\Resource\Utilities\Reader;
 
 class Service extends Authentication
 {

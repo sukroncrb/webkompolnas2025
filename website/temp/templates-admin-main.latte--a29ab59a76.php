@@ -34,21 +34,36 @@ final class Template_a29ab59a76 extends Latte\Runtime\Template
     <meta name="prefix" content="';
 		echo LR\Filters::escapeHtmlAttr($prefix_dashboard) /* line 11 */;
 		echo '" />
+
+    <link rel="shortcut icon" type="image/png" href="$baseurl}assets/admin/images/logos/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 14 */;
+		echo 'favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 15 */;
+		echo 'favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 16 */;
+		echo 'favicon/favicon-16x16.png">
+    <link rel="manifest" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 17 */;
+		echo 'favicon/site.webmanifest">
+
     <link rel="shortcut icon" type="image/png" href="$baseurl}assets/admin/images/logos/favicon.png" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 13 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 20 */;
 		echo 'assets/admin/css/styles.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 15 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 22 */;
 		echo 'assets/admin/css/style.css" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 16 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 23 */;
 		echo 'assets/admin/css/animasi-skm.css" />
 ';
-		$this->renderBlock('css', get_defined_vars()) /* line 17 */;
+		$this->renderBlock('css', get_defined_vars()) /* line 24 */;
 		echo '    <title>';
-		$this->renderBlock('title', get_defined_vars()) /* line 18 */;
+		$this->renderBlock('title', get_defined_vars()) /* line 25 */;
 		echo '</title>
 
 </head>
@@ -62,7 +77,7 @@ final class Template_a29ab59a76 extends Latte\Runtime\Template
                 <span class=\'teks-k\'>KEPOLISIAN</span>
                 <span class=\'teks-m\'>NASIONAL</span>
                 <span class=\'teks-skm\'><img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 30 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 37 */;
 		echo 'assets/admin/images/custom-apps/img/Logo_Kompolnas.png\'><span>KOMPOLNAS</span></span>
             </div>
         </div>
@@ -70,13 +85,13 @@ final class Template_a29ab59a76 extends Latte\Runtime\Template
     
     <div id="main-wrapper">
 ';
-		$this->createTemplate('./components/sidebar.latte', $this->params, 'include')->renderToContentType('html') /* line 36 */;
+		$this->createTemplate('./components/sidebar.latte', $this->params, 'include')->renderToContentType('html') /* line 43 */;
 		echo '
         <div class="page-wrapper">
 ';
-		$this->createTemplate('./components/header.latte', $this->params, 'include')->renderToContentType('html') /* line 39 */;
-		$this->createTemplate('./components/aside.latte', $this->params, 'include')->renderToContentType('html') /* line 40 */;
-		$this->renderBlock('content', get_defined_vars()) /* line 41 */;
+		$this->createTemplate('./components/header.latte', $this->params, 'include')->renderToContentType('html') /* line 46 */;
+		$this->createTemplate('./components/aside.latte', $this->params, 'include')->renderToContentType('html') /* line 47 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 48 */;
 		echo '        </div>
     </div>
 
@@ -88,38 +103,38 @@ final class Template_a29ab59a76 extends Latte\Runtime\Template
 
     <div class="dark-transparent sidebartoggler"></div>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 52 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 59 */;
 		echo '/assets/admin/js/vendor.min.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 53 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 60 */;
 		echo 'assets/admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 54 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 61 */;
 		echo 'assets/admin/libs/simplebar/dist/simplebar.min.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 55 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 62 */;
 		echo 'assets/admin/js/theme/app.init.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 56 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 63 */;
 		echo 'assets/admin/js/theme/theme.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 57 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 64 */;
 		echo 'assets/admin/js/theme/app.min.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 58 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 65 */;
 		echo 'assets/admin/js/theme/sidebarmenu.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 59 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 66 */;
 		echo 'assets/admin/js/jam.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 61 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 68 */;
 		echo 'assets/admin/js/style.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 62 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 69 */;
 		echo 'assets/admin/js/form.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 63 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 70 */;
 		echo 'assets/admin/js/validasi.js"></script>
     <script>
     setInterval(()=>{
@@ -129,7 +144,7 @@ final class Template_a29ab59a76 extends Latte\Runtime\Template
     setJamDigital(\'jam\');
     </script>
 ';
-		$this->renderBlock('js', get_defined_vars()) /* line 71 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 78 */;
 		echo '
 </body>
 
@@ -137,25 +152,25 @@ final class Template_a29ab59a76 extends Latte\Runtime\Template
 	}
 
 
-	/** {block css} on line 17 */
+	/** {block css} on line 24 */
 	public function blockCss(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block title} on line 18 */
+	/** {block title} on line 25 */
 	public function blockTitle(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block content} on line 41 */
+	/** {block content} on line 48 */
 	public function blockContent(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block js} on line 71 */
+	/** {block js} on line 78 */
 	public function blockJs(array $ʟ_args): void
 	{
 	}
