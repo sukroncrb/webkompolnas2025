@@ -44,145 +44,292 @@
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Website</span>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/berita" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-news"></i>
-                        </span>
-                        <span class="hide-menu">Berita</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/buku" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-book"></i>
-                        </span>
-                        <span class="hide-menu">Buku</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/photo" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-photo"></i>
-                        </span>
-                        <span class="hide-menu">Photo</span>
-                    </a>
-                </li>
-                {* <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/video" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-video"></i>
-                        </span>
-                        <span class="hide-menu">Video</span>
-                    </a>
-                </li> *}
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/pengumuman" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-speakerphone"></i>
-                        </span>
-                        <span class="hide-menu">Pengumuman</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/regulasi" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-file-text-spark"></i>
-                        </span>
-                        <span class="hide-menu">Regulasi</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                        <span class="d-flex">
-                        <i class="ti ti-box-multiple"></i>
-                        </span>
-                        <span class="hide-menu">Halaman Statis</span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item">
-                            <a href="{$baseurl}{$prefix_dashboard}/statis/editor/home-page" class="sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">Home Page</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{$baseurl}{$prefix_dashboard}/statis/editor/tentang-kompolnas" class="sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">Tentang Kompolnas</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Formulir Online</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/form/data/ppid" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-news"></i>
-                        </span>
-                        <span class="hide-menu">Permohonan Data</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/form/data/pengaduan" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-news"></i>
-                        </span>
-                        <span class="hide-menu">Pengaduan</span>
-                    </a>
-                </li>
 
 
+                <!--- Admin -->
+                {if $sesi['namagrup'] == "Administrator"}
 
-                <li class="nav-small-cap">
-                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Seting</span>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                        <span class="d-flex">
-                        <i class="ti ti-users"></i>
-                        </span>
-                        <span class="hide-menu">Users</span>
-                    </a>
-                    <ul aria-expanded="false" class="collapse first-level">
-                        <li class="sidebar-item">
-                            <a href="{$baseurl}{$prefix_dashboard}/users" class="sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">Semua user</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="{$baseurl}{$prefix_dashboard}/grup" class="sidebar-link">
-                                <div class="round-16 d-flex align-items-center justify-content-center">
-                                <i class="ti ti-circle"></i>
-                                </div>
-                                <span class="hide-menu">Grup</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/seting" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-settings"></i>
-                        </span>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/berita" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Berita</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/buku" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-book"></i>
+                            </span>
+                            <span class="hide-menu">Buku</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/photo" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-photo"></i>
+                            </span>
+                            <span class="hide-menu">Photo</span>
+                        </a>
+                    </li>
+                    {* <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/video" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-video"></i>
+                            </span>
+                            <span class="hide-menu">Video</span>
+                        </a>
+                    </li> *}
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/pengumuman" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-speakerphone"></i>
+                            </span>
+                            <span class="hide-menu">Pengumuman</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/regulasi" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-file-text-spark"></i>
+                            </span>
+                            <span class="hide-menu">Regulasi</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                            <span class="d-flex">
+                            <i class="ti ti-box-multiple"></i>
+                            </span>
+                            <span class="hide-menu">Halaman Statis</span>
+                        </a>
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="{$baseurl}{$prefix_dashboard}/statis/editor/home-page" class="sidebar-link">
+                                    <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                    </div>
+                                    <span class="hide-menu">Home Page</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{$baseurl}{$prefix_dashboard}/statis/editor/tentang-kompolnas" class="sidebar-link">
+                                    <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                    </div>
+                                    <span class="hide-menu">Tentang Kompolnas</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Formulir Online</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/form/data/ppid" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Permohonan Data</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/form/data/pengaduan" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Pengaduan</span>
+                        </a>
+                    </li>
+
+
+
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                         <span class="hide-menu">Seting</span>
-                    </a>
-                </li>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                            <span class="d-flex">
+                            <i class="ti ti-users"></i>
+                            </span>
+                            <span class="hide-menu">Users</span>
+                        </a>
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="{$baseurl}{$prefix_dashboard}/users" class="sidebar-link">
+                                    <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                    </div>
+                                    <span class="hide-menu">Semua user</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{$baseurl}{$prefix_dashboard}/grup" class="sidebar-link">
+                                    <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                    </div>
+                                    <span class="hide-menu">Grup</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/seting" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-settings"></i>
+                            </span>
+                            <span class="hide-menu">Seting</span>
+                        </a>
+                    </li>
+
+                {/if}
 
 
+
+                <!--- Humas -->
+                {if $sesi['namagrup'] == "Humas"}
+                
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/berita" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Berita</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/buku" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-book"></i>
+                            </span>
+                            <span class="hide-menu">Buku</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/photo" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-photo"></i>
+                            </span>
+                            <span class="hide-menu">Photo</span>
+                        </a>
+                    </li>
+                    {* <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/video" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-video"></i>
+                            </span>
+                            <span class="hide-menu">Video</span>
+                        </a>
+                    </li> *}
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/pengumuman" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-speakerphone"></i>
+                            </span>
+                            <span class="hide-menu">Pengumuman</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/regulasi" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-file-text-spark"></i>
+                            </span>
+                            <span class="hide-menu">Regulasi</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                            <span class="d-flex">
+                            <i class="ti ti-box-multiple"></i>
+                            </span>
+                            <span class="hide-menu">Halaman Statis</span>
+                        </a>
+                        <ul aria-expanded="false" class="collapse first-level">
+                            <li class="sidebar-item">
+                                <a href="{$baseurl}{$prefix_dashboard}/statis/editor/home-page" class="sidebar-link">
+                                    <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                    </div>
+                                    <span class="hide-menu">Home Page</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="{$baseurl}{$prefix_dashboard}/statis/editor/tentang-kompolnas" class="sidebar-link">
+                                    <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="ti ti-circle"></i>
+                                    </div>
+                                    <span class="hide-menu">Tentang Kompolnas</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Formulir Online</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/form/data/ppid" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Permohonan Data</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/form/data/pengaduan" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Pengaduan</span>
+                        </a>
+                    </li>
+
+                {/if}
+
+
+
+
+
+                <!--- Humas -->
+                {if $sesi['namagrup'] == "Hukum"}
+                
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/regulasi" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-file-text-spark"></i>
+                            </span>
+                            <span class="hide-menu">Regulasi</span>
+                        </a>
+                    </li>
+
+                {/if}
+
+
+
+
+
+
+
+                <!--- Humas -->
+                {if $sesi['namagrup'] == "Penulis"}
+                
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="{$baseurl}{$prefix_dashboard}/berita" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-news"></i>
+                            </span>
+                            <span class="hide-menu">Berita</span>
+                        </a>
+                    </li>
+
+                {/if}
                 
                 
             </ul>

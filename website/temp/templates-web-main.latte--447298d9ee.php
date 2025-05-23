@@ -31,53 +31,68 @@ final class Template_447298d9ee extends Latte\Runtime\Template
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Kompolnas Official"/>
     <meta property="og:description" content="Website Resmi Komisi Kepolisian Nasional"/>
+
+    <link rel="shortcut icon" type="image/png" href="$baseurl}assets/admin/images/logos/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 13 */;
+		echo 'favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 14 */;
+		echo 'favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 15 */;
+		echo 'favicon/favicon-16x16.png">
+    <link rel="manifest" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 16 */;
+		echo 'favicon/site.webmanifest">
+
     <title>';
-		$this->renderBlock('title', get_defined_vars()) /* line 11 */;
+		$this->renderBlock('title', get_defined_vars()) /* line 18 */;
 		echo '</title>
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 12 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 19 */;
 		echo 'assets/web/css/style.css">
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 13 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 20 */;
 		echo 'assets/admin/css/animasi-skm.css" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 15 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 22 */;
 		echo 'assets/web/css/shimmer.css">
 ';
-		$this->renderBlock('css', get_defined_vars()) /* line 16 */;
+		$this->renderBlock('css', get_defined_vars()) /* line 23 */;
 		echo '</head>
 <body>
 
     <div itemprop="blog Post" itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
         <div itemprop="image" itemscope="itemscope" itemtype="http://schema.org/ImageObject">
             <meta content="';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 22 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 29 */;
 		echo 'assets/web/images/12334.png" itemprop=\'https';
-		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 22 */;
+		echo LR\Filters::escapeHtmlAttr($baseurl) /* line 29 */;
 		echo '\'/>
         </div>
     </div>
 
     <div id=\'opsi\' data-apikey="';
-		echo LR\Filters::escapeHtmlAttr($apikey) /* line 26 */;
+		echo LR\Filters::escapeHtmlAttr($apikey) /* line 33 */;
 		echo '"></div>
 ';
-		$this->createTemplate('./components/header.latte', $this->params, 'include')->renderToContentType('html') /* line 27 */;
-		$this->renderBlock('content', get_defined_vars()) /* line 28 */;
-		$this->createTemplate('./components/footer.latte', $this->params, 'include')->renderToContentType('html') /* line 29 */;
-		$this->createTemplate('./components/floating.latte', $this->params, 'include')->renderToContentType('html') /* line 30 */;
+		$this->createTemplate('./components/header.latte', $this->params, 'include')->renderToContentType('html') /* line 34 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 35 */;
+		$this->createTemplate('./components/footer.latte', $this->params, 'include')->renderToContentType('html') /* line 36 */;
+		$this->createTemplate('./components/floating.latte', $this->params, 'include')->renderToContentType('html') /* line 37 */;
 		echo '
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 32 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 39 */;
 		echo 'assets/web/js/jquery-3.7.0.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 33 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 40 */;
 		echo 'assets/admin/js/jam.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 34 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 41 */;
 		echo 'assets/web/js/web.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 35 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 42 */;
 		echo 'assets/web/js/validasi.js"></script>
     <script>
         setInterval(()=>{
@@ -126,31 +141,31 @@ final class Template_447298d9ee extends Latte\Runtime\Template
     </script>
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="c4dd1880-97b3-4279-ac1c-08c391050270";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 ';
-		$this->renderBlock('js', get_defined_vars()) /* line 82 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 89 */;
 		echo '</body>
 </html>';
 	}
 
 
-	/** {block title} on line 11 */
+	/** {block title} on line 18 */
 	public function blockTitle(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block css} on line 16 */
+	/** {block css} on line 23 */
 	public function blockCss(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block content} on line 28 */
+	/** {block content} on line 35 */
 	public function blockContent(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block js} on line 82 */
+	/** {block js} on line 89 */
 	public function blockJs(array $ʟ_args): void
 	{
 	}

@@ -31,22 +31,37 @@ final class Template_55b7f0583c extends Latte\Runtime\Template
     <meta name="apikey" content="';
 		echo LR\Filters::escapeHtmlAttr($apikey) /* line 10 */;
 		echo '" />
+
+    <link rel="shortcut icon" type="image/png" href="$baseurl}assets/admin/images/logos/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 13 */;
+		echo 'favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 14 */;
+		echo 'favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 15 */;
+		echo 'favicon/favicon-16x16.png">
+    <link rel="manifest" href="';
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 16 */;
+		echo 'favicon/site.webmanifest">
+    
     <link rel="shortcut icon" type="image/png" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 11 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 18 */;
 		echo 'assets/admin/images/logos/favicon.png" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 12 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 19 */;
 		echo 'assets/admin/css/styles.css" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 13 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 20 */;
 		echo 'assets/admin/css/animasi-skm.css" />
     <link rel="stylesheet" href="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 14 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 21 */;
 		echo 'assets/auth/css/style.css" />
 ';
-		$this->renderBlock('css', get_defined_vars()) /* line 15 */;
+		$this->renderBlock('css', get_defined_vars()) /* line 22 */;
 		echo '    <title>';
-		$this->renderBlock('title', get_defined_vars()) /* line 16 */;
+		$this->renderBlock('title', get_defined_vars()) /* line 23 */;
 		echo '</title>
 
 </head>
@@ -60,14 +75,14 @@ final class Template_55b7f0583c extends Latte\Runtime\Template
                 <span class=\'teks-k\'>KEPOLISIAN</span>
                 <span class=\'teks-m\'>NASIONAL</span>
                 <span class=\'teks-skm\'><img src=\'';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 28 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 35 */;
 		echo 'assets/admin/images/custom-apps/img/Logo_Kompolnas.png\'><span>KOMPOLNAS</span></span>
             </div>
         </div>
     </div>
     
 ';
-		$this->renderBlock('content', get_defined_vars()) /* line 33 */;
+		$this->renderBlock('content', get_defined_vars()) /* line 40 */;
 		echo '
     <script>
         function handleColorTheme(e) {
@@ -76,22 +91,22 @@ final class Template_55b7f0583c extends Latte\Runtime\Template
     </script>
 
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 41 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 48 */;
 		echo 'assets/admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 42 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 49 */;
 		echo 'assets/admin/js/theme/theme.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 43 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 50 */;
 		echo 'assets/admin/js/style.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 44 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 51 */;
 		echo 'assets/admin/js/form.js"></script>
     <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 45 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 52 */;
 		echo 'assets/admin/js/validasi.js"></script>
 ';
-		$this->renderBlock('js', get_defined_vars()) /* line 46 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 53 */;
 		echo '
 </body>
 
@@ -99,25 +114,25 @@ final class Template_55b7f0583c extends Latte\Runtime\Template
 	}
 
 
-	/** {block css} on line 15 */
+	/** {block css} on line 22 */
 	public function blockCss(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block title} on line 16 */
+	/** {block title} on line 23 */
 	public function blockTitle(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block content} on line 33 */
+	/** {block content} on line 40 */
 	public function blockContent(array $ʟ_args): void
 	{
 	}
 
 
-	/** {block js} on line 46 */
+	/** {block js} on line 53 */
 	public function blockJs(array $ʟ_args): void
 	{
 	}

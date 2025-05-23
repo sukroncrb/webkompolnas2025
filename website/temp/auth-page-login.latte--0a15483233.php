@@ -19,7 +19,7 @@ final class Template_0a15483233 extends Latte\Runtime\Template
 
 		$this->renderBlock('content', get_defined_vars()) /* line 2 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 64 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 68 */;
 	}
 
 
@@ -74,17 +74,7 @@ final class Template_0a15483233 extends Latte\Runtime\Template
                                     <label for="psw">Password</label>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <div class="form-check flex-center px-0">
-                                        <div class="form-check form-switch mb-0">
-                                            <input class="form-check-input cursor-pointer" type="checkbox" name="ingatkan" role="switch" id="flexSwitchCheckChecked">
-                                            <label class="form-check-label text-dark" for="flexCheckChecked">
-                                                Ingatkan
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <a class="text-primary fw-medium" href="../main/authentication-forgot-password.html">Lupa password?</a>
-                                </div>
+                                
                                 <button class="btn btn-primary w-100 py-8 rounded-2">Login</button>
                             </form>
                         </div>
@@ -97,7 +87,7 @@ final class Template_0a15483233 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 64 */
+	/** {block js} on line 68 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script>

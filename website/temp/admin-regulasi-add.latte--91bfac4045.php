@@ -398,8 +398,6 @@ function uploadFile(file){
 
     xhr.onload = function() {
         const result = JSON.parse(xhr.responseText);
-
-        console.log(result);
         if(result.code == 200){
             let namafile = result.data;
             el("#dokumen").value = namafile;
