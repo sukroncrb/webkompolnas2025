@@ -52,23 +52,15 @@
                     <ul class="font-semibold">
                         {var $no = 1}
                         {foreach $komisioner as $k}
-                            {if $no == 1}
-                            <li class="item-profile-btn active" onclick="setProfileActive(this.dataset.content)" id="k{$no}" data-content="k{$no}" 
-                            data-nama = "{$k->nama}"
-                            data-jabatan = "{$k->jabatan}"
-                            data-photo = "{$k->photo}"
-                            data-keterangan = "{$k->keterangan}"
-                            class="cursor-pointer hover:text-yellow-400 py-4">{$k->nama}</li>
-                            {else}
                             <li class="item-profile-btn" onclick="setProfileActive(this.dataset.content)" id="k{$no}" data-content="k{$no}" 
                             data-nama = "{$k->nama}"
                             data-jabatan = "{$k->jabatan}"
                             data-photo = "{$k->photo}"
-                            data-keterangan = "{$k->keterangan}"
+                            data-keterangan = "{html_entity_decode($k->keterangan)}"
                             class="cursor-pointer hover:text-yellow-400 py-4">{$k->nama}</li>
-                            {/if}
                             {var $no = $no + 1}
                         {/foreach}
+                        <input type="hidden" id="idkomisioner" value="{$idkomisioner}">
                         {* <li class="item-profile-btn active" onclick="setProfileActive(this.dataset.content)" data-content="k1" class="cursor-pointer hover:text-yellow-400 py-4">Prof. Dr. Budi Gunawan, S.H., M.Si.</li>
                         <li class="item-profile-btn" onclick="setProfileActive(this.dataset.content)" data-content="k2" class="cursor-pointer hover:text-yellow-400 py-4">Prof. H.M. Tito Karnavian, Ph.D. </li>
                         <li class="item-profile-btn" onclick="setProfileActive(this.dataset.content)" data-content="k3" class="cursor-pointer hover:text-yellow-400 py-4">Dr. Supratman Andi Agtas, S.H., M.H.</li>
@@ -118,9 +110,28 @@ function showProfileDefault(x){
     shownama.innerHTML = el("#"+x).dataset.nama;
     showjabatan.innerHTML = el("#"+x).dataset.jabatan;
     showdeskripsi.innerHTML = el("#"+x).dataset.keterangan;
+
+
+    let datacontent = document.querySelectorAll(".item-profile-btn");
+    if(datacontent){
+        for(let i=0; i<datacontent.length; i++){
+            datacontent[i].classList.remove("active");
+            if(datacontent[i].dataset.content == x){
+                datacontent[i].classList.add("active");
+                showphoto.src = baseurl + el("#"+x).dataset.photo;
+                shownama.innerHTML = el("#"+x).dataset.nama;
+                showjabatan.innerHTML = el("#"+x).dataset.jabatan;
+                showdeskripsi.innerHTML = el("#"+x).dataset.keterangan;
+            }
+        }
+    }
 }
 
-showProfileDefault("k1");
+if(el("#idkomisioner").value != ""){
+    showProfileDefault(el("#idkomisioner").value);
+}else{
+    showProfileDefault("k1");
+}
 
 setProfileActive = (x) =>{
     let datacontent = document.querySelectorAll(".item-profile-btn");
@@ -144,6 +155,14 @@ setProfileActive = (x) =>{
                 showjabatan.innerHTML = el("#"+x).dataset.jabatan;
                 showdeskripsi.innerHTML = el("#"+x).dataset.keterangan;
             }
+        }
+    }
+
+    
+    if(Number(window.location.href.slice(-1))) {
+        if(window.location.href.slice(-2) != x){
+            const stateObj = { foo: "tentang-kompolnas/komisioner/"+window.location.href.slice(-2) };
+            history.pushState(stateObj, "", x);
         }
     }
 }

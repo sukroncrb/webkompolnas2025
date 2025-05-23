@@ -17,7 +17,7 @@ final class TentangController extends Controller
                 'visi-dan-misi' => $this->visimisi(),
                 'tupoksi' => $this->tupoksi(),
                 'struktur-organisasi' => $this->struktur(),
-                'komisioner' => $this->komisioner(),
+                'komisioner' => $this->komisioner($params),
                 default => Lanjut::ke()
             };
         }else{
@@ -75,13 +75,18 @@ final class TentangController extends Controller
         );
     }
 
-    protected function komisioner() {
+    protected function komisioner($params) {
+        $idkomisioner = "";
+        if(isset($params[1])){
+            $idkomisioner = $params[1];
+        }
         return $this->view(
             model: 'web',
             template: 'tentang/komisioner',
             data: [
                 'title' => 'Profil Komisioner Kompolnas',
-                'komisioner' => DB::terhubung()->query("SELECT id, nama, jabatan, photo, keterangan FROM komisioner WHERE periode = ? ORDER BY dibuat ", ['Periode Saat ini'])->hasil()
+                'komisioner' => DB::terhubung()->query("SELECT id, nama, jabatan, photo, keterangan FROM komisioner WHERE periode = ? ORDER BY dibuat ", ['Periode Saat ini'])->hasil(),
+                'idkomisioner' => $idkomisioner
             ]
         );
     }

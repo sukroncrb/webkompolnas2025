@@ -159,34 +159,36 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
                 ">
                     <div class="container-caraousel">
                         <div class="card-carousel" style="width: 140%;">
-
 ';
-		$no = 1 /* line 146 */;
-		foreach ($komisioner as $k) /* line 147 */ {
+		$no = 1 /* line 145 */;
+		foreach ($komisioner as $k) /* line 146 */ {
 			echo '                            <div class="card" id="';
-			echo LR\Filters::escapeHtmlAttr($no) /* line 148 */;
+			echo LR\Filters::escapeHtmlAttr($no) /* line 147 */;
+			echo '" onClick="window.location.href=this.dataset.link" data-link="';
+			echo LR\Filters::escapeHtmlAttr($baseurl) /* line 147 */;
+			echo 'tentang-kompolnas/komisioner/k';
+			echo LR\Filters::escapeHtmlAttr($no) /* line 147 */;
 			echo '">
                                 <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
                                     <img src=\'';
-			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 150 */;
-			echo LR\Filters::escapeHtmlAttr($k->photo) /* line 150 */;
+			echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 149 */;
+			echo LR\Filters::escapeHtmlAttr($k->photo) /* line 149 */;
 			echo '\' class="w-[180px] h-[200px] object-cover">
                                 </div>
                                 <div class="font-semibold text-sm">';
-			echo LR\Filters::escapeHtmlText($k->nama) /* line 152 */;
+			echo LR\Filters::escapeHtmlText($k->nama) /* line 151 */;
 			echo '</div>
                                 <div class="mt-1 text-sm">';
-			echo LR\Filters::escapeHtmlText($k->jabatan) /* line 153 */;
+			echo LR\Filters::escapeHtmlText($k->jabatan) /* line 152 */;
 			echo '</div>
                             </div>
                             ';
-			echo LR\Filters::escapeHtmlText($no++) /* line 155 */;
+			echo LR\Filters::escapeHtmlText($no++) /* line 154 */;
 			echo "\n";
 
 		}
 
-		echo '
-                        </div>
+		echo '                        </div>
                         <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
                     </div>
                 </div>
@@ -196,10 +198,10 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
                 <h1 class="font-semibold mb-4">Pengumuman</h1>
                 <div class="w-full">
                     <img style=\'cursor: pointer;\' src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 167 */;
-		echo LR\Filters::escapeHtmlAttr($banner) /* line 167 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 165 */;
+		echo LR\Filters::escapeHtmlAttr($banner) /* line 165 */;
 		echo '" class="w-full" onClick=\'window.location.href=this.dataset.link\' data-link=\'';
-		echo LR\Filters::escapeHtmlAttr($linkbanner) /* line 167 */;
+		echo LR\Filters::escapeHtmlAttr($linkbanner) /* line 165 */;
 		echo '\'>
                 </div>
             </div>
@@ -216,7 +218,7 @@ final class Template_2845bcf11e extends Latte\Runtime\Template
 		extract($this->params);
 
 		if (!$this->getReferringTemplate() || $this->getReferenceType() === 'extends') {
-			foreach (array_intersect_key(['k' => '147'], $this->params) as $ʟ_v => $ʟ_l) {
+			foreach (array_intersect_key(['k' => '146'], $this->params) as $ʟ_v => $ʟ_l) {
 				trigger_error("Variable \$$ʟ_v overwritten in foreach on line $ʟ_l");
 			}
 		}

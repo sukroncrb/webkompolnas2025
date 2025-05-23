@@ -20,7 +20,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 27 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 228 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 230 */;
 	}
 
 
@@ -249,7 +249,8 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
                                         </div>
                                     </div>
                                     <div class="form-group mb-3">
-                                        <textarea class="form-control" id="keterangan" name="keterangan" placeholder="Keterangan" style="height: 200px;"></textarea>
+                                        <div id="editorketerangan"></div>
+                                        <input type="hidden" id="keterangan" name="keterangan">
                                     </div>
                                     <div class="form-group mt-3">
                                         <input type=\'hidden\' id=\'tipe\' name=\'tipe\' value=\'HOME_PAGE_KOMISIONER\'>
@@ -282,19 +283,19 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
                     <div class="card-body">
                         <div class="mb-3">
                             <img id=\'banneryoutubeview\' style="width: 100%;" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 204 */;
-		echo LR\Filters::escapeHtmlAttr($banneryoutube) /* line 204 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 206 */;
+		echo LR\Filters::escapeHtmlAttr($banneryoutube) /* line 206 */;
 		echo '">
                         </div>
                         <h6 class="font-semibold text-center mb-3">Banner Youtube Kompolnas</h6>
                         <form method="post" id="formBannerYoutube" name="formBannerYoutube" data-id="';
-		echo LR\Filters::escapeHtmlAttr($banneryoutubeid) /* line 207 */;
+		echo LR\Filters::escapeHtmlAttr($banneryoutubeid) /* line 209 */;
 		echo '">
                             <div id="msgformBannerYoutube"></div>
                             <div class="form-group">
                                 <input type="file" data-label="Media" id="media" name="media" class="form-control">
                                 <input id="link" name="link" class="form-control mt-3" placeholder="Link channel youtube" value="';
-		echo LR\Filters::escapeHtmlAttr($linkbanneryoutube) /* line 211 */;
+		echo LR\Filters::escapeHtmlAttr($linkbanneryoutube) /* line 213 */;
 		echo '">
                             </div>
                             <div class="form-group mt-3">
@@ -314,7 +315,7 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 228 */
+	/** {block js} on line 230 */
 	public function blockJs(array $ʟ_args): void
 	{
 		extract($this->params);
@@ -322,31 +323,31 @@ final class Template_368c3793a0 extends Latte\Runtime\Template
 		unset($ʟ_args);
 
 		echo '<script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 229 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 231 */;
 		echo '/assets/admin/libs/dropzone/dist/min/dropzone.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 230 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 232 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.full.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 231 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 233 */;
 		echo '/assets/admin/libs/select2/dist/js/select2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 232 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
 		echo '/assets/admin/js/forms/select2.init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 233 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
 		echo '/assets/admin/libs/jquery.repeater/jquery.repeater.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 234 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
 		echo '/assets/admin/libs/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 235 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
 		echo '/assets/admin/js/forms/repeater-init.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 236 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 238 */;
 		echo 'assets/admin/libs/sweetalert2/dist/sweetalert2.min.js"></script>
 <script src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 237 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 239 */;
 		echo 'assets/admin/libs/quill/dist/quill.min.js"></script>
 <script>
 
@@ -626,6 +627,14 @@ frSc.addEventListener("submit", (e)=> {
 
 // Komisioner
 
+const editorketerangan = new Quill("#editorketerangan", {
+  theme: "snow",
+});
+
+editorketerangan.on(\'text-change\', () => {
+  el("#formKomisioner").querySelector("#keterangan").value = editorketerangan.root.innerHTML;
+});
+
 function loadListKomisioner(){
     fetch(baseurl + \'api/statis/listkomisioner\', {
         method: \'GET\',
@@ -715,6 +724,7 @@ function isiFormKomisioner(x){
     el("#formKomisioner").querySelector("#jabatan").value = jabatan;
     el("#formKomisioner").querySelector("#periode").children[0].value = periode;
     el("#formKomisioner").querySelector("#periode").children[0].innerText = periode;
+    editorketerangan.root.innerHTML =  keterangan;
     el("#formKomisioner").querySelector("#keterangan").value = keterangan;
     el("#btnreplacekomisioner").innerHTML = `
         <button id=\'btnreplace\' data-id=\'`+id+`\' class="btn btn-primary">Simpan Perubahan</button>
@@ -726,6 +736,7 @@ function isiFormKomisioner(x){
 function komisionerFormReset(){
     el("#formKomisioner").querySelector("#nama").value = "";
     el("#formKomisioner").querySelector("#jabatan").value = "";
+    editorketerangan.root.innerHTML =  "";
     el("#formKomisioner").querySelector("#keterangan").value = "";
     el("#viewphotokomisioner").src = baseurl + "assets/storage/default/add_image.jpeg";
     el("#formKomisioner").querySelector("#periode").children[0].value = "";
@@ -734,7 +745,6 @@ function komisionerFormReset(){
         <button class="btn btn-primary">Simpan</button>
     `;
 }
-
 
 loadListKomisioner();
 
@@ -807,7 +817,8 @@ frKm.addEventListener("submit", (e)=> {
                     nama.value = "";
                     jabatan.value = "";
                     periode.value = "";
-                    keterangan.value = "";
+                    editorketerangan.root.innerHTML =  keterangan;
+                    el("#formKomisioner").querySelector("#keterangan").value = keterangan;
                     el("#viewphotokomisioner").src = baseurl + "assets/storage/default/add_image.jpeg";
                     Swal.fire(
                         "Sip!",

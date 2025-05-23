@@ -20,7 +20,7 @@ final class Template_130b01e7c1 extends Latte\Runtime\Template
 		$this->renderBlock('css', get_defined_vars()) /* line 2 */;
 		$this->renderBlock('content', get_defined_vars()) /* line 21 */;
 		echo "\n";
-		$this->renderBlock('js', get_defined_vars()) /* line 110 */;
+		$this->renderBlock('js', get_defined_vars()) /* line 102 */;
 		echo "\n";
 	}
 
@@ -106,55 +106,34 @@ final class Template_130b01e7c1 extends Latte\Runtime\Template
 ';
 		$no = 1 /* line 53 */;
 		foreach ($komisioner as $k) /* line 54 */ {
-			if ($no == 1) /* line 55 */ {
-				echo '                            <li class="item-profile-btn active" onclick="setProfileActive(this.dataset.content)" id="k';
-				echo LR\Filters::escapeHtmlAttr($no) /* line 56 */;
-				echo '" data-content="k';
-				echo LR\Filters::escapeHtmlAttr($no) /* line 56 */;
-				echo '" 
+			echo '                            <li class="item-profile-btn" onclick="setProfileActive(this.dataset.content)" id="k';
+			echo LR\Filters::escapeHtmlAttr($no) /* line 55 */;
+			echo '" data-content="k';
+			echo LR\Filters::escapeHtmlAttr($no) /* line 55 */;
+			echo '" 
                             data-nama="';
-				echo LR\Filters::escapeHtmlAttr($k->nama) /* line 57 */;
-				echo '"
+			echo LR\Filters::escapeHtmlAttr($k->nama) /* line 56 */;
+			echo '"
                             data-jabatan="';
-				echo LR\Filters::escapeHtmlAttr($k->jabatan) /* line 58 */;
-				echo '"
+			echo LR\Filters::escapeHtmlAttr($k->jabatan) /* line 57 */;
+			echo '"
                             data-photo="';
-				echo LR\Filters::escapeHtmlAttr($k->photo) /* line 59 */;
-				echo '"
+			echo LR\Filters::escapeHtmlAttr($k->photo) /* line 58 */;
+			echo '"
                             data-keterangan="';
-				echo LR\Filters::escapeHtmlAttr($k->keterangan) /* line 60 */;
-				echo '"
+			echo LR\Filters::escapeHtmlAttr(html_entity_decode($k->keterangan)) /* line 59 */;
+			echo '"
                             class="cursor-pointer hover:text-yellow-400 py-4">';
-				echo LR\Filters::escapeHtmlText($k->nama) /* line 61 */;
-				echo '</li>
+			echo LR\Filters::escapeHtmlText($k->nama) /* line 60 */;
+			echo '</li>
 ';
-			} else /* line 62 */ {
-				echo '                            <li class="item-profile-btn" onclick="setProfileActive(this.dataset.content)" id="k';
-				echo LR\Filters::escapeHtmlAttr($no) /* line 63 */;
-				echo '" data-content="k';
-				echo LR\Filters::escapeHtmlAttr($no) /* line 63 */;
-				echo '" 
-                            data-nama="';
-				echo LR\Filters::escapeHtmlAttr($k->nama) /* line 64 */;
-				echo '"
-                            data-jabatan="';
-				echo LR\Filters::escapeHtmlAttr($k->jabatan) /* line 65 */;
-				echo '"
-                            data-photo="';
-				echo LR\Filters::escapeHtmlAttr($k->photo) /* line 66 */;
-				echo '"
-                            data-keterangan="';
-				echo LR\Filters::escapeHtmlAttr($k->keterangan) /* line 67 */;
-				echo '"
-                            class="cursor-pointer hover:text-yellow-400 py-4">';
-				echo LR\Filters::escapeHtmlText($k->nama) /* line 68 */;
-				echo '</li>
-';
-			}
-			$no = $no + 1 /* line 70 */;
+			$no = $no + 1 /* line 61 */;
 		}
 
-		echo '                    </ul>
+		echo '                        <input type="hidden" id="idkomisioner" value="';
+		echo LR\Filters::escapeHtmlAttr($idkomisioner) /* line 63 */;
+		echo '">
+                    </ul>
                 </div>
                 <div class="col-start-1 col-span-1
                     sm:col-start-1 sm:col-span-1
@@ -167,7 +146,7 @@ final class Template_130b01e7c1 extends Latte\Runtime\Template
                         <div class="flex justify-start items-center gap-6 mb-8">
                             <div class="block w-[130px] h-[150px] rounded-md overflow-hidden">
                                 <img id="show-photo" src="';
-		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 93 */;
+		echo LR\Filters::escapeHtmlAttr(LR\Filters::safeUrl($baseurl)) /* line 85 */;
 		echo 'assets/storage/default/pp.jpg" class="w-[130px] h-[150px] object-fit">
                             </div>
                             <div>
@@ -187,7 +166,7 @@ final class Template_130b01e7c1 extends Latte\Runtime\Template
 	}
 
 
-	/** {block js} on line 110 */
+	/** {block js} on line 102 */
 	public function blockJs(array $ʟ_args): void
 	{
 		echo '<script>
@@ -200,9 +179,28 @@ function showProfileDefault(x){
     shownama.innerHTML = el("#"+x).dataset.nama;
     showjabatan.innerHTML = el("#"+x).dataset.jabatan;
     showdeskripsi.innerHTML = el("#"+x).dataset.keterangan;
+
+
+    let datacontent = document.querySelectorAll(".item-profile-btn");
+    if(datacontent){
+        for(let i=0; i<datacontent.length; i++){
+            datacontent[i].classList.remove("active");
+            if(datacontent[i].dataset.content == x){
+                datacontent[i].classList.add("active");
+                showphoto.src = baseurl + el("#"+x).dataset.photo;
+                shownama.innerHTML = el("#"+x).dataset.nama;
+                showjabatan.innerHTML = el("#"+x).dataset.jabatan;
+                showdeskripsi.innerHTML = el("#"+x).dataset.keterangan;
+            }
+        }
+    }
 }
 
-showProfileDefault("k1");
+if(el("#idkomisioner").value != ""){
+    showProfileDefault(el("#idkomisioner").value);
+}else{
+    showProfileDefault("k1");
+}
 
 setProfileActive = (x) =>{
     let datacontent = document.querySelectorAll(".item-profile-btn");
@@ -226,6 +224,14 @@ setProfileActive = (x) =>{
                 showjabatan.innerHTML = el("#"+x).dataset.jabatan;
                 showdeskripsi.innerHTML = el("#"+x).dataset.keterangan;
             }
+        }
+    }
+
+    
+    if(Number(window.location.href.slice(-1))) {
+        if(window.location.href.slice(-2) != x){
+            const stateObj = { foo: "tentang-kompolnas/komisioner/"+window.location.href.slice(-2) };
+            history.pushState(stateObj, "", x);
         }
     }
 }

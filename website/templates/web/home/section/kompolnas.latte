@@ -142,10 +142,9 @@
                 ">
                     <div class="container-caraousel">
                         <div class="card-carousel" style="width: 140%;">
-
                             {var $no = 1}
                             {foreach $komisioner as $k}
-                            <div class="card" id="{$no}">
+                            <div class="card" id="{$no}" onClick="window.location.href=this.dataset.link" data-link="{$baseurl}tentang-kompolnas/komisioner/k{$no}">
                                 <div class="w-[180px] h-[200px] mb-[10px] rounded-[10px] bg-gray-300 overflow-hidden">
                                     <img src='{$baseurl}{$k->photo}' class="w-[180px] h-[200px] object-cover">
                                 </div>
@@ -154,7 +153,6 @@
                             </div>
                             {$no++}
                             {/foreach}
-
                         </div>
                         <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
                     </div>
